@@ -1,0 +1,116 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-05-14 17:28+0800\n"
+"PO-Revision-Date: 2024-05-14 19:21+0800\n"
+"Last-Translator: \n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.15.0\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: templates/base.html:46
+msgid "首页"
+msgstr "Home"
+
+#: templates/base.html:47 templates/base.html:109
+msgid "服务"
+msgstr "Service"
+
+#: templates/base.html:48
+msgid "模型介绍"
+msgstr "Model Introduction"
+
+#: templates/base.html:51
+msgid "模型1"
+msgstr ""
+
+#: templates/base.html:52
+msgid "模型2    "
+msgstr ""
+
+#: templates/base.html:55
+msgid "使用手册"
+msgstr "user manual"
+
+#: templates/base.html:57
+msgid "价格"
+msgstr "Price"
+
+#: templates/base.html:59
+msgid "更多"
+msgstr "More info"
+
+#: templates/base.html:62 templates/base.html:79
+msgid "登录"
+msgstr "Login"
+
+#: templates/base.html:63
+msgid "注册"
+msgstr "Register"
+
+#: templates/base.html:65
+msgid "团队"
+msgstr "teams"
+
+#: templates/base.html:66 templates/base.html:74
+msgid "博客"
+msgstr "Blog"
+
+#: templates/base.html:67
+msgid "博客详情"
+msgstr "Blog Details"
+
+#: templates/base.html:68
+msgid "未来发展"
+msgstr ""
+
+#: templates/base.html:69
+msgid "条款"
+msgstr ""
+
+#: templates/base.html:70
+msgid "隐私政策"
+msgstr ""
+
+#: templates/base.html:71
+msgid "样本"
+msgstr ""
+
+#: templates/base.html:75
+msgid "联系我们"
+msgstr "Contact us"
+
+#: templates/base.html:98
+msgid "望飞宇是一家致力于为医疗行业提供AI解决方案的公司。我们提供医疗影像AI模型，医疗图像分析，医疗数据分析，医疗数据处理等服务。"
+msgstr "Wangfeiyu is a company dedicated to providing AI solutions for the healthcare industry. We provide medical imaging AI models, medical image analysis, medical data analysis, medical data processing and other services."
+
+#: templates/base.html:112
+msgid "产品下载"
+msgstr "download"
+
+#: templates/base.html:122
+msgid "联系方式"
+msgstr ""
+
+#: templates/base.html:124
+msgid "商务合作:contact@example.com"
+msgstr ""
+
+#: templates/base.html:125
+msgid "公司地址:武汉市光谷工业园"
+msgstr ""
+
+#: templates/base.html:139
+msgid "望飞宇(武汉)科技有限公司 备案号："
+msgstr ""

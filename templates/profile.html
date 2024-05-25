@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block title %}{{ _('隐私政策') }}{% endblock %}
+
+{% block content %}
+
+    <main id="main">
+
+        <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-start position-relative">
+                        <div class="col-lg-6 text-left">
+                            <h2 >{{ _('公司简介') }}</h2>
+{#                            <p>{{ _('本隐私政策阐述了本网站如何收集、使用、存储、保护、传输和分享您的个人信息。') }}</p>#}
+                            <nav>
+                                <ol>
+                                    <li><a href="{{ url_for('home.index') }}">{{ _('首页') }}</a></li>
+                                    <li>{{ _('简介') }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="pages-images">
+                                <img src="{{ url_for('static', filename='picture/common-page.jpg') }}" class="img-fluid"
+                                     alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- End Breadcrumbs -->
+
+        <section class="single-page">
+            <div class="container" data-aos="fade-up">
+                <h3 class="mb-5 text-center"><strong data-aos="gradual-text">{{ _("公司简介") }}</strong></h3>
+                <p class="mb-5 lead"><strong>
+                    {{ _("望飞宇（武汉）科技有限公司旨在持续开展人工智能前沿研究，打造更具拓展性更普惠的人工智能软件平台，服务于生物科学研究及医学检测。") }}
+                </strong></p>
+                <p class="mb-5">
+                    {{ _("本公司已研发一系列拥有自主知识产权的生物与医学图像处理工具，可在神经元重建、血管重建、器官分割与配准、三维海量数据可视化等多个领域为用户提供多元化、定制化科研服务。") }}
+                </p >
+                <p class="mb-5">
+                    {{ _("公司开发了大数据格式方法，速度快、数据压缩量少、可视化响应速度提升，可用于个人电脑快速分析大量数据。") }}
+                </p >
+                <p class="mb-5">
+                    {{ _("公司研发的NeuroVision工具可实现从10TB成像数据中神经元重建及细胞定位，BloodVision工具可进行血管形态重建，MedVision工具可用于医学数据分析。") }}
+                </p>
+                <p class="mb-5">
+                    {{ _("公司服务项目包括胞体定位、神经元追踪、血管分析、图像配准、全脑数据一体化处理软件定制开发等。") }}
+                </p>
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

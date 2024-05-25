@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gmap3.min.js') }}"></script>
+{% endblock %}
+
+
+{% block title %}{{ _("联系我们") }}{% endblock %}
+
+{% block content %}
+    <main id="main">
+
+        <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-start position-relative">
+                        <div class="col-lg-6 text-left">
+                            <h2>{{ _("合作咨询") }}</h2>
+                            <p>{{ _("留下你的联系方式和需求，我们将尽快与您联系") }}</p>
+                            <nav>
+                                <ol>
+                                    <li><a href="{{ url_for("home.index") }}">{{ _("首页") }}</a></li>
+                                    <li>{{ _("联系我们") }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="pages-images">
+                                <img src="{{ url_for('static', filename='picture/contact.jpg') }}" class="img-fluid"
+                                     alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- End Breadcrumbs -->
+
+        <div class="single-page">
+            <!-- Start Contact Section -->
+            <div id="contact" class="contact-section section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12" data-aos="fade-left">
+                            <div class="contact-form-box contact-form contact-form-3">
+                                <div class="form-container-box">
+                                    <form class="contact-form form" id="ajax-contact" method="post"
+                                          action="{{ url_for('contact.index') }}">
+                                        <div class="controls">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-input-box">
+                                                        <input type="text" class="form-control" id="name" name="name"
+                                                               placeholder="Name*" required="required"
+                                                               data-error={{ _("用户名必须填写") }}>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-input-box">
+                                                        <input type="email" class="form-control" id="email" name="email"
+                                                               placeholder="Email*" required="required"
+                                                               data-error={{ _("邮箱不能为空") }}>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group form-input-box">
+                                                        <input type="text" class="form-control" name="subject"
+                                                               placeholder="Subject" required="required">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group form-input-box">
+                                                        <textarea class="form-control" id="message" name="message"
+                                                                  rows="7" placeholder="Write Your Message*"
+                                                                  required="required"
+                                                                  data-error={{ _("请写下你的留言    ") }}></textarea>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <button type="submit"
+                                                            data-text="Send Message">{{ _("发送信息") }}</button>
+                                                </div>
+                                                <div class="messages">
+                                                    <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"
+                                                         id="msgSubmit">
+                                                        <button type="button" class="close" data-dismiss="alert"
+                                                                aria-hidden="true">&times;
+                                                        </button>
+                                                        {{ _("信息已发送，我们会尽快回复您。") }} </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12" data-aos="fade-right">
+                            <div class="contact-information-box-3">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="single-contact-info-box">
+                                            <div class="contact-info">
+                                                <h6>{{ _("联系我们") }}</h6>
+                                                <p>{{ _("联系人(微信电话同号)") }}</p>
+                                                {#                      <p>PBo 12345, United States</p>#}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single-contact-info-box">
+                                            <div class="contact-info">
+                                                <h6>{{ _("全廷伟") }}</h6>
+                                                <p>{{ _("电话：15337259396") }}</p>
+                                                <p>
+                                                    <a href="mailto:quantingwei@hust.edu.cn">{{ _("邮箱: quantingwei@hust.edu.cn") }}</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single-contact-info-box">
+                                            <div class="contact-info">
+                                                <h6>{{ _("郭沙沙") }}</h6>
+                                                <p>{{ _("电话：13166317949") }}</p>
+                                                <p>
+                                                    <a href="mailto:wfy@wfywh.com">{{ _("邮箱: wfy@wfywh.com") }}</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contact Section -->
+        </div>
+
+        <div class="map-area">
+            <div class="map-content">
+                <div class="map-canvas" id="contact-map"></div>
+            </div>
+        </div>
+
+    </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends('base.html') %}
+
+
+{% block title %}{{ _('登录') }}{% endblock %}
+
+{% block content %}
+    <main id="main">
+
+        <div class="single-page">
+            <div class="login">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="heading">
+                            <h1 class="text text-large">{{ _('登录') }}</h1>
+                            <p class="text text-normal">{{ _('新用户') }}? <span><a
+                                    href="{{ url_for('auth.register') }}"
+                                    class="text text-links">{{ _('注册') }}</a></span>
+                            </p>
+                        </div>
+                        <form name="signin" class="form" method="post" action="{{ url_for('auth.login') }}">
+                            <div class="input-control">
+                                <label for="email" class="input-label" hidden="">{{ _('邮箱') }}</label>
+                                <input type="email" name="email" id="email" class="input-field" placeholder={{ _('邮箱') }}>
+                            </div>
+                            <div class="input-control">
+                                <label for="password" class="input-label" hidden="">{{ _('密码') }}</label>
+                                <input type="password" name="password" id="password" class="input-field" placeholder={{ _('密码') }}>
+                            </div>
+                            <div class="input-control">
+                                <a href="#" class="text text-links">{{ _('忘记密码?') }}</a>
+                                <input type="submit" name="submit" class="input-submit" value="{{ _('登录') }}">
+                            </div>
+                        </form>
+                        <div class="striped">
+                            <span class="line-separator"></span>
+                            <span class="striped-text">{{ _("其他登录方式") }}</span>
+                            <span class="line-separator"></span>
+                        </div>
+                        <div class="method">
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/WeChat_logo.da5ad05a.svg') }}"
+                                         alt="WeChat">
+                                    <span class="d-none">Sign in with Google</span>
+                                </a>
+                            </div>
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/Google_logo.fbdf93ef.svg') }}"
+                                         alt="Google">
+                                    <span class="d-none">Sign in with Google</span>
+                                </a>
+                            </div>
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/Github_logo.e351596f.svg') }}"
+                                         alt="GitHub">
+                                    <span class="d-none">Sign in with Facebook</span>
+                                </a>
+                            </div>
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/Gitee_logo.b1882c20.svg') }}"
+                                         alt="Gitee">
+                                    <span class="d-none">Sign in with Apple</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main><!-- End #main -->
+{% endblock %}

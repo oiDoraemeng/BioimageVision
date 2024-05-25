@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+
+{% block title %}{{ _('隐私政策') }}{% endblock %}
+
+{% block content %}
+
+    <main id="main">
+
+        <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-start position-relative">
+                        <div class="col-lg-6 text-left">
+                            <h2>Privacy Policy</h2>
+                            <p>{{ _('本隐私政策阐述了本网站如何收集、使用、存储、保护、传输和分享您的个人信息。') }}</p>
+                            <nav>
+                                <ol>
+                                    <li><a href="{{ url_for('home.index') }}">{{ _('首页') }}</a></li>
+                                    <li>{{ _('隐私政策') }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="pages-images">
+                                <img src="{{ url_for('static', filename='picture/common-page.jpg') }}" class="img-fluid"
+                                     alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- End Breadcrumbs -->
+
+        <section class="single-page">
+            <div class="container" data-aos="fade-up">
+                <h4 class="mb-5">{{ _("简介&提示") }}</h4>
+                <p>
+                    {{ _("欢迎您使用我们的产品和服务！我们深知个人信息对您的重要性，您的信任对我们非常重要，我们将根据法律法规要求并参照行业最佳实践为您的个人信息安全提供充分保障。
+                    为此，BioimageVision服务提供者（或称“我们”）制定本《BioimageVision 隐私政策》（下称“本政策”）以便您充分了解在您使用BioimageVision的产品和服务的过程中，
+                    我们会如何收集、使用、共享、存储和保护您的个人信息以及您可以如何管理您的个人信息。") }}
+                </p>
+                <p>
+                    {{ _("在您开始使用我们的产品和服务前，请您务必先仔细阅读和理解本政策，特别应重点阅读我们以粗体/粗体下划线标识的条款，确保您充分理解和同意后再开始使用。
+                    本政策中涉及的专业词汇，我们尽量以简明通俗的表述向您解释，以便于您理解。") }}
+                </p>
+                <h4 class="mt-5 mb-5">{{ _("本政策主要向您说明：") }}</h4>
+                <h4 class="mb-4">{{ _("【我们如何收集和使用您的个人信息】") }}</h4>
+                <ul>
+                    <li>
+                        <i class="ms-5 bi bi bi-arrow-right-square-fill"></i> {{ _('账号注册：您在登录网站时，需要绑定您的填写的邮箱') }}
+                    </li>
+                    <li>
+                        <i class="ms-5 bi bi bi-arrow-right-square-fill"></i> {{ _('问答对话生成：您可以自愿提供您的个人信息，并生成相应文本内容。') }}
+                    </li>
+                    <li>
+                        <i class="ms-5 bi bi bi-arrow-right-square-fill"></i> {{ _("客服及争议处理：我们将使用您的个人信息用于为您提供客户服务和争议处理。") }}
+                    </li>
+                    {#                    <li><i class="bi bi bi-arrow-right-square-fill"></i></li>#}
+                    {#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> </li>#}
+                    {#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> </li>#}
+                </ul>
+                <h4 class="mt-5 mb-4 ">{{ _("【您如何管理自己的信息】") }}</h4>
+                <p class="ms-5">
+                    {{ _("您可以通过多种方式管理您的个人信息，例如查询、复制、更新、补充您的个人信息。如果您在管理您的个人信息时遇到问题，您还可以通过下方联系方式与我们联系，
+                    我们将在15天内回复您的要求。但也请您理解，我们可能会因为履行法律法规义务或者我们提供服务必要性的原因无法完全满足您的请求。") }}
+                </p>
+
+{#                <p>#}
+{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
+{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
+{#                    ipsum dolorem.#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
+{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
+{#                    dolore magna aliqua.#}
+{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
+{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
+{#                    ipsum dolorem.#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
+{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
+{#                    dolore magna aliqua.#}
+{#                </p>#}
+{##}
+{#                <p>#}
+{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
+{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
+{#                    ipsum dolorem.#}
+{#                </p>#}
+{#                <p>#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
+{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
+{#                    dolore magna aliqua.#}
+{#                </p>#}
+{##}
+{#                <p>#}
+{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
+{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
+{#                    ipsum dolorem.#}
+{#                </p>#}
+{#                <p>#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
+{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
+{#                    dolore magna aliqua.#}
+{#                </p>#}
+{#                <h3>Sub Heading</h3>#}
+{#                <ul>#}
+{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Nemo enim ipsam voluptatem quia voluptas sit#}
+{#                        aspernatur#}
+{#                    </li>#}
+{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Sed quia consequuntur magni dolores eos qui#}
+{#                        ratione#}
+{#                    </li>#}
+{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Neque porro quisquam est, qui dolorem ipsum#}
+{#                        quia amet#}
+{#                    </li>#}
+{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Consectetur, adipisci velit, sed quia non#}
+{#                        numquameius#}
+{#                    </li>#}
+{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Rempora incidunt ut labore et dolore magnam#}
+{#                        aliquam#}
+{#                    </li>#}
+{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Neque porro quisquam est, qui dolorem ipsum#}
+{#                        quia amet#}
+{#                    </li>#}
+{#                </ul>#}
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

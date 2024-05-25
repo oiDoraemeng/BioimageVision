@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('生物与医学图像处理工具') }}{% endblock title %}
+
+{% block content %}
+    <main id="main">
+
+        <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-start position-relative">
+                        <div class="col-lg-6 text-left">
+                            <h2>{{ _('生物与医学图像处理工具') }}</h2>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-12 text-center">
+                                    <div class="search-form">
+                                        <form action="#">
+                                            <input type="text" placeholder={{ _('搜索') }}>
+                                            <button><i class="fa fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav>
+                                <ol>
+                                    <li><a href="{{ url_for('home.index') }}">{{ _('首页') }}</a></li>
+                                    <li>{{ _("生物与医学图像处理工具") }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="pages-images">
+                                <img src="{{ url_for('static', filename='picture/blog-2.jpg') }}" class="img-fluid"
+                                     alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- End Breadcrumbs -->
+
+        <section class="single-page">
+            <div class="container" data-aos="fade-up">
+                <!-- - - - - - - - -  Recent Blog Posts Section - - - - - - - -  -->
+                <div id="recent-posts" class="recent-posts">
+                    <div class="container" data-aos="fade-up">
+                        <div class="row gy-4">
+                            <div class="col-lg-4">
+                                <article>
+                                    <div class="post-img">
+                                        <img src="{{ url_for('static', filename='picture/NeuroGPS-1.png') }}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <p class="post-category fs-3 ">NeuroGPS Plus</p>
+                                    <h2 class="title">
+                                        <a href="blogs-details.html">{{ _("全脑神经元重建技术") }}</a>
+                                    </h2>
+                                    {#                  <div class="d-flex align-items-center">#}
+                                    {#                    <div class="post-meta">#}
+                                    {#                      <p class="post-author">William Bla</p>#}
+                                    {#                      <p class="post-date">#}
+                                    {#                        <time datetime="2022-01-01">Feb 1, 2022</time>#}
+                                    {#                      </p>#}
+                                    {#                    </div>#}
+                                    {#                  </div>#}
+                                </article>
+                            </div><!-- End post list item -->
+
+                            <div class="col-lg-4">
+                                <article>
+                                    <div class="post-img">
+                                        <img src="{{ url_for('static', filename='picture/NeuroGPS-2.png') }}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <p class="post-category fs-3">NeuroGPS Plus</p>
+                                    <h2 class="title">
+                                        <a href="blogs-details.html">{{ _("全脑尺度下神经细胞定位") }}</a>
+                                    </h2>
+                                </article>
+                            </div><!-- End post list item -->
+
+                            <div class="col-lg-4">
+                                <article>
+                                    <div class="post-img">
+                                        <img src="{{ url_for('static', filename='picture/VascuGPS.png') }}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <p class="post-category fs-3">VascuGPS Plus</p>
+                                    <h2 class="title">
+                                        <a href="blogs-details.html">{{ _("光学成像系统脑血管重建") }}</a>
+                                    </h2>
+                                </article>
+                            </div><!-- End post list item -->
+
+                            <div class="col-lg-4">
+                                <article>
+                                    <div class="post-img">
+                                        <img src="{{ url_for('static', filename='picture/MedSee-1.png') }}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <p class="post-category fs-3">MedSee</p>
+                                    <h2 class="title">
+                                        <a href="blogs-details.html">{{ _("一体化软件对CT成像数据中肺部血管重建") }}</a>
+                                    </h2>
+                                </article>
+                            </div><!-- End post list item -->
+
+                            <div class="col-lg-4">
+                                <article>
+                                    <div class="post-img">
+                                        <img src="{{ url_for('static', filename='picture/MedSee-2.png') }}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <p class="post-category fs-3">MedSee</p>
+                                    <h2 class="title">
+                                        <a href="blogs-details.html">{{ _("一体化软件对细菌识别") }}</a>
+                                    </h2>
+                                </article>
+                            </div><!-- End post list item -->
+
+                            <div class="col-lg-4">
+                                <article>
+                                    <div class="post-img">
+                                        <img src="{{ url_for('static', filename='picture/product-2.jpg') }}" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <p class="post-category fs-3">{{ _("下步计划") }}</p>
+                                    <h2 class="title">
+                                        <a href="blogs-details.html"></a>
+                                    </h2>
+
+                                </article>
+                            </div><!-- End post list item -->
+
+                        </div><!-- End recent posts list -->
+
+                    </div>
+                </div><!-- End Recent Blog Posts Section -->
+            </div>
+
+            {#      <!-- Pagination -->#}
+            {#      <div class="pagination">#}
+            {#        <button class="btn">#}
+            {#          <svg xmlns="http://www.w3.org/2000/svg" class="btn--icon" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">#}
+            {#            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>#}
+            {#          </svg>#}
+            {#        </button>#}
+            {#        <div class="pages">#}
+            {#          <a class="page">1</a>#}
+            {#          <a class="page">2</a>#}
+            {#          <a class="page">3</a>#}
+            {#          <a class="page active">4</a>#}
+            {#          <a class="page">5</a>#}
+            {#          <a class="page">6</a>#}
+            {#          <a class="page">...</a>#}
+            {#          <a class="page">... ...</a>#}
+            {#          <a class="page">100</a>   #}
+            {#        </div>#}
+            {#        <button class="btn">#}
+            {#          <svg xmlns="http://www.w3.org/2000/svg" class="btn--icon" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">#}
+            {#            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>#}
+            {#          </svg>#}
+            {#        </button>#}
+            {#      </div>#}
+            <!-- Pagination -->
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock content %}

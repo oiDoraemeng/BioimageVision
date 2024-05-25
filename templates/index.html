@@ -1,0 +1,339 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='js/addition.js') }}"></script>
+{% endblock %}
+
+{% block title %}{{ _('首页') }}{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container position-relative">
+            <div class="row gy-5 h-full d-flex align-content-center" data-aos="fade-in">
+                <div class="col-lg-7 d-flex flex-column align-items-center justify-content-center text-center ">
+                    <h2 class="heading-primary mb-4">{{ _('打造更具拓展性更普惠的人工智能软件平台') }}</h2>
+                    {#                <h3 class="heading-secondy">{{ _('') }}</h3>#}
+                    <p>{{ _("服务于生物科学研究及医学检测,为用户提供多元化、定制化科研服务") }}</p>
+                    <div class="d-flex">
+                        <a href="https://github.com/Quanlab-Bioimage/BioimageVision/tree/master" target=blank" id="download-link"
+                           class="btn-get-started">{{ _('下载软件') }}</a>
+                        <a href="{{ url_for('static', filename='video/胞体定位.mp4') }}"
+                           class="glightbox btn-watch-video d-flex align-items-center">
+                            <i class="bi bi-play-circle"></i><span>{{ _('视频介绍') }}</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex flex-column align-items-center justify-content-center">
+                    <img src="static/picture/brain-2.png" class="img-fluid rounded-4 mb-4 mt-m70"  alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Start Services Section -->
+    <div id="services" class="the-main-service text-center section">
+        <div class="section-header">
+            <h2 data-aos="gradual-text">{{ _("我们的服务") }}</h2>
+            <p data-aos="gradual-text">{{ _("我们提供多种生物医学图像处理技术及服务，帮助用户提升科研效率，降低成本") }}</p>
+        </div>
+        <div class="container">
+            <div class="row our-offer-items less-carousel">
+                <!-- Main Service -->
+                <div class="col-md-4 col-sm-12 equal-height">
+                    <div class="item">
+                        <i class="fa fa-pencil"></i>
+                        <h4>{{ _("数据处理和可视化") }}</h4>
+                        <p>
+                            {{ _("建立新的大数据格式，快速构建、读写、存储和可视化大规模数据，提高数据处理效率") }}
+                        </p>
+                    </div>
+                </div>
+                <!-- End Main Service -->
+
+                <!-- Main Service -->
+                <div class="col-md-4 col-sm-12 equal-height">
+                    <div class="item ">
+                        <i class="fa  fa-pie-chart"></i>
+                        <h4>{{ _("软件开发") }}</h4>
+                        <p>
+                            {{ ("实现神经元形态重建,细胞定位,血管分析、图像配准、和数据可视化等功能") }}
+                        </p>
+                    </div>
+                </div>
+                <!-- End Main Service -->
+
+                <!-- Main Service -->
+                <div class="col-md-4 col-sm-12 equal-height">
+                    <div class="item">
+                        <i class="fa fa-tasks"></i>
+                        <h4>{{ _("生物医学图像标注") }}</h4>
+                        <p>
+                            {{ _("提供病理细胞标注、CT图像数据标注、MRI图像标注等服务") }}
+                        </p>
+                    </div>
+                </div>
+                <!-- End Main Service -->
+
+                <!-- Main Service -->
+                <div class="col-md-4 col-sm-12 equal-height">
+                    <div class="item">
+                        <i class="fa fa-tachometer"></i>
+                        <h4>{{ _("医学数据分析") }}</h4>
+                        <p>
+                            {{ _("包括数据标注、模型训练和预测，适用于不同类型的生物医学数据") }}
+                        </p>
+                    </div>
+                </div>
+                <!-- End Main Service -->
+
+                <!-- Main Service -->
+                <div class="col-md-4 col-sm-12 equal-height">
+                    <div class="item">
+                        <i class="fa fa-recycle"></i>
+                        <h4>{{ _("软件更新") }}</h4>
+                        <p>
+                            {{ _("提供软件更新，确保软件的最新功能和安全性") }}
+                        </p>
+                    </div>
+                </div>
+                <!-- End Main Service -->
+
+                <!-- Main Service -->
+                <div class="col-md-4 col-sm-12 equal-height">
+                    <div class="item">
+                        <i class="fa fa-handshake-o"></i>
+                        <h4>{{ _("定制化的服务") }}</h4>
+                        <p>
+                            {{ _("定制开发全脑数据一体化处理软件和海量数据存储、管理、可视化定制开发等服务") }}
+                        </p>
+                    </div>
+                </div>
+                <!-- End Main Service -->
+            </div>
+        </div>
+    </div>
+    <!-- End Services Section -->
+
+    <main id="main">
+
+        <!-- Start Feature Section -->
+        <section class="single-page">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header ">
+                    <h2 data-aos="gradual-text">{{ _('我们的软件') }}</h2>
+                    <p data-aos="gradual-text">{{ _("我们使用生物医学图像处理技术及深度学习模型，量化分析生物医学图像") }}</p>
+                </div>
+                <div id="recent-posts" class="recent-posts">
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ url_for('static', filename='picture/NeuroGPS-1.png') }}" alt=""
+                                         class="img-fluid">
+                                </div>
+                                <p class="post-category fs-3 ">NeuroGPS Plus</p>
+                                <h2 class="title">
+                                    <a href="blogs-details.html">{{ _("全脑神经元重建技术") }}</a>
+                                </h2>
+                                {#                  <div class="d-flex align-items-center">#}
+                                {#                    <div class="post-meta">#}
+                                {#                      <p class="post-author">William Bla</p>#}
+                                {#                      <p class="post-date">#}
+                                {#                        <time datetime="2022-01-01">Feb 1, 2022</time>#}
+                                {#                      </p>#}
+                                {#                    </div>#}
+                                {#                  </div>#}
+                            </article>
+                        </div><!-- End post list item -->
+
+                        <div class="col-lg-4">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ url_for('static', filename='picture/NeuroGPS-2.png') }}" alt=""
+                                         class="img-fluid">
+                                </div>
+                                <p class="post-category fs-3">NeuroGPS Plus</p>
+                                <h2 class="title">
+                                    <a href="blogs-details.html">{{ _("全脑尺度下神经细胞定位") }}</a>
+                                </h2>
+                            </article>
+                        </div><!-- End post list item -->
+
+                        <div class="col-lg-4">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ url_for('static', filename='picture/VascuGPS.png') }}" alt=""
+                                         class="img-fluid">
+                                </div>
+                                <p class="post-category fs-3">VascuGPS Plus</p>
+                                <h2 class="title">
+                                    <a href="blogs-details.html">{{ _("光学成像系统脑血管重建") }}</a>
+                                </h2>
+                            </article>
+                        </div><!-- End post list item -->
+
+                        <div class="col-lg-4">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ url_for('static', filename='picture/MedSee-1.png') }}" alt=""
+                                         class="img-fluid">
+                                </div>
+                                <p class="post-category fs-3">MedSee</p>
+                                <h2 class="title">
+                                    <a href="blogs-details.html">{{ _("一体化软件对CT成像数据中肺部血管重建") }}</a>
+                                </h2>
+                            </article>
+                        </div><!-- End post list item -->
+
+                        <div class="col-lg-4">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ url_for('static', filename='picture/MedSee-2.png') }}" alt=""
+                                         class="img-fluid">
+                                </div>
+                                <p class="post-category fs-3">MedSee</p>
+                                <h2 class="title">
+                                    <a href="blogs-details.html">{{ _("一体化软件对细菌识别") }}</a>
+                                </h2>
+                            </article>
+                        </div><!-- End post list item -->
+
+                        <div class="col-lg-4">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{ url_for('static', filename='picture/product-2.jpg') }}" alt=""
+                                         class="img-fluid">
+                                </div>
+                                <p class="post-category fs-3">{{ _("下步计划") }}</p>
+                                <h2 class="title">
+                                    <a href="blogs-details.html"></a>
+                                </h2>
+
+                            </article>
+                        </div><!-- End post list item -->
+
+                    </div><!-- End recent posts list -->
+
+                </div>
+            </div><!-- End Recent Blog Posts Section -->
+        </section>
+
+        <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action">
+            <div class="container text-center" data-aos="zoom-out">
+                <h3><strong data-aos="gradual-text" >{{ _("用户满意,是我们最大的动力") }}</strong></h3>
+                <p data-aos="gradual-text"> {{ _("我们将持续开展人工智能前沿研究，为用户提供更优质的服务")  }}</p>
+                <a class="cta-btn" href="{{ url_for('analytics.index') }}">{{ _("立即前往") }}</a>
+            </div>
+        </section><!-- End Call To Action Section -->
+
+        <!-- Start Contact Section -->
+        <div id="contact" class="contact-section section">
+            <div class="section-header">
+                <h2 data-aos="gradual-text">{{ _("联系我们") }}</h2>
+                <p data-aos="gradual-text">{{ _("联系我们，我们将竭诚为您提供最好的服务") }}</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12" data-aos="fade-left">
+                        <div class="contact-form-box contact-form contact-form-3">
+                            <div class="form-container-box">
+                                <form class="contact-form form" id="ajax-contact" method="post"
+                                      action="{{ url_for('contact.index') }}">
+                                    <div class="controls">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-input-box">
+                                                    <input type="text" class="form-control" id="name" name="name"
+                                                           placeholder="Name*" required="required"
+                                                           data-error={{ _("用户名必须填写") }}>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-input-box">
+                                                    <input type="email" class="form-control" id="email" name="email"
+                                                           placeholder="Email*" required="required"
+                                                           data-error={{ _("邮箱不能为空") }}>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group form-input-box">
+                                                    <input type="text" class="form-control" name="subject"
+                                                           placeholder="Subject" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group form-input-box">
+                                                        <textarea class="form-control" id="message" name="message"
+                                                                  rows="7" placeholder="Write Your Message*"
+                                                                  required="required"
+                                                                  data-error={{ _("请写下你的留言    ") }}></textarea>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="submit"
+                                                        data-text="Send Message">{{ _("发送信息") }}</button>
+                                            </div>
+                                            <div class="messages">
+                                                <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"
+                                                     id="msgSubmit">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-hidden="true">&times;
+                                                    </button>
+                                                    {{ _("信息已发送，我们会尽快回复您。") }} </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12" data-aos="fade-right">
+                        <div class="contact-information-box-3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="single-contact-info-box">
+                                        <div class="contact-info">
+                                            <h6>{{ _("联系我们") }}</h6>
+                                            <p>{{ _("联系人(微信电话同号)") }}</p>
+                                            {#                      <p>PBo 12345, United States</p>#}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="single-contact-info-box">
+                                        <div class="contact-info">
+                                            <h6>{{ _("全廷伟") }}</h6>
+                                            <p>{{ _("电话：15337259396") }}</p>
+                                            <p>
+                                                <a href="mailto:quantingwei@hust.edu.cn">{{ _("邮箱: quantingwei@hust.edu.cn") }}</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="single-contact-info-box">
+                                        <div class="contact-info">
+                                            <h6>{{ _("郭沙沙") }}</h6>
+                                            <p>{{ _("电话：13166317949") }}</p>
+                                            <p>
+                                                <a href="mailto:wfy@wfywh.com">{{ _("邮箱: wfy@wfywh.com") }}</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Contact Section -->
+
+
+    </main><!-- End #main -->
+
+{% endblock %}

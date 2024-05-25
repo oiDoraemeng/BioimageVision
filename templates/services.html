@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("服务") }}{% endblock title %}
+
+
+{% block content %}
+  <main id="main">
+
+    <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-start position-relative">
+            <div class="col-lg-6 text-left">
+              <h2>{{ _("服务") }}</h2>
+              <p>{{ _("我们提供多种生物医学图像处理技术及服务，帮助用户提升科研效率，降低成本") }}</p>
+              <nav>
+                  <ol>
+                    <li><a href="{{ url_for('home.index') }}">{{ _("首页") }}</a></li>
+                    <li>{{ _("服务") }}</li>
+                  </ol>
+              </nav>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-end">
+              <div class="pages-images">
+                <img src="static/picture/services.jpg" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End Breadcrumbs -->
+
+    <section class="single-page">
+          <!-- - - - - - - - -  Pricing - - - - - - - -  -->
+    <div id="pricing">
+      <div class="container" data-aos="fade-up">
+        <div class="price-plan-wrapper">
+          <div class="row">
+              <div class="col-lg-10 ">
+                  <div class="row">
+                      <!-- - - 第1行 -  -->
+                      <div class="col-12">
+                          <div class="row">
+                              <div class="col-9">
+                                  <div class="row pricing-table ">
+                                      <div class="col-4 price-header"><h3 class="price-row  ">{{ _("胞体定位") }}</h3></div>
+                                      <div class="col-8 price-header"><h3 class="price-row small-font ">{{ _("统计胞体三维位置和胞体数量") }}</h3></div>
+                                  </div>
+                              </div>
+                              <div class="col-3  pricing-table ">
+                                  <div class="RMB "><span class="dollar">{{ _("¥") }}</span>3500~5000<span class="month">/套</span></div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- - - 第2行 -  -->
+                      <div class="col-12">
+                          <div class="row">
+                              <div class="col-9">
+                                  <div class="row pricing-table">
+                                      <div class="col-4 price-header"><h3 class="price-row ">{{ _("胞体定位及形态重建") }}</h3></div>
+                                      <div class="col-8 price-header"><h3 class="price-row ">{{ _("统计胞体三维位置、数量及轮廓信息") }}</h3></div>
+                                  </div>
+                              </div>
+                              <div class="col-3  pricing-table">
+                                  <div class="RMB "><span class="dollar">{{ _("¥") }}</span>7000~10000<span class="month">/套</span></div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- - - 第3行 -  -->
+                       <div class="col-12">
+                          <div class="row">
+                              <div class="col-9">
+                                  <div class="row pricing-table">
+                                      <div class="col-4 price-header"><h3 class="price-row ">{{ _("神经元追踪") }}</h3></div>
+                                      <div class="col-8 price-header"><h3 class="price-row ">{{ _("全脑尺度神经元追踪") }}</h3></div>
+                                  </div>
+                              </div>
+                              <div class="col-3  pricing-table">
+                                  <div class="RMB "><span class="dollar">{{ _("¥") }}</span>70~100<span class="month">/厘米</span></div>
+                              </div>
+                          </div>
+                      </div>
+                       <div class="col-12">
+                          <div class="row">
+                              <div class="col-9">
+                                  <div class="row pricing-table">
+                                      <div class="col-4 price-header"><h3 class="price-row ">{{ _("血管分析") }}</h3></div>
+                                      <div class="col-8 price-header"><h3 class="price-row ">{{ _("分割、追踪、定量等分析") }}</h3></div>
+                                  </div>
+                              </div>
+                              <div class="col-3  pricing-table">
+                                  <div class="RMB "><span class="dollar">{{ _("¥") }}</span>70~100<span class="month">/厘米</span></div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- - - 第5行 -  -->
+                      <div class="col-12">
+                          <div class="row">
+                              <div class="col-9">
+                                  <div class="row pricing-table">
+                                      <div class="col-4 price-header"><h3 class="price-row ">{{ _("病理细胞,CT图像,MRI图像数据标注") }}</h3></div>
+                                      <div class="col-8 price-header"><h3 class="price-row ">{{ _("对细胞、细菌数、CT图像和磁共振成像数据进行辅助诊断标注") }}</h3></div>
+                                  </div>
+                              </div>
+                              <div class="col-3  pricing-table">
+                                  <div class="RMB "><span class="dollar">{{ _("¥") }}</span>3000~5000<span class="month">/套</span></div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- - - 第6行 -  -->
+                      <div class="col-12">
+                          <div class="row">
+                              <div class="col-9 ">
+                                  <div class="row pricing-table">
+                                      <div class="col-4 price-header"><h3 class="price-row ">{{ _("图像配准") }}</h3></div>
+                                      <div class="col-8 price-header"><h3 class="price-row ">{{ _("对于一幅医学图像寻求一种空间变换,使它与标准医学图像上的对应点达到空间上的一致") }}</h3></div>
+                                  </div>
+                              </div>
+                              <div class="col-3  pricing-table">
+                                  <div class="RMB "><span class="dollar">{{ _("¥") }}</span>3000~5000<span class="month">/套</span></div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- - - End -  -->
+                  </div>
+              </div>
+                       <!-- - - 第4行 -  -->
+
+              <div class="col-lg-2 pricing-table " >
+                  <div class="absolute-center ">{{ _("价格依照数据难度及处理脑的数量来定") }}</div>
+                  <div class="price-footer"><a class="order-btn" href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a></div>
+              </div>
+             <!-- - - 第2行第1列 -  -->
+              <div class="col-lg-4  col-md-12 ">
+                  <div class="pricing-table" style="min-height:700px">
+                      <div class="price-header">
+                          <h3 class="title" style="height:60px">{{ _("全脑数据一体化处理软件定制开发") }}</h3>
+                          <div class="price"><span class="dollar">{{ _("¥") }}</span>50000<span class="month">/套</span></div>
+                      </div>
+
+                      <div class="price-body">
+                          <ul>
+                              <li><b>{{ _("全脑") }}</b> {{ _("二维序列图制作成大数据格式") }}</li>
+                              <li><b>{{ _("自动") }}</b> {{ _("筛选全脑中各类数据作为训练集") }}</li>
+                              <li><b>{{ _("模型") }}</b> {{ _("自动预测训练集") }}</li>
+                              <li><b>{{ _("训练") }}</b> {{ _("人工修订训练集,再对训练集数据进行训练") }}</li>
+                              <li><b>{{ _("预测") }}</b> {{ _("全脑数据提取神经元骨架或血管估计") }}</li>
+                              <li><b>{{ _("适用") }}</b> {{ _("适用数10TB量级fMOST及光片成像系统") }}</li>
+                          </ul>
+                      </div>
+                      <div class="price-footer">
+                          <a class="order-btn" href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a>
+                      </div>
+                  </div>
+              </div>
+               <!-- - - 第2行第2列 -  -->
+              <div class="col-lg-4  col-md-12 ">
+                   <div class="pricing-table" style="height:700px">
+                      <div class="price-header">
+                          <h3 class="title" style="height:60px">{{ _("生物医学图像一体化标注、训练、预测软件定制开发") }}</h3>
+                          <div class="price"><span class="dollar">{{ _("¥") }}</span>20000~50000<span class="month">/套</span></div>
+                      </div>
+
+                      <div class="price-body">
+                          <ul>
+                              <li><b>{{ _("标注") }}</b> {{ _("能高效标注数据集") }}</li>
+                              <li><b>{{ _("一键式") }}</b> {{ _("训练深度学习模型") }}</li>
+                              <li><b>{{ _("一键式") }}</b> {{ _("实现深度学习模型预测") }}</li>
+                              <li><b>{{ _("定制") }}</b> {{ _("任务需求的模型及软件") }}</li>
+                              <li><b>{{ _("适用") }}</b> {{ _("适用多类型的生物医学图像分析") }}</li>
+                          </ul>
+                      </div>
+                      <div class="price-footer">
+                          <a class="order-btn" href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a>
+                      </div>
+                  </div>
+              </div>
+               <!-- - - 第2行第3列 -  -->
+              <div class="col-lg-4  col-md-12 ">
+                  <div class="pricing-table"  style="height:700px">
+                      <div class="price-header">
+                          <h3 class="title" style="height:60px">{{ _("海量数据存储、管理、可视化定制开发") }}</h3>
+                          <div class="price"><span class="dollar">{{ _("¥") }}</span>95000<span class="month">/套</span></div>
+                      </div>
+
+                      <div class="price-body">
+                          <ul>
+                              <li><b>{{ _("海量") }}</b> {{ _("三维医学生物图像的存储") }}</li>
+                              <li><b>{{ _("构建") }}</b> {{ _("新的数据格式，提供快速可视化及区域选取") }}</li>
+                              <li><b>{{ _("快速") }}</b> {{ _("快速生成其它商业软件大数据格式，适用后续分析") }}</li>
+                              <li><b>{{ _("无损") }}</b> {{ _("无损压缩，可实现3-4倍压缩率") }}</li>
+                          </ul>
+                      </div>
+                      <div class="price-footer">
+                          <a class="order-btn" href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->
+{% endblock content %}

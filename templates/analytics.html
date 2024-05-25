@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('大数据') }}{% endblock %}
+
+{% block content %}
+    <main id="main">
+
+        <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-start position-relative">
+                        <div class="col-lg-6 text-left">
+                            <h2>{{ _('大数据') }}</h2>
+                            <p>{{ _('TB量级数据格式构建、快速读写、数据存储、可视化') }}</p>
+                            <nav>
+                                <ol>
+                                    <li><a href="{{ url_for('home.index') }}">{{ _('首页') }}</a></li>
+                                    <li>{{ _('大数据') }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="pages-images">
+                                <img src="{{ url_for('static', filename='picture/common-page.jpg') }}" class="img-fluid"
+                                     alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- End Breadcrumbs -->
+
+        <section class="single-page">
+
+            <div id="portfolio-details" class="portfolio-details">
+                <div class="container" data-aos="fade-up">
+                    <div class="row justify-content-between gy-2">
+                        <h2 class="mb-4"><strong>{{ _('TB量级数据格式构建、快速读写、数据存储、可视化') }}</strong></h2>
+                        <div class="col-lg-9">
+                            <div class="portfolio-description">
+
+                                <p class="lead">
+                                    {{ _('本公司建立了新的大数据格式方法，实现个人电脑快速分析10TB甚至百TB量级数据，同时兼容现有商业软件') }}
+                                </p>
+                            </div>
+
+                            <div class="position-relative "  style="width: 70%;margin: auto">
+                                <div class="slides-1 portfolio-details-slider swiper">
+                                    <div class="swiper-wrapper align-items-center">
+
+                                        <div class="swiper-slide">
+                                            <img src="{{ url_for('static',filename='picture/analysis-a.png') }}" alt="">
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <img src="{{ url_for('static',filename='picture/analysis-b.png') }}" alt="">
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <img src="{{ url_for('static',filename='picture/analysis-c.png') }}" alt="">
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <img src="{{ url_for('static',filename='picture/analysis-d.png') }}" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                            <div class="portfolio-description">
+                                <h2 class="mb-4">{{ _('大数据格式快速制作及数据格式压缩率') }}</h2>
+                                <p class="ms-4">
+                                    {{ _('(a)-(b)将图像转换为大数据格式中，数据读写速度接近硬盘极限（红色）') }}
+                                </p>
+                                <p class="ms-4">
+                                    {{ _('(c)大数据制作速度比较，提升速度至少30倍') }}
+                                </p>
+                                <p class="ms-4">
+                                    {{ _('(d)数据的压缩率比较，我们数据格式BV压缩率提升80%%') }}
+                                </p>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 project-deatils-aside">
+                            <div class="portfolio-info">
+                                <h3>{{ _("数据格式特点") }}</h3>
+                                <ul>
+                                    <li><strong>Speed</strong> <span>{{ _("快速读写") }}</span></li>
+                                    <li><strong>Compression</strong> <span>{{ _("压缩率高") }}</span></li>
+                                    <li><strong>Project date</strong> <span>{{ _("可视化") }}</span></li>
+                                    <li><strong>More details</strong> <a href="#">www.example.com</a></li>
+                                    <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
+                                </ul>
+                            </div>
+{#                            <div class="testimonial-item">#}
+{#                                <p>#}
+{#                                    <i class="bi bi-quote quote-icon-left"></i>#}
+{#                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid#}
+{#                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet#}
+{#                                    legam anim culpa.#}
+{#                                    <i class="bi bi-quote quote-icon-right"></i>#}
+{#                                </p>#}
+{#                                <div>#}
+{#                                    <img src="{{ url_for('static',filename='picture/testimonial-1.jpg') }}" class="testimonial-img" alt="">#}
+{#                                    <h3>Jhone Wilsson</h3>#}
+{#                                    <h4>Graphic Designer</h4>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

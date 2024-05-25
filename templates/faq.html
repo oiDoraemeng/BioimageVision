@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('常见问题') }}{% endblock %}
+
+{% block content %}
+  <main id="main">
+
+    <!--  - - - - - - - -  Breadcrumbs  - - - - - - - -  -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-start position-relative">
+            <div class="col-lg-6 text-left">
+              <h2>{{ _('常见问题') }}</h2>
+{#              <p></p>#}
+              <nav>
+                  <ol>
+                    <li><a href="{{ url_for('home.index') }}">{{ _('首页') }}</a></li>
+                    <li>{{ _('常见问题') }}</li>
+                  </ol>
+              </nav>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-end">
+              <div class="pages-images">
+                <img src="{{ url_for('static', filename='picture/faq.jpg')}}" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End Breadcrumbs -->
+
+    <div class="single-page">
+      <!-- - - - - - - - -  Frequently Asked Questions Section - - - - - - - -  -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    <span class="num"><i class="bi bi bi-arrow-right-square-fill"></i></span>
+                     {{ _("该公司服务的具体领域是什么？") }}
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse show" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    {{ _("该公司服务的具体领域涉及生物科学研究和医学检测，主要集中在人工智能前沿研究以及生物与医学图像处理工具领域。他们提供多元化、定制化的科研服务，包括数据构建、神经元形态重建、血管形态重建、医学数据分析等服务项目。") }}
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    <span class="num"><i class="bi bi bi-arrow-right-square-fill"></i></span>
+                    {{ _("该公司的NeuroVision工具能实现哪些功能") }}
+                  </button>
+                </h3>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                     {{ _("该公司的NeuroVision工具能够实现从10 TB成像数据中进行神经元形态重建及细胞定位。这意味着NeuroVision可以帮助用户在处理大规模成像数据时进行神经元形态的重建和细胞的定位。") }}
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                    <span class="num"><i class="bi bi bi-arrow-right-square-fill"></i></span>
+                    {{ _("该公司提供的MedVision工具有什么特点？ ") }}
+                  </button>
+                </h3>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                      {{ _("该公司提供的MedVision工具是用于医学数据分析的工具，具有以下特点：") }}
+                      <ul class="ms-4">
+                          <li>{{ _("可实现医学图像数    据的自动化标注，一键化模型训练及预测") }}</li>
+                          <li>{{ _("兼容不同类型的生物医学数据") }}</li>
+                          <li>{{ _("可供没有任何编程基础的人员使用最新的深度学习模型") }}</li>
+                          <li>{{ _("能够量化分析生物医学图像") }}</li>
+                      </ul>
+                      {{ _("这些特点使得MedVision工具在医学数据分析领域具有较高的灵活性和便利性。") }}
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-8">
+                    <span class="num"><i class="bi bi bi-arrow-right-square-fill"></i></span>
+                    Why Organic SEO is important for all businesses?
+                  </button>
+                </h3>
+                <div id="faq-content-8" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+                    quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                    exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                    autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+                    vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+      <!-- - - - - - - - -  Call To Action Section - - - - - - - -  -->
+      <section id="call-to-action">
+        <div class="container text-center call-to-action" data-aos="zoom-out">
+          <h3>Read to start something great?</h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+          <a class="cta-btn" href="mailto:info@example.com">Conatct Us</a>
+        </div>
+      </section><!-- End Call To Action Section -->
+    </div>
+
+  </main><!-- End #main -->
+{% endblock %}
