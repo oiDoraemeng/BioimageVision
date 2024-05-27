@@ -9,6 +9,7 @@
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
     --font-heading: 'Comfortaa', cursive;
+    --font-body: sans-serif;
 }
 
 :root {
@@ -22,9 +23,9 @@
 }
 
 body {
-    font-family: var(--font-default);
+    font-family: var(--font-body);
     color: var(--color-default);
-    background: #373737;
+    background: #F4F4F4;
 }
 
 a {
@@ -154,7 +155,7 @@ section {
 
 .section-header p {
     margin-bottom: 0;
-    color: #ffffff;
+    color: #000000;
 }
 
 .fill-btn {
@@ -608,6 +609,17 @@ section {
     .mobile-nav-hide {
         display: none;
     }
+}
+
+.line-separator {
+    flex: 1;
+    border-top: 1px solid #808080;
+
+}
+
+.logo-personal {
+    width: 30px;
+    height: 30px
 }
 
 /*--------------------------------------------------------------
@@ -2090,6 +2102,7 @@ section {
 .hero {
     width: 100%;
     position: relative;
+
     background: url(../image/hero-bg.png) center center;
     background-size: cover;
     padding: 60px 0 0 0;
@@ -4058,30 +4071,16 @@ section {
 }
 
 
-.line-separator {
-    flex: 1;
-    border-top: 1px solid #808080;
-
-}
-
-.logo-personal {
-    width: 30px;
-    height: 30px
-}
-
-/*display: inline-block：将.letter设置为内联块元素，这样每个字符都可以单独显示，而不是合并成一个整体。*/
-
-/*opacity: 0：初始状态下，每个字符的透明度设置为0，即完全透明，不可见。*/
-
-/*transform: translateY(20px)：初始状态下，每个字符向上移动20像素。*/
-
-/*transition: opacity 0.5s, transform 0.5s：设置透明度和transform属性的过渡效果，持续时间为0.5秒。*/
-
-/*.letter.show：当.letter类名添加show类时，即显示状态。*/
-
-/*opacity: 1：显示状态下，每个字符的透明度设置为1，即完全不透明，可见。*/
-
-/*transform: translateY(0)：显示状态下，每个字符向上移动0像素，即恢复到原始位置。*/
+/*--------------------------------------------------------------
+ ** AOS Animation
+display: inline-block：将.letter设置为内联块元素，这样每个字符都可以单独显示，而不是合并成一个整体。
+opacity: 0：初始状态下，每个字符的透明度设置为0，即完全透明，不可见。
+transform: translateY(20px)：初始状态下，每个字符向上移动20像素。
+transition: opacity 0.5s, transform 0.5s：设置透明度和transform属性的过渡效果，持续时间为0.5秒。
+.letter.show：当.letter类名添加show类时，即显示状态。
+opacity: 1：显示状态下，每个字符的透明度设置为1，即完全不透明，可见。
+transform: translateY(0)：显示状态下，每个字符向上移动0像素，即恢复到原始位置。
+ --------------------------------------------------------------*/
 .letter {
     display: inline-block;
     opacity: 0;
@@ -4092,4 +4091,408 @@ section {
 .letter.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/*--------------------------------------------------------------
+ # LeftSideBar
+ --------------------------------------------------------------*/
+.left-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+}
+
+.left-sidebar .sidebar_item {
+    margin-bottom: 2px;
+    position: relative;
+    cursor: pointer;
+    /*background-color: #f3f3f3;*/
+    color: #999;
+    transition: all 0.5s ease;
+    /*border: 1px solid #CCCCCC;*/
+}
+
+.left-sidebar .sidebar_item:hover {
+    background-color: #fff;
+    color: #fff;
+}
+
+.left-sidebar .sidebar_icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-sidebar .sidebar_icon .icon {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+}
+
+.left-sidebar .sidebar_hidden {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.left-sidebar .sidebar_hidden .iconSpan {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.left-sidebar .sidebar_item:hover .sidebar_hidden {
+    opacity: 1;
+    width: 220px;
+    padding-right: 10px;
+}
+
+.left-sidebar .sidebar_value {
+    width: 100%;
+    min-height: 20px;
+    line-height: 20px;
+    background-color: #f35454;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.left-sidebar .sidebar_value.dh {
+    padding-left: 35px;
+}
+
+.left-sidebar .sidebar_value p {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.left-sidebar .wechat_img {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    position: absolute;
+    right: calc(100% + 223px);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+}
+
+.left-sidebar .sidebar_item:hover .wechat_img {
+    display: block;
+}
+
+.left-sidebar .wechat_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.left-sidebar .sidebar_value .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.left-sidebar .sidebar_value::after {
+    content: " ";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 6px solid #f35454;
+    border-bottom: 6px solid transparent;
+}
+
+/*--------------------------------------------------------------
+ # Consultation
+ --------------------------------------------------------------*/
+.consult {
+    background-color: #fff;
+    width: 360px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    position: fixed;
+    z-index: 99;
+    top: 400px;
+    right: 78px;
+    display: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.consult-header {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    align-items: center;
+    cursor: move;
+}
+
+.consult-header .consult-header-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 32px;
+    color: #333333
+}
+
+.consult-header .consult-header-close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #D9D9D9
+}
+
+.consult-content {
+    background-color: #F5F5F5;
+    height: 338px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 12px;
+    overflow-y: auto
+}
+
+.consult-content .consult-message-s {
+    margin-top: 12px
+}
+
+.consult-content .consult-message-s .consult-time {
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 24px;
+    color: #999
+}
+
+.consult-content .consult-message-s .consult-message-time .consult-avatar {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    margin-right: 4px
+}
+
+.consult-content .consult-message-s .consult-right .consult-avatar {
+    margin-left: 4px;
+    margin-right: 0
+}
+
+.consult-content .consult-message-area {
+    padding-left: 30px
+}
+
+.consult-content .consult-message-text {
+    color: #595959;
+    text-align: left;
+    display: inline-block;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 288px;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 14px
+}
+
+.consult-content .consult-right {
+    text-align: right
+}
+
+.consult-content .consult-message-area.consult-right {
+    padding-right: 32px
+}
+
+.consult-content .consult-message-area.consult-right .consult-message-text {
+    background-color: #D9D9D9
+}
+
+.consult-status {
+    font-size: 12px;
+    padding-left: 24px;
+    padding-bottom: 2px;
+    color: #999;
+    background-color: #EEE
+}
+
+.consult-content::-webkit-scrollbar,
+.consult-emoji-content::-webkit-scrollbar,
+.consult-textarea::-webkit-scrollbar {
+    width: 6px;
+    height: 1px
+}
+
+.consult-content::-webkit-scrollbar-thumb,
+.consult-emoji-content::-webkit-scrollbar-thumb,
+.consult-textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    background: #B2B2B2
+}
+
+.consult-content::-webkit-scrollbar-track,
+.consult-emoji-content::-webkit-scrollbar-track,
+.consult-textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    background: #EDEDED
+}
+
+.consult-input {
+    display: flex;
+    flex-direction: column
+}
+
+.consult-input .consult-emoji-img {
+    height: 32px
+}
+
+.consult-input .consult-emoji-img:focus {
+    outline: 0
+}
+
+.consult-input .consult-emoji {
+    position: relative
+}
+
+.consult-input .consult-emoji-img {
+    width: 16px;
+    margin: 8px 16px
+}
+
+.consult-input .consult-emoji-img:hover {
+    cursor: pointer
+}
+
+.consult-input .consult-emoji-content {
+    box-sizing: content-box;
+    display: none;
+    max-width: 216px;
+    height: 98px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+    padding: 12px 12px 6px;
+    background-color: #fff;
+    position: absolute;
+    top: -118px;
+    overflow-y: auto
+}
+
+.consult-input .consult-emoji-content .consult-emoji-Item {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1px
+}
+
+.consult-input .consult-textarea {
+    box-sizing: border-box;
+    padding-left: 16px;
+    outline: 0;
+    border: none;
+    resize: none;
+    width: 98%;
+    height: 95px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 400;
+    color: #595959;
+    line-height: 22px
+}
+
+.consult-input .consult-textarea::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #BFBFBF
+}
+
+.consult-input .consult-send {
+    text-align: right;
+    position: relative
+}
+
+.consult-input .consult-send .consult-send {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle
+}
+
+.consult-input .consult-send .consult-send-content-default .consult-send-img-default {
+    opacity: 1
+}
+
+.consult-input .consult-send .consult-send-content-default {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    cursor: not-allowed;
+    padding-right: 8px;
+    background-color: #eee;
+    font-size: 13px;
+    color: #bfbfbf;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px
+}
+
+.consult-input .consult-send .consult-send-content-default.active {
+    cursor: pointer;
+    background-color: #fff;
+    border-color: #d9d9d9;
+    color: #595959
+}
+
+.consult-input .consult-send .consult-send-img-default {
+    width: 14px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px
+}
+
+.consult-input .consult-send .consult-text-popver {
+    position: absolute;
+    width: 136px;
+    height: 36px;
+    background: #FFF;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #595959;
+    bottom: 46px;
+    right: 16px;
+    text-align: center;
+    line-height: 36px;
+    z-index: 99;
+    display: none
+}
+
+.consult-input .consult-send .consult-text-popver.active {
+    display: block
+}
+
+.consult-input .consult-send .consult-text-popver::after {
+    display: block;
+    content: '';
+    border-width: 7px 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    left: 65%;
+    bottom: -14px;
+    z-index: 99
 }

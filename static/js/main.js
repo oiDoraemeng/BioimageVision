@@ -360,5 +360,34 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
     elements.forEach(element => {
         observer.observe(element);
     });
+    /**
+     * Consultation form move
+     */
+
+    // 获取聊天框元素
+    var chatBox = document.querySelector('.consult');
+
+    // 使聊天框可拖动
+    var isDragging = false;
+    var offsetX, offsetY;
+
+    chatBox.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        offsetX = e.clientX - chatBox.getBoundingClientRect().left;
+        offsetY = e.clientY - chatBox.getBoundingClientRect().top;
+    });
+
+    document.addEventListener('mousemove', function (e) {
+        if (isDragging) {
+            var x = e.clientX - offsetX;
+            var y = e.clientY - offsetY;
+            chatBox.style.left = x + 'px';
+            chatBox.style.top = y + 'px';
+        }
+    });
+
+    document.addEventListener('mouseup', function () {
+        isDragging = false;
+    });
 
 });

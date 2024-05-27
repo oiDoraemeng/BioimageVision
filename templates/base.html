@@ -36,9 +36,10 @@
 </head>
 
 <body>
+<!-- ======= Preloader ======= -->
 <div id="preloader"></div>
 
-
+<!-- ======= Header ======= -->
 <header id="header" class="single-page-header header d-flex align-items-center">
     <div class="container container-xl d-flex align-items-center justify-content-between">
         <a href="{{ url_for('home.index') }}" class="logo d-flex align-items-center">
@@ -57,37 +58,39 @@
                 </li>
                 {#要在点击链接时生成一个新页面而不是在原有页面加载#}
                 <li><a href="http://sincostan.tech/manual/" target="_blank">{{ _("使用手册") }}</a></li>
-{#                <li><a href="packages.html">{{ _("价格") }}</a></li>#}
-{#                <li><a href="testimonials.html">{{ _("客户评价") }}</a></li>#}
+                {#                <li><a href="packages.html">{{ _("价格") }}</a></li>#}
+                {#                <li><a href="testimonials.html">{{ _("客户评价") }}</a></li>#}
                 <li class="dropdown"><a href="javascript:void(0);"><span>{{ _("联系我们") }}</span>
                     <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                         {#                        <li><a href="login.html">{{ _("登录") }}</a></li>#}
-{#                        <li><a href="{{ url_for('auth.register') }}">{{ _("注册") }}</a></li>#}
+                        {#                        <li><a href="{{ url_for('auth.register') }}">{{ _("注册") }}</a></li>#}
                         <li><a href="{{ url_for('contact.index') }}">{{ _("合作咨询") }}</a></li>
                         <li><a href="{{ url_for('faq.index') }}">{{ _("问题反馈") }}</a></li>
-{#                        <li><a href="{{ url_for('contact.index') }}">{{ _("帮助中心") }}</a></li>#}
+                        {#                        <li><a href="{{ url_for('contact.index') }}">{{ _("帮助中心") }}</a></li>#}
                         <li><a href="team.html">{{ _("团队") }}</a></li>
                         <li><a href="coming-soon.html">{{ _("未来发展") }}</a></li>
-{#                        <li><a href="biomedical.html">{{ _("博客") }}</a></li>#}
-{#                        <li><a href="blogs-details.html">{{ _("博客详情") }}</a></li>#}
+                        {#                        <li><a href="biomedical.html">{{ _("博客") }}</a></li>#}
+                        {#                        <li><a href="blogs-details.html">{{ _("博客详情") }}</a></li>#}
                         <li><a href="terms.html">{{ _("用户条款") }}</a></li>
                         <li><a href="{{ url_for('auth.privacy_policy') }}">{{ _("隐私政策") }}</a></li>
-{#                        <li><a href="sample.html">{{ _("样本") }}</a></li>#}
+                        {#                        <li><a href="sample.html">{{ _("样本") }}</a></li>#}
                     </ul>
                 </li>
-{#                <li><a href="biomedical.html">{{ _("博客") }}</a></li>#}
-{#                <li><a href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a></li>#}
+                {#                <li><a href="biomedical.html">{{ _("博客") }}</a></li>#}
+                {#                <li><a href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a></li>#}
                 <li>
-                    <div class="d-flex" >
+                    <div class="d-flex">
                         <span><a href="/" class="chinese-link">简</a></span>
                         <span style="color: #fff ;display: flex;align-items: center;">|</span>
                         <span><a href="/?lang=en" class="english-link">English</a></span>
                     </div>
                 </li>
                 {% if user %}
-                     <li class="dropdown"><a href="#"><img class="logo-personal" src="{{ url_for('static', filename='image/personal.png') }}" alt="user">
-                     <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="#"><img class="logo-personal"
+                                                          src="{{ url_for('static', filename='image/personal.png') }}"
+                                                          alt="user">
+                        <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
                             <li><a href="{{ url_for('auth.personal') }}">{{ _("个人中心") }}</a></li>
                             <li><a href="{{ url_for('auth.logout') }}">{{ _("退出登录 ") }}</a></li>
@@ -102,11 +105,137 @@
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>
-</header><!-- End Header -->
+</header>
 
+<!-- ======= content ======= -->
 {% block content %}{% endblock %}
 
-<!-- Footer -->
+<!-- ======= LeftSideBar ======= -->
+<div class="left-sidebar" id="left-sidebar">
+    <div class="sidebar_item">
+        <div class="sidebar_icon">
+            <img class="icon" src="{{ url_for('static', filename='icon/phone.png') }}" alt="icon">
+        </div>
+        <div class="sidebar_hidden">
+            <div class="sidebar_value">
+                <p><span>{{ _("联系电话:") }}</span><span><a href="tel:027-81812488">027-81812488</a></span></p>
+                <p><span>{{ _("服务时间:") }}</span><span>{{ _("9:00 - 21:00") }}</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar_item">
+        <div class="sidebar_icon">
+            <img class="icon" src="{{ url_for('static', filename='icon/email.png') }}" alt="icon">
+        </div>
+        <div class="sidebar_hidden">
+            <div class="sidebar_value dh">
+                <a class="p_doThirdFunc" href="mailto:support@oebio.com" target="">
+                            <span class="iconSpan"><svg t="1631600011853" class="icon" viewBox="0 0 1024 1024"
+                                                        version="1.1"
+                                                        xmlns="http://www.w3.org/2000/svg" p-id="5803" width="128"
+                                                        height="128"><path
+                                    d="M983.899806 785.385782V224.886223h0.180631l-0.180631-4.696419c-0.180632-5.238314-0.722526-10.476627-1.806315-15.714941-2.890104-25.469042-21.675781-44.977245-45.519139-47.686717H122.287529c-11.741048 0-23.482096 1.625684-34.861881 5.238314-30.346093 10.295996-50.757453 40.100194-50.576821 74.058917v534.849885c-0.361263 21.314518 5.780208 42.087141 17.701887 59.789028l0.361263 0.722526 5.418946 3.973893c18.243782 21.856412 44.977245 34.319986 73.517022 34.500618H904.421944c37.751984 0 70.265655-27.094726 79.477862-66.291763l0.180631-0.541894c0.361263-5.96084 0.361263-11.741048-0.180631-17.701888zM390.16405 547.494091l55.453872 49.854295 43.893456 40.100194c5.418945 5.96084 13.005468 9.57347 21.133886 9.57347 7.947786 0 15.534309-3.431999 21.133886-9.57347l101.153642-91.941436 272.753572 263.721997H126.622685L390.16405 547.494091z m120.119951 30.346092L111.449638 216.03528H115.604163c214.409596-0.903158 703.559711-2.890104 793.875463-0.361263l-399.195625 362.166166z m165.458458-69.72376l251.619686-227.956959v474.518963L675.742459 508.116423z m-328.568707 0.180631L93.205856 760.278003V278.895043l253.967896 229.402011z"
+                                    p-id="5804"></path></svg></span>
+                    <span>support@oebio.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar_item">
+        <div class="sidebar_icon">
+            <img class="icon" src="{{ url_for('static', filename='logo/WeChat_logo.da5ad05a.svg') }}" alt="icon">
+        </div>
+        <div class="sidebar_hidden">
+            <div class="sidebar_value dh">
+                <p class="p_doThirdFunc" type="6" account="微信客服"
+                   img="portal-saas/new2022081918121270782/cms/image/b95388af-dd70-4a0e-882a-18781421958f.jpg">
+
+                            <span class="iconSpan"><svg t="1631599980856" class="icon" viewBox="0 0 1024 1024"
+                                                        version="1.1"
+                                                        xmlns="http://www.w3.org/2000/svg" p-id="5541" width="128"
+                                                        height="128"><path
+                                    d="M506.942 345.921c25.259 0 42.134-16.916 42.134-42.107 0-25.477-16.848-41.956-42.134-41.956-25.299 0-50.668 16.48-50.668 41.956 0.028 25.204 25.409 42.107 50.668 42.107z m0 0z m-235.685-84.064c-25.259 0-50.79 16.48-50.79 41.956 0 25.19 25.532 42.107 50.79 42.107 25.163 0 42.012-16.916 42.012-42.107-0.014-25.477-16.834-41.956-42.012-41.956z m0 0z m739.397 353.635c0-133.202-123.563-246.702-275.237-258.512 0.205-1.652 0.301-3.373-0.068-5.092-30.406-141.79-182.886-248.695-354.7-248.695-194.15 0-352.119 135.387-352.119 301.793 0 89.279 45.574 169.725 131.946 233.158l-30.106 90.508a15.42 15.42 0 0 0 4.506 16.452 15.435 15.435 0 0 0 10.076 3.741c2.335 0 4.697-0.546 6.867-1.625l113.036-56.565 13.926 2.827c34.802 7.154 64.853 13.353 101.868 13.353 10.895 0 40.878-3.987 43.404-7.182 40.755 101.99 153.094 175.61 285.273 175.61 33.86 0 68.13-8.164 98.891-15.866l87.136 47.636c2.307 1.257 4.847 1.911 7.359 1.911 3.441 0 6.881-1.161 9.639-3.413 4.847-3.932 6.841-10.404 5.038-16.33L895.134 815.2c74.602-58.955 115.521-129.488 115.521-199.708zM409.798 665.75a338.345 338.345 0 0 1-29.082 1.243c-32.686 0-60.334-5.652-92.31-12.26l-18.582-3.755a14.266 14.266 0 0 0-9.503 1.269l-81.687 40.892 21.231-63.775c2.076-6.24-0.205-13.053-5.57-16.821-82.07-57.207-123.659-126.894-123.659-207.093 0-144.179 139.087-261.516 310.067-261.516 151.142 0 284.959 91.955 312.579 214.261-158.475 2.076-286.706 113.487-286.706 250.32 0 19.893 3.018 39.171 8.11 57.767-1.542-0.382-3.168-0.683-4.887-0.532z m450.573 122.949c-4.875 3.673-6.935 10.007-5.188 15.852l13.804 45.903-56.647-30.993a14.577 14.577 0 0 0-7.004-1.803c-1.188 0-2.389 0.15-3.564 0.464-30.379 7.674-61.822 15.593-92.433 15.593-142.186 0-257.857-97.717-257.857-217.811 0-120.095 115.658-217.771 257.857-217.771 139.469 0 257.325 99.724 257.325 217.771 0 59.87-37.738 121.255-106.291 172.797z m7.81 8.479zM616.454 506.006c-16.848 0-33.696 16.971-33.696 33.792 0 16.944 16.848 33.669 33.696 33.669 25.313 0 42.038-16.725 42.038-33.669 0-16.848-16.725-33.792-42.038-33.792z m0 0z m185.126 0c-16.603 0-33.451 16.971-33.451 33.792 0 16.944 16.848 33.669 33.451 33.669 25.231 0 42.257-16.725 42.257-33.669 0-16.848-16.998-33.792-42.257-33.792z m0 0z"
+                                    p-id="5542"></path></svg></span>
+                    <span>微信客服</span>
+
+                </p>
+            </div>
+
+            <div class="wechat_img">
+                <img src=""
+                     alt="微信客服">
+            </div>
+        </div>
+    </div>
+    <div class="sidebar_item">
+        <div class="sidebar_icon">
+            <img class="icon" src="{{ url_for('static', filename='icon/consult.png') }}" alt="icon">
+        </div>
+    </div>
+</div>
+<!-- ======= consult ======= -->
+<div class="consult" style="display: block;">
+    <div class="consult-header">
+        <div class="consult-header-name">在线咨询</div>
+        <img class="consult-header-close"
+             src="{{ url_for('static', filename='icon/close.png') }}" alt="close"></div>
+    <div class="consult-content">
+        <div class="consult-message-s">
+            <div class="consult-message-time"><img class="consult-avatar"
+                                                   src="{{ url_for('static', filename='icon/avatar.png') }}"
+                                                   alt="avatar">
+                <span class="consult-time">在线客服 2024-05-25 17:57:06</span></div>
+
+            <div class="consult-message-area"><span class="consult-message-text">您好，请问有什么可以帮助您的？</span>
+            </div>
+        </div>
+        <div class="consult-message-s" data-relingo-parsed="true">
+            <div class="consult-message-time" data-relingo-block="true"><img class="consult-avatar" src="">
+                <span class="consult-time">在线客服 2024-05-25 17:57:08</span></div>
+            <div class="consult-message-area" data-relingo-block="true"><span class="consult-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
+            </div>
+        </div>
+        <div class="consult-message-s" data-relingo-parsed="true">
+            <div class="consult-message-time" data-relingo-block="true"><img class="consult-avatar">
+                <span class="consult-time">在线客服 2024-05-25 17:57:10</span></div>
+            <div class="consult-message-area" data-relingo-block="true"><span class="consult-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
+            </div>
+        </div>
+    </div>
+    <div class="consult-status"></div>
+    <div class="consult-input">
+        <div class="consult-emoji">
+            <div class="consult-emoji-img" tabindex="0">
+                <img class="consult-emoji-img" src="">
+            </div>
+            <div class="consult-emoji-content"><span class="consult-emoji-Item">😁</span><span
+                    class="consult-emoji-Item">😂</span><span
+                    class="consult-emoji-Item">😃</span><span class="consult-emoji-Item">😄</span><span
+                    class="consult-emoji-Item">😅</span><span class="consult-emoji-Item">😆</span><span
+                    class="consult-emoji-Item">😉</span><span class="consult-emoji-Item">😊</span><span
+                    class="consult-emoji-Item">😋</span><span class="consult-emoji-Item">😌</span><span
+                    class="consult-emoji-Item">😍</span><span class="consult-emoji-Item">😏</span><span
+                    class="consult-emoji-Item">😒</span><span class="consult-emoji-Item">😓</span><span
+                    class="consult-emoji-Item">😔</span><span class="consult-emoji-Item">😖</span><span
+                    class="consult-emoji-Item">😘</span><span class="consult-emoji-Item">😚</span><span
+                    class="consult-emoji-Item">😜</span><span class="consult-emoji-Item">😝</span><span
+                    class="consult-emoji-Item">😞</span><span class="consult-emoji-Item">😠</span><span
+                    class="consult-emoji-Item">😡</span><span class="consult-emoji-Item">😢</span><span
+                    class="consult-emoji-Item">😭</span><span class="consult-emoji-Item">😫</span><span
+                    class="consult-emoji-Item">😪</span><span class="consult-emoji-Item">😩</span><span
+                    class="consult-emoji-Item">😨</span><span class="consult-emoji-Item">😥</span><span
+                    class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span></div>
+        </div>
+        <textarea class="consult-textarea" placeholder="点击输入内容..." maxlength="255"></textarea>
+        <div class="consult-send">
+            <div class="consult-send-content-default"><img class="consult-send-img-default" src="">
+                <span class="consult-send consult-send-default">发送</span></div>
+            <div class="consult-text-popver">不能发送空白消息</div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= Footer ======= -->
 <footer id="footer" class="main-footer">
     <div class="container">
         <div class="footer-content">
@@ -142,8 +271,11 @@
                         <div class="footer-title">{{ _("联系方式") }}</div>
                         <div class="text">
                             <p><a href="{{ url_for('contact.index') }}">{{ _("商务合作:") }}</a></p>
-                            <p>{{ _("全廷伟:") }}<a href="mailto:{{ _("quantingwei@hust.edu.cn") }}">{{ _("quantingwei@hust.edu.cn") }}</a></p>
-                            <p>{{ _("郭沙沙:") }}<a href="mailto:{{ _("wfy@wfywh.com") }}">{{ _("wfy@wfywh.com") }}</a></p>
+                            <p>{{ _("全廷伟:") }}<a
+                                    href="mailto:{{ _("quantingwei@hust.edu.cn") }}">{{ _("quantingwei@hust.edu.cn") }}</a>
+                            </p>
+                            <p>{{ _("郭沙沙:") }}<a href="mailto:{{ _("wfy@wfywh.com") }}">{{ _("wfy@wfywh.com") }}</a>
+                            </p>
                             <p>{{ _("公司地址:武汉市东湖新技术开发区关东工业园 3-3号4楼418号") }}</p>
                             <p></p>
                         </div>
@@ -153,7 +285,6 @@
         </div>
     </div>
 </footer>
-<!-- main-footer end -->
 <div class="footer-bottom">
     <div class="container">
         <div class="row">
@@ -169,8 +300,8 @@
         </div>
     </div>
 </div>
-<!-- End Footer -->
 
+<!-- ======= Back to Top ======= -->
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 {#<!-- Vendor JS Files -->#}
@@ -188,6 +319,8 @@
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="#"></script>
+
+<!-- Google Analytics -->
 <script>
     window.dataLayer = window.dataLayer || [];
 
