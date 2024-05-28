@@ -2,7 +2,7 @@ from flask_mail import Mail
 from flask_pymongo import PyMongo
 from flask_babel import Babel
 from flask_cors import CORS
-
+from flask_socketio import SocketIO
 
 
 # 连接MongoDB数据库
@@ -22,4 +22,4 @@ mongo = PyMongo()
 mail = Mail()
 babel = Babel()
 cors = CORS()
-
+socketio = SocketIO()

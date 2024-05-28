@@ -37,7 +37,6 @@
 
 <body>
 <!-- ======= Preloader ======= -->
-
 <div id="preloader"></div>
 
 <!-- ======= Header ======= -->
@@ -57,10 +56,7 @@
                         <li><a href="{{ url_for('analytics.biomedical') }}">{{ _("生物与医学图像处理工具") }}</a></li>
                     </ul>
                 </li>
-                {#要在点击链接时生成一个新页面而不是在原有页面加载#}
                 <li><a href="http://sincostan.tech/manual/" target="_blank">{{ _("使用手册") }}</a></li>
-                {#                <li><a href="packages.html">{{ _("价格") }}</a></li>#}
-                {#                <li><a href="testimonials.html">{{ _("客户评价") }}</a></li>#}
                 <li class="dropdown"><a href="javascript:void(0);"><span>{{ _("联系我们") }}</span>
                     <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
@@ -78,8 +74,7 @@
                         {#                        <li><a href="sample.html">{{ _("样本") }}</a></li>#}
                     </ul>
                 </li>
-                {#                <li><a href="biomedical.html">{{ _("博客") }}</a></li>#}
-                {#                <li><a href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a></li>#}
+                <li><a href="{{ url_for('contact.index') }}">{{ _("消息中心") }}</a></li>
                 <li>
                     <div class="d-flex">
                         <span><a href="/" class="chinese-link">简</a></span>
@@ -108,78 +103,30 @@
     </div>
 </header>
 
-<!-- ======= content ======= -->
-{% block content %}{% endblock %}
-
-<!-- ======= LeftSideBar ======= -->
-<div class="left-sidebar" id="left-sidebar">
-    <div class="sidebar_item">
-        <div class="sidebar_icon">
-            <img class="icon" src="{{ url_for('static', filename='icon/phone.png') }}" alt="icon">
-        </div>
-        <div class="sidebar_hidden">
-            <div class="sidebar_value">
-                <p><span>{{ _("联系电话:") }}</span><span><a href="tel:13166317949">13166317949</a></span></p>
-                <p><span>{{ _("服务时间:") }}</span><span style="color: #6362E5;">{{ _("9:00 - 21:00") }}</span></p>
-            </div>
-        </div>
-    </div>
-    <div class="sidebar_item">
-        <div class="sidebar_icon">
-            <img class="icon" src="{{ url_for('static', filename='icon/email.png') }}" alt="icon">
-        </div>
-        <div class="sidebar_hidden">
-            <div class="sidebar_value dh">
-                <img class="iconSpan" src="{{ url_for('static', filename='icon/email.png') }}" alt="icon">
-                <a href="mailto:wfy@wfywh.com" target=""><span>郭沙沙:wfy@wfywh.com</span></a>
-            </div>
-        </div>
-    </div>
-    <div class="sidebar_item">
-        <div class="sidebar_icon">
-            <img class="icon" src="{{ url_for('static', filename='logo/WeChat_logo.da5ad05a.svg') }}" alt="icon">
-        </div>
-        <div class="sidebar_hidden">
-            <div class="sidebar_value dh">
-
-                <span>微信联系</span>
-            </div>
-        </div>
-        <div class="wechat_img">
-            <img src="{{ url_for('static', filename='icon/email.png') }}" alt="微信客服">
-        </div>
-    </div>
-    <div class="sidebar_item">
-        <div class="sidebar_icon">
-            <img id="chat" class="icon" src="{{ url_for('static', filename='icon/consult.png') }}" alt="icon">
-        </div>
-    </div>
-</div>
-
-<!-- ======= consult ======= -->
+<!-- ======= Message center ======= -->
 <div class="consult" style="display: block;">
     <div class="consult-header">
         <div class="consult-header-name">在线咨询</div>
-        <img id="chat-close" class="consult-header-close"
+        <img class="consult-header-close"
              src="{{ url_for('static', filename='icon/close.png') }}" alt="close"></div>
     <div class="consult-content" id="MessageContent">
         <div class="consult-message-div">
-            <div class="consult-message-time"><img class="consult-avatar"
-                                                   src="{{ url_for('static', filename='icon/avatar.png') }}"
-                                                   alt="avatar">
-                <span class="consult-time">在线客服 2024-05-25 17:57:06</span></div>
-
-            <div class="consult-message-area"><span class="consult-message-text">您好，请问有什么可以帮助您的？</span>
+            <div class="consult-message-time">
+                <img class="consult-img" src="{{ url_for('static', filename='icon/avatar.png') }}" alt="avatar">
+                <span class="consult-time">在线客服 2024-05-25 17:57:06</span>
+            </div>
+            <div class="consult-message-area">
+                <span class="consult-message-text">您好，请问有什么可以帮助您的？</span>
             </div>
         </div>
-        <div class="consult-message-div">
-            <div class="consult-message-time" data-relingo-block="true"><img class="consult-avatar" src="">
+        <div class="consult-message-div" >
+            <div class="consult-message-time" data-relingo-block="true"><img class="consult-img" src="">
                 <span class="consult-time">在线客服 2024-05-25 17:57:08</span></div>
             <div class="consult-message-area" data-relingo-block="true"><span class="consult-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
             </div>
         </div>
-        <div class="consult-message-div">
-            <div class="consult-message-time" data-relingo-block="true"><img class="consult-avatar">
+        <div class="consult-message-div" >
+            <div class="consult-message-time" data-relingo-block="true"><img class="consult-img">
                 <span class="consult-time">在线客服 2024-05-25 17:57:10</span></div>
             <div class="consult-message-area" data-relingo-block="true"><span class="consult-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
             </div>
@@ -210,8 +157,11 @@
                     class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span></div>
         </div>
         <textarea id="consultInput" class="consult-textarea" placeholder="点击输入内容..." maxlength="255"></textarea>
-        <div class="consult-send">
-            <button id="sendBtn" class=" consult-send-default sendBtn">发送</button>
+        <div class="consult-send" >
+            <div class="consult-send-content-default">
+                <img class="consult-send-img-default" src="">
+                <button class="sendBtn consult-send-default" id="sendBtn">发送</button>
+            </div>
             <div class="consult-text-popver">不能发送空白消息</div>
         </div>
     </div>
@@ -296,14 +246,12 @@
 <script src="{{ url_for('static', filename = 'js/validator.min.js') }}"></script>
 <script src="{{ url_for('static', filename = 'js/contactform.js') }}"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
-</script>
-
 <!-- Template Main JS File -->
 <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-
 <!-- Socket.io -->
-<script src="{{ url_for('static', filename = 'js/addition.js') }}"></script>
-<script>initializeSocket('http://127.0.0.1:5000/customer')</script>
+<script src="{{ url_for('static', filename = 'js/addition.js') }}"
+></script>
+<script>initializeSocket('http://127.0.0.1:5000/agent')</script>
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="#"></script>

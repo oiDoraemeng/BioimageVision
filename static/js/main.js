@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
         textContent.split('').forEach((letter, index) => {
             const span = document.createElement('span');
             span.textContent = letter;
-            span.classList.add('letter');
+            span.classList.add('letter');// 为 span 元素添加 letter 类
             span.style.transitionDelay = `${index * 0.1}s`;
             element.appendChild(span);
         });
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
      * Consultation form move
      */
 
-    // 获取聊天框元素
+        // 获取聊天框元素
     var chatBox = document.querySelector('.consult');
 
     // 使聊天框可拖动
@@ -385,7 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
             chatBox.style.top = y + 'px';
         }
     });
-
     document.addEventListener('mouseup', function () {
         isDragging = false;
     });

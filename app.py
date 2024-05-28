@@ -2,10 +2,9 @@ from bson import ObjectId
 
 from flask import Flask, request, session, g
 from flask_session import Session  # 导入Session扩展
-from flaskext.markdown import Markdown
 
 import config
-from utils.exts import mail,mongo,babel,cors
+from utils.exts import mail,mongo,babel,cors,socketio
 from blueprints import register_blueprints
 from utils.filters import datetime_format
 from utils.models import User
@@ -32,7 +31,7 @@ def create_app():
         cors.init_app(app)
         mail.init_app(app)
         mongo.init_app(app)
-        Markdown(app)
+        socketio.init_app(app)
         babel.init_app(app, locale_selector=get_locale, timezone_selector=get_timezone)
         Session(app)
 
@@ -64,9 +63,6 @@ def create_app():
     def context_processor():
         # 给模板添加user变量
         return {'user': g.user}
-
-
-
 
     return app
 
