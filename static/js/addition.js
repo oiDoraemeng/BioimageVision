@@ -226,7 +226,7 @@ function chatbox_right(message, user,src) {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-// 获取消息框和图片的元素
+// 点击聊天按钮时，初始化 socket 连接
 var consultBox = document.querySelector(".consult");
 var sidebarIcon = document.getElementById("chat");
 var closeIcon = document.getElementById("chat-close");

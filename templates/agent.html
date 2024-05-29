@@ -104,170 +104,222 @@
 </header>
 
 <!-- ======= Message center ======= -->
-<div class="consult" style="display: block;">
-    <div class="consult-header">
-        <div class="consult-header-name">在线咨询</div>
-        <img class="consult-header-close"
-             src="{{ url_for('static', filename='icon/close.png') }}" alt="close"></div>
-    <div class="consult-content" id="MessageContent">
-        <div class="consult-message-div">
-            <div class="consult-message-time">
-                <img class="consult-img" src="{{ url_for('static', filename='icon/avatar.png') }}" alt="avatar">
-                <span class="consult-time">在线客服 2024-05-25 17:57:06</span>
-            </div>
-            <div class="consult-message-area">
-                <span class="consult-message-text">您好，请问有什么可以帮助您的？</span>
-            </div>
+<div class="container">
+    <div class="view-container">
+        <div class="message-header">
+            <span class="title">消息中心</span>
+            <span class="setting">消息设置</span>
         </div>
-        <div class="consult-message-div" >
-            <div class="consult-message-time" data-relingo-block="true"><img class="consult-img" src="">
-                <span class="consult-time">在线客服 2024-05-25 17:57:08</span></div>
-            <div class="consult-message-area" data-relingo-block="true"><span class="consult-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
-            </div>
-        </div>
-        <div class="consult-message-div" >
-            <div class="consult-message-time" data-relingo-block="true"><img class="consult-img">
-                <span class="consult-time">在线客服 2024-05-25 17:57:10</span></div>
-            <div class="consult-message-area" data-relingo-block="true"><span class="consult-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
-            </div>
-        </div>
-    </div>
-    <div class="consult-status"></div>
-    <div class="consult-input">
-        <div class="consult-emoji">
-            <div class="consult-emoji-img" tabindex="0">
-                <img class="consult-emoji-img" src="">
-            </div>
-            <div class="consult-emoji-content"><span class="consult-emoji-Item">😁</span><span
-                    class="consult-emoji-Item">😂</span><span
-                    class="consult-emoji-Item">😃</span><span class="consult-emoji-Item">😄</span><span
-                    class="consult-emoji-Item">😅</span><span class="consult-emoji-Item">😆</span><span
-                    class="consult-emoji-Item">😉</span><span class="consult-emoji-Item">😊</span><span
-                    class="consult-emoji-Item">😋</span><span class="consult-emoji-Item">😌</span><span
-                    class="consult-emoji-Item">😍</span><span class="consult-emoji-Item">😏</span><span
-                    class="consult-emoji-Item">😒</span><span class="consult-emoji-Item">😓</span><span
-                    class="consult-emoji-Item">😔</span><span class="consult-emoji-Item">😖</span><span
-                    class="consult-emoji-Item">😘</span><span class="consult-emoji-Item">😚</span><span
-                    class="consult-emoji-Item">😜</span><span class="consult-emoji-Item">😝</span><span
-                    class="consult-emoji-Item">😞</span><span class="consult-emoji-Item">😠</span><span
-                    class="consult-emoji-Item">😡</span><span class="consult-emoji-Item">😢</span><span
-                    class="consult-emoji-Item">😭</span><span class="consult-emoji-Item">😫</span><span
-                    class="consult-emoji-Item">😪</span><span class="consult-emoji-Item">😩</span><span
-                    class="consult-emoji-Item">😨</span><span class="consult-emoji-Item">😥</span><span
-                    class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span></div>
-        </div>
-        <textarea id="consultInput" class="consult-textarea" placeholder="点击输入内容..." maxlength="255"></textarea>
-        <div class="consult-send" >
-            <div class="consult-send-content-default">
-                <img class="consult-send-img-default" src="">
-                <button class="sendBtn consult-send-default" id="sendBtn">发送</button>
-            </div>
-            <div class="consult-text-popver">不能发送空白消息</div>
-        </div>
-    </div>
-</div>
-
-<!-- ======= Footer ======= -->
-<footer id="footer" class="main-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                    <div class="logo-widget footer-widget">
-                        <h1 class="footer-logo"><i><span>Bioimage</span>望飞宇<span>.</span></i></h1>
-                        <div class="text">
-                            <p>{{ _("望飞宇是一家致力于为生物科学研究及医学行业提供普惠的人工智能软件平台。我们提供胞体定位、神经元追踪、血管分析、图像配准、全脑数据一体化处理软件定制开发等服务。") }}</p>
+        <div class="message-center">
+            <div class="left-menu">
+                <div class="chat-list">
+                    <div class="message-item">
+                        <div><img class="headimg" src="{{ url_for('static',filename="icon/customer.png") }}"></div>
+                        <div class="msg-main">
+                            <div class="justify-content-between d-flex">
+                                <span class="msg-name">互动通知</span>
+                                <span class="msg-time ">昨天</span>
+                            </div>
+                            <p class="msg">马费炉里的本生灯收藏了你的博客</p>
                         </div>
-                        <ul class="footer-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google"></i></a></li>
-                        </ul>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 offset-lg-1 footer-column">
-                    <div class="service-widget footer-widget">
-                        <div class="footer-title">{{ _("服务") }}</div>
-                        <ul class="list">
-                            <li><a href="#">{{ ("大数据分析") }}</a></li>
-                            <li><a href="#">{{ _("产品下载") }}</a></li>
-                            {#                            <li><a href="#">Cloud Services</a></li>#}
-                            {#                            <li><a href="#">Domain adn Hosting</a></li>#}
-                            {#                            <li><a href="#">Seo Optimization</a></li>#}
-                            {#                            <li><a href="#">Social Media</a></li>#}
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                    <div class="contact-widget footer-widget">
-                        <div class="footer-title">{{ _("联系方式") }}</div>
-                        <div class="text">
-                            <p><a href="{{ url_for('contact.index') }}">{{ _("商务合作:") }}</a></p>
-                            <p>{{ _("全廷伟:") }}<a
-                                    href="mailto:{{ _("quantingwei@hust.edu.cn") }}">{{ _("quantingwei@hust.edu.cn") }}</a>
-                            </p>
-                            <p>{{ _("郭沙沙:") }}<a href="mailto:{{ _("wfy@wfywh.com") }}">{{ _("wfy@wfywh.com") }}</a>
-                            </p>
-                            <p>{{ _("公司地址:武汉市东湖新技术开发区关东工业园 3-3号4楼418号") }}</p>
-                            <p></p>
+                    <div class="message-item">
+                        <div><img class="headimg" src="{{ url_for('static',filename="icon/customer.png") }}"></div>
+                        <div class="msg-main">
+                            <div class="justify-content-between d-flex">
+                                <span class="msg-name">互动通知</span>
+                                <span class="msg-time ">昨天</span>
+                            </div>
+                            <p class="msg">马费炉里的本生灯收藏了你的博客</p>
                         </div>
                     </div>
                 </div>
+                <div class="message-item">
+                    <div><img class="headimg" src="{{ url_for('static',filename="icon/customer.png") }}"></div>
+                    <div class="msg-main">
+                        <div class="justify-content-between d-flex">
+                            <span class="msg-name">互动通知</span>
+                            <span class="msg-time ">昨天</span>
+                        </div>
+                        <p class="msg">马费炉里的本生灯收藏了你的博客</p>
+                    </div>
+                </div>
+                <div class="blankview" style="display: none;">暂无联系人哦</div>
+            </div>
+            <div class="right-content" >
+                <div class="message-content" id="MessageContent">
+                    <div class="message-div">
+                        <div class="message-time"><img class="message-img"
+                                                               src="{{ url_for('static', filename='icon/customer.png') }}"
+                                                               alt="avatar">
+                            <span class="message-time">在线客服 2024-05-25 17:57:06</span></div>
+
+                        <div class="message-message-area"><span
+                                class="message-message-text">您好，请问有什么可以帮助您的？</span>
+                        </div>
+                    </div>
+                    <div class="message-div">
+                        <div class="message-time"><img class="message-avatar" src="">
+                            <span class="message-time">在线客服 2024-05-25 17:57:08</span></div>
+                        <div class="message-message-area"><span class="message-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
+                        </div>
+                    </div>
+                    <div class="message-div">
+                        <div class="message-time"><img class="message-avatar">
+                            <span class="message-time">在线客服 2024-05-25 17:57:10</span></div>
+                        <div class="message-message-area"><span class="message-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-status"></div>
+                <div class="message-input">
+                    <div class="message-emoji">
+                        <div class="message-emoji-img" tabindex="0">
+                            <img class="message-emoji-img" src="">
+                        </div>
+                        <div class="message-emoji-content"><span class="message-emoji-Item">😁</span><span
+                                class="message-emoji-Item">😂</span><span
+                                class="message-emoji-Item">😃</span><span class="message-emoji-Item">😄</span><span
+                                class="message-emoji-Item">😅</span><span class="message-emoji-Item">😆</span><span
+                                class="message-emoji-Item">😉</span><span class="message-emoji-Item">😊</span><span
+                                class="message-emoji-Item">😋</span><span class="message-emoji-Item">😌</span><span
+                                class="message-emoji-Item">😍</span><span class="message-emoji-Item">😏</span><span
+                                class="message-emoji-Item">😒</span><span class="message-emoji-Item">😓</span><span
+                                class="message-emoji-Item">😔</span><span class="message-emoji-Item">😖</span><span
+                                class="message-emoji-Item">😘</span><span class="message-emoji-Item">😚</span><span
+                                class="message-emoji-Item">😜</span><span class="message-emoji-Item">😝</span><span
+                                class="message-emoji-Item">😞</span><span class="message-emoji-Item">😠</span><span
+                                class="message-emoji-Item">😡</span><span class="message-emoji-Item">😢</span><span
+                                class="message-emoji-Item">😭</span><span class="message-emoji-Item">😫</span><span
+                                class="message-emoji-Item">😪</span><span class="message-emoji-Item">😩</span><span
+                                class="message-emoji-Item">😨</span><span class="message-emoji-Item">😥</span><span
+                                class="message-emoji-Item">😤</span><span class="message-emoji-Item">😣</span></div>
+                    </div>
+                    <textarea id="messageInput" class="message-textarea" placeholder="点击输入内容..."
+                              maxlength="255"></textarea>
+                    <div class="message-send">
+                        <button id="sendBtn" class=" message-send-default sendBtn">发送</button>
+                        <div class="message-text-popver">不能发送空白消息</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<div class="footer-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 column">
-                <div class="copyright">Copyright &copy; 2024.{{ _("望飞宇(武汉)科技有限公司 备案号：" ) }}</div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 column">
-                <ul class="footer-nav">
-                    <li><a href="#">{{ ("用户条款") }}</a></li>
-                    <li><a href="#">{{ ("隐私政策") }}</a></li>
-                </ul>
+        <div class="blank_list">您还未选中或者发起聊天，快去跟好友聊一聊吧</div>
+
+        <div class="el-loading-mask" style="display: none;">
+            <div class="el-loading-spinner">
+                <svg viewBox="25 25 50 50" class="circular">
+                    <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
+                </svg><!---->
             </div>
         </div>
-    </div>
-</div>
 
-<!-- ======= Back to Top ======= -->
-<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <div class="view"></div>
 
-{#<!-- Vendor JS Files -->#}
-<script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/glightbox.min.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/aos.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/swiper-bundle.min.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/plugins.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/validator.min.js') }}"></script>
-<script src="{{ url_for('static', filename = 'js/contactform.js') }}"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
-<!-- Template Main JS File -->
-<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-<!-- Socket.io -->
-<script src="{{ url_for('static', filename = 'js/addition.js') }}"
-></script>
-<script>initializeSocket('http://127.0.0.1:5000/agent')</script>
 
-<!-- Google tag (gtag.js) -->
-<script async="" src="#"></script>
+        <!-- ======= Footer ======= -->
+        <footer id="footer" class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget">
+                                <h1 class="footer-logo"><i><span>Bioimage</span>望飞宇<span>.</span></i></h1>
+                                <div class="text">
+                                    <p>{{ _("望飞宇是一家致力于为生物科学研究及医学行业提供普惠的人工智能软件平台。我们提供胞体定位、神经元追踪、血管分析、图像配准、全脑数据一体化处理软件定制开发等服务。") }}</p>
+                                </div>
+                                <ul class="footer-social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 offset-lg-1 footer-column">
+                            <div class="service-widget footer-widget">
+                                <div class="footer-title">{{ _("服务") }}</div>
+                                <ul class="list">
+                                    <li><a href="#">{{ ("大数据分析") }}</a></li>
+                                    <li><a href="#">{{ _("产品下载") }}</a></li>
+                                    {#                            <li><a href="#">Cloud Services</a></li>#}
+                                    {#                            <li><a href="#">Domain adn Hosting</a></li>#}
+                                    {#                            <li><a href="#">Seo Optimization</a></li>#}
+                                    {#                            <li><a href="#">Social Media</a></li>#}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                            <div class="contact-widget footer-widget">
+                                <div class="footer-title">{{ _("联系方式") }}</div>
+                                <div class="text">
+                                    <p><a href="{{ url_for('contact.index') }}">{{ _("商务合作:") }}</a></p>
+                                    <p>{{ _("全廷伟:") }}<a
+                                            href="mailto:{{ _("quantingwei@hust.edu.cn") }}">{{ _("quantingwei@hust.edu.cn") }}</a>
+                                    </p>
+                                    <p>{{ _("郭沙沙:") }}<a
+                                            href="mailto:{{ _("wfy@wfywh.com") }}">{{ _("wfy@wfywh.com") }}</a>
+                                    </p>
+                                    <p>{{ _("公司地址:武汉市东湖新技术开发区关东工业园 3-3号4楼418号") }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                        <div class="copyright">Copyright &copy; 2024.{{ _("望飞宇(武汉)科技有限公司 备案号：" ) }}</div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                        <ul class="footer-nav">
+                            <li><a href="#">{{ ("用户条款") }}</a></li>
+                            <li><a href="#">{{ ("隐私政策") }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- Google Analytics -->
-<script>
-    window.dataLayer = window.dataLayer || [];
+        <!-- ======= Back to Top ======= -->
+        <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+        {#<!-- Vendor JS Files -->#}
+        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/glightbox.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/aos.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/swiper-bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/plugins.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/validator.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/contactform.js') }}"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
 
-    gtag('js', new Date());
+        <!-- Template Main JS File -->
+        <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+        <!-- Socket.io -->
+        <script src="{{ url_for('static', filename = 'js/addition.js') }}"></script>
+        <script>initializeSocket('http://127.0.0.1:5000/agent')</script>
 
-    gtag('config', 'G-ZZZ4193J2X');
-</script>
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="#"></script>
+
+        <!-- Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZZZ4193J2X');
+        </script>
 
 </body>
 

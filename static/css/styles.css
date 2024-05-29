@@ -462,7 +462,7 @@ section {
 }
 
 .sticked-header-offset {
-    /* margin-top: 70px; */
+    margin-top: 70px;
 }
 
 section {
@@ -3329,7 +3329,7 @@ section {
 
 .footer-content {
     position: relative;
-    padding: 85px 0px 80px 0px;
+    padding: 45px 0px 15px 0px;
 }
 
 .footer-content .logo-widget {
@@ -3760,7 +3760,7 @@ section {
     padding: 0;
 }
 
-.project-deatils-aside .testimonial-item {
+.project-details-aside .testimonial-item {
     padding: 30px 30px 0 30px;
     position: relative;
     background: #6463e2;
@@ -3768,7 +3768,7 @@ section {
     margin-bottom: 50px;
 }
 
-.project-deatils-aside .testimonial-item .testimonial-img {
+.project-details-aside .testimonial-item .testimonial-img {
     width: 90px;
     border-radius: 2px;
     border: 6px solid #fff;
@@ -3776,33 +3776,33 @@ section {
     margin: 0 10px 0 0;
 }
 
-.project-deatils-aside .testimonial-item h3 {
+.project-details-aside .testimonial-item h3 {
     font-size: 18px;
     font-weight: bold;
     margin: 15px 0 5px 0;
     padding-top: 20px;
 }
 
-.project-deatils-aside .testimonial-item h4 {
+.project-details-aside .testimonial-item h4 {
     font-size: 14px;
     color: #cccecf;
     margin: 0;
 }
 
-.project-deatils-aside .testimonial-item .quote-icon-left,
-.project-deatils-aside .testimonial-item .quote-icon-right {
+.project-details-aside .testimonial-item .quote-icon-left,
+.project-details-aside .testimonial-item .quote-icon-right {
     color: #f05454;
     font-size: 26px;
     line-height: 0;
 }
 
-.project-deatils-aside .testimonial-item .quote-icon-left {
+.project-details-aside .testimonial-item .quote-icon-left {
     display: inline-block;
     left: -5px;
     position: relative;
 }
 
-.project-deatils-aside .testimonial-item .quote-icon-right {
+.project-details-aside .testimonial-item .quote-icon-right {
     display: inline-block;
     right: -5px;
     position: relative;
@@ -3810,7 +3810,7 @@ section {
     transform: scale(-1, -1);
 }
 
-.project-deatils-aside .testimonial-item p {
+.project-details-aside .testimonial-item p {
     font-style: italic;
     margin: 0 0 15px 0;
     padding: 0;
@@ -4488,3 +4488,354 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     bottom: -14px;
     z-index: 99
 }
+
+/*--------------------------------------------------------------
+ # Message center
+ --------------------------------------------------------------*/
+.container .view-container {
+    position: relative;
+    background-color: #fff;
+    padding-top: 24px;
+    border-radius: 2px;
+    min-height: 510px;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1);
+    -webkit-font-smoothing: antialiased
+}
+
+
+.message-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 16px 24px;
+}
+
+.message-header .title {
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFangSC-Medium, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    font-weight: 500;
+    color: #222226;
+    line-height: 26px
+}
+
+.message-header .setting {
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFangSC-Medium, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    font-weight: 500;
+    color: #222226;
+    line-height: 26px
+}
+
+
+.message-center {
+    overflow: hidden;
+    min-height: 700px;
+    background: #fff;
+    border-top: 1px solid #e8e8ed;
+    margin: auto;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .06);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .06)
+}
+
+
+.left-menu {
+    width: 300px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.chat-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.message-item:hover {
+    background-color: #f1f1f1;
+}
+
+.headimg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.msg-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.msg-time {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.msg {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.right-content {
+    background-color: #fff;
+    width: 100%;
+    /*box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);*/
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.message-content {
+    background-color: #F5F5F5;
+    height: 560px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 12px;
+    overflow-y: auto
+}
+
+.message-content .message-div {
+    margin-top: 12px;
+}
+
+.message-content .message-div .message-time {
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 24px;
+    color: #999
+}
+
+.message-content .message-div .message-time .message-img {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    margin-right: 4px
+}
+
+.message-content .message-div .message-right .message-img {
+    margin-left: 4px;
+    margin-right: 0
+}
+
+.message-content .message-message-area {
+    padding-left: 30px
+}
+
+.message-content .message-message-text {
+    color: #000000;
+    text-align: left;
+    display: inline-block;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 288px;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 14px
+}
+
+.message-content .message-right {
+    text-align: right
+}
+
+.message-content .message-message-area.message-right {
+    padding-right: 32px
+}
+
+.message-content .message-message-area.message-right .message-message-text {
+    background-color: #95EC69
+}
+
+.message-status {
+    font-size: 12px;
+    padding-left: 24px;
+    padding-bottom: 2px;
+    color: #999;
+    background-color: #EEE
+}
+
+/* 设置滚动条的宽度和高度 */
+.message-content::-webkit-scrollbar,
+.message-emoji-content::-webkit-scrollbar,
+.message-textarea::-webkit-scrollbar {
+    width: 6px;
+    height: 1px;
+}
+
+/* 设置滚动条thumb的样式 */
+.message-content::-webkit-scrollbar-thumb,
+.message-emoji-content::-webkit-scrollbar-thumb,
+.message-textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    background: #B2B2B2;
+}
+
+/* 设置滚动条track的样式 */
+.message-content::-webkit-scrollbar-track,
+.message-emoji-content::-webkit-scrollbar-track,
+.message-textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+
+.message-input {
+    display: flex;
+    flex-direction: column
+}
+
+.message-input .message-emoji-img {
+    height: 32px
+}
+
+.message-input .message-emoji-img:focus {
+    outline: 0
+}
+
+.message-input .message-emoji {
+    position: relative
+}
+
+.message-input .message-emoji-img {
+    width: 16px;
+    margin: 8px 16px
+}
+
+.message-input .message-emoji-img:hover {
+    cursor: pointer
+}
+
+.message-input .message-emoji-content {
+    box-sizing: content-box;
+    display: none;
+    max-width: 216px;
+    height: 98px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+    padding: 12px 12px 6px;
+    background-color: #fff;
+    position: absolute;
+    top: -118px;
+    overflow-y: auto
+}
+
+.message-input .message-emoji-content .message-emoji-Item {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1px
+}
+
+.message-input .message-textarea {
+    box-sizing: border-box;
+    padding-left: 16px;
+    outline: 0;
+    border: none;
+    resize: none;
+    width: 98%;
+    height: 95px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 22px
+}
+
+.message-input .message-textarea::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #BFBFBF
+}
+
+.message-input .message-send {
+    text-align: right;
+    position: relative
+}
+
+.message-input .message-send .sendBtn {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    width: 80px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #06AE56;
+    background-color: #E9E9E9;
+    border: none;
+    border-radius: 2px;
+}
+
+.message-input .message-send .sendBtn:hover {
+    cursor: pointer;
+    background-color: #D2D2D2;
+    color: #595959
+}
+
+
+.message-input .message-send .message-text-popver {
+    position: absolute;
+    width: 136px;
+    height: 36px;
+    background: #FFF;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #595959;
+    bottom: 46px;
+    right: 16px;
+    text-align: center;
+    line-height: 36px;
+    z-index: 99;
+    display: none
+}
+
+.message-input .message-send .message-text-popver.active {
+    display: block
+}
+
+.message-input .message-send .message-text-popver::after {
+    display: block;
+    content: '';
+    border-width: 7px 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    left: 65%;
+    bottom: -14px;
+    z-index: 99
+}
+
+
+
