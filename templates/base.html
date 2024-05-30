@@ -44,7 +44,7 @@
 <header id="header" class="single-page-header header d-flex align-items-center">
     <div class="container container-xl d-flex align-items-center justify-content-between">
         <a href="{{ url_for('home.index') }}" class="logo d-flex align-items-center">
-            <h1><i><span>Bioimage</span>望飞宇<span>.</span></i></h1>
+            <h1><i><span class="ENG">Bioimage</span><span class="ZH">望飞宇</span></i></h1>
         </a>
         <nav id="navbar" class="navbar">
             <ul>
@@ -82,24 +82,24 @@
                 {#                <li><a href="{{ url_for('contact.index') }}">{{ _("联系我们") }}</a></li>#}
                 <li>
                     <div class="d-flex">
-                        <span><a href="/" class="chinese-link">简</a></span>
-                        <span style="color: #fff ;display: flex;align-items: center;">|</span>
-                        <span><a href="/?lang=en" class="english-link">English</a></span>
+                        <span><a href="/" class="chinese-link language">简</a></span>
+                        <span style="color: #0f0f0f ;display: flex;align-items: center;">|</span>
+                        <span><a href="/?lang=en" class="english-link language">English</a></span>
                     </div>
                 </li>
-                {% if user %}
-                    <li class="dropdown"><a href="#"><img class="logo-personal"
-                                                          src="{{ url_for('static', filename='image/personal.png') }}"
-                                                          alt="user">
-                        <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                        <ul>
-                            <li><a href="{{ url_for('auth.personal') }}">{{ _("个人中心") }}</a></li>
-                            <li><a href="{{ url_for('auth.logout') }}">{{ _("退出登录 ") }}</a></li>
-                        </ul>
-                    </li>
-                {% else %}
-                    <li><a href="{{ url_for('auth.login') }}" class="main-button">{{ _("登录/注册") }}</a></li>
-                {% endif %}
+{#                {% if user %}#}
+{#                    <li class="dropdown"><a href="#"><img class="logo-personal"#}
+{#                                                          src="{{ url_for('static', filename='image/personal.png') }}"#}
+{#                                                          alt="user">#}
+{#                        <i class="bi bi-chevron-down dropdown-indicator"></i></a>#}
+{#                        <ul>#}
+{#                            <li><a href="{{ url_for('auth.personal') }}">{{ _("个人中心") }}</a></li>#}
+{#                            <li><a href="{{ url_for('auth.logout') }}">{{ _("退出登录 ") }}</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                {% else %}#}
+{#                    <li><a href="{{ url_for('auth.login') }}" class="main-button">{{ _("登录/注册") }}</a></li>#}
+{#                {% endif %}#}
 
             </ul>
         </nav><!-- navbar-->
@@ -157,7 +157,7 @@
 </div>
 
 <!-- ======= consult ======= -->
-<div class="consult" style="display: block;">
+<div class="consult" style="display: none;">
     <div class="consult-header">
         <div class="consult-header-name">在线咨询</div>
         <img id="chat-close" class="consult-header-close"
@@ -173,25 +173,27 @@
             </div>
         </div>
         <div class="consult-message-div">
-            <div class="consult-message-time" ><img class="consult-avatar" src="">
+            <div class="consult-message-time"><img class="consult-avatar" src="">
                 <span class="consult-time">在线客服 2024-05-25 17:57:08</span></div>
-            <div class="consult-message-area" ><span class="consult-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
+            <div class="consult-message-area"><span
+                    class="consult-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
             </div>
         </div>
         <div class="consult-message-div">
-            <div class="consult-message-time" ><img class="consult-avatar">
+            <div class="consult-message-time"><img class="consult-avatar">
                 <span class="consult-time">在线客服 2024-05-25 17:57:10</span></div>
-            <div class="consult-message-area" ><span class="consult-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
+            <div class="consult-message-area"><span
+                    class="consult-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
             </div>
         </div>
     </div>
     <div class="consult-status"></div>
     <div class="consult-input">
-        <div class="consult-emoji">
-            <div class="consult-emoji-img" tabindex="0">
-                <img class="consult-emoji-img" src="">
+        <div class="consult-emoji" id="emoji-toggle">
+            <div class="consult-emoji-img">
+                <img class="emoji-img" src="{{ url_for('static', filename='icon/emoji.png') }}">
             </div>
-            <div class="consult-emoji-content"><span class="consult-emoji-Item">😁</span><span
+            <div class="consult-emoji-content" id="emoji-content"><span class="consult-emoji-Item">😁</span><span
                     class="consult-emoji-Item">😂</span><span
                     class="consult-emoji-Item">😃</span><span class="consult-emoji-Item">😄</span><span
                     class="consult-emoji-Item">😅</span><span class="consult-emoji-Item">😆</span><span
@@ -207,9 +209,10 @@
                     class="consult-emoji-Item">😭</span><span class="consult-emoji-Item">😫</span><span
                     class="consult-emoji-Item">😪</span><span class="consult-emoji-Item">😩</span><span
                     class="consult-emoji-Item">😨</span><span class="consult-emoji-Item">😥</span><span
-                    class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span></div>
+                    class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span>
+            </div>
         </div>
-        <textarea id="consultInput" class="consult-textarea" placeholder="点击输入内容..." maxlength="255"></textarea>
+        <textarea id="MessageInput" class="consult-textarea" placeholder="点击输入内容..." maxlength="255"></textarea>
         <div class="consult-send">
             <button id="sendBtn" class=" consult-send-default sendBtn">发送</button>
             <div class="consult-text-popver">不能发送空白消息</div>

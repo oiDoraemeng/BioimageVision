@@ -371,22 +371,46 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
     var isDragging = false;
     var offsetX, offsetY;
 
-    chatBox.addEventListener('mousedown', function (e) {
-        isDragging = true;
-        offsetX = e.clientX - chatBox.getBoundingClientRect().left;
-        offsetY = e.clientY - chatBox.getBoundingClientRect().top;
-    });
+    if (chatBox) {
+        chatBox.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            offsetX = e.clientX - chatBox.getBoundingClientRect().left;
+            offsetY = e.clientY - chatBox.getBoundingClientRect().top;
+        });
 
-    document.addEventListener('mousemove', function (e) {
-        if (isDragging) {
-            var x = e.clientX - offsetX;
-            var y = e.clientY - offsetY;
-            chatBox.style.left = x + 'px';
-            chatBox.style.top = y + 'px';
+        document.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                var x = e.clientX - offsetX;
+                var y = e.clientY - offsetY;
+                chatBox.style.left = x + 'px';
+                chatBox.style.top = y + 'px';
+            }
+        });
+        document.addEventListener('mouseup', function () {
+            isDragging = false;
+        });
+    }
+    /**
+     * Emoji toggle and content
+     */
+    const emojiToggle = document.getElementById('emoji-toggle');
+    const emojiContent = document.getElementById('emoji-content');
+
+    emojiToggle.addEventListener('click', () => {
+        console.log('emojiToggle clicked');
+        if (emojiContent.style.display === 'block') {
+            emojiContent.style.display = 'none';
+        } else {
+            emojiContent.style.display = 'block';
         }
     });
-    document.addEventListener('mouseup', function () {
-        isDragging = false;
+
+    // 在外部单击时关闭emoji内容
+    document.addEventListener('click', (event) => {
+        console.log('document clicked');
+        if (!emojiToggle.contains(event.target) && !emojiContent.contains(event.target)) {
+            emojiContent.style.display = 'none';
+        }
     });
 
 });

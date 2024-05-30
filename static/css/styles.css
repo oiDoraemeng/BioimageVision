@@ -9,6 +9,7 @@
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
     --font-heading: 'Comfortaa', cursive;
+    --font-nav: "Arial", sans-serif;
     --font-body: sans-serif;
 }
 
@@ -439,7 +440,7 @@ section {
 }
 
 .header.stikcy-menu {
-    background: #303030;
+    background: #f4f4f4;
     box-shadow: 0 0 29px 0 rgb(0 0 0 / 5%);
 }
 
@@ -453,12 +454,16 @@ section {
     margin: 0;
     font-weight: 600;
     letter-spacing: 0.8px;
-    color: #ffffff;
+    color: #3c3c3c;
     font-family: var(--font-primary);
 }
 
-.header .logo h1 span {
+.header .logo .ENG {
+    font-family: "Lucida Calligraphy", sans-serif;
     color: #f05454;
+}
+.header .logo .ZH {
+    font-family: "黑体", sans-serif;
 }
 
 .sticked-header-offset {
@@ -501,10 +506,11 @@ section {
         align-items: center;
         justify-content: space-between;
         padding: 0 3px;
-        font-family: var(--font-secondary);
+        font-family: var(--font-nav);
+        /*font-family: "Helvetica", sans-serif;*/
         font-size: 16px;
-        font-weight: 400;
-        color: #ffffff;
+        font-weight: 600;
+        color: #333333;
         white-space: nowrap;
         transition: 0.3s;
         position: relative;
@@ -524,11 +530,18 @@ section {
         width: 100%;
     }
 
+    .navbar > ul > li > a:hover,
+    .language:hover {
+        background-color: rgba(0, 135, 225, 0.2);
+        box-shadow: 0 1px 5px 14px rgba(0, 135, 255, .2);
+        backdrop-filter: blur(5px);
+    }
+
     .navbar a:hover,
     .navbar .active,
     .navbar .active:focus,
     .navbar li:hover > a {
-        color: #ee5353;
+        color: #007BFF;
     }
 
     .navbar .dropdown ul {
@@ -541,7 +554,7 @@ section {
         z-index: 99;
         opacity: 0;
         visibility: hidden;
-        background: #f44336;
+        background: #fff;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         transition: 0.3s;
         border-radius: 0px;
@@ -552,15 +565,15 @@ section {
     }
 
     .navbar .dropdown ul li:hover {
-        background: #6362e5;
+        background: rgba(0, 135, 225, 0.6);
     }
 
     .navbar .dropdown ul a {
         padding: 10px 20px;
         font-size: 15px;
         text-transform: none;
-        font-weight: 400;
-        color: #fff;
+        font-weight: 600;
+        color: #333333;
     }
 
     .navbar .dropdown ul a i {
@@ -2019,11 +2032,11 @@ section {
 # Single Page Section
 --------------------------------------------------------------*/
 .single-page {
-    color: #ffffff;
+    color: #333333;
 }
 
 .single-page p {
-    color: #ffffff;
+    color: #333333;
 }
 
 /*--------------------------------------------------------------
@@ -4276,55 +4289,55 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     overflow-y: auto
 }
 
-.consult-content .consult-message-div {
+.consult-message-div {
     margin-top: 12px
 }
 
-.consult-content .consult-message-div .consult-time {
+.consult-message-div .consult-time {
     font-size: 12px;
     vertical-align: top;
     line-height: 24px;
     color: #999
 }
 
-.consult-content .consult-message-div .consult-message-time .consult-img {
+.consult-message-div .consult-message-time .consult-img {
     height: 24px;
     width: 24px;
     border-radius: 50%;
     margin-right: 4px
 }
 
-.consult-content .consult-message-div .consult-right .consult-img {
+.consult-message-div .consult-right .consult-img {
     margin-left: 4px;
     margin-right: 0
 }
 
-.consult-content .consult-message-area {
+.consult-message-area {
     padding-left: 30px
 }
 
-.consult-content .consult-message-text {
+.consult-message-text {
     color: #000000;
     text-align: left;
     display: inline-block;
     padding: 8px;
     background-color: #fff;
     border-radius: 8px;
-    max-width: 288px;
+    max-width: 588px;
     word-break: break-all;
     word-wrap: break-word;
     font-size: 14px
 }
 
-.consult-content .consult-right {
+.consult-right {
     text-align: right
 }
 
-.consult-content .consult-message-area.consult-right {
+.consult-message-area .consult-right {
     padding-right: 32px
 }
 
-.consult-content .consult-message-area.consult-right .consult-message-text {
+.consult-message-area.consult-right .consult-message-text {
     background-color: #95EC69
 }
 
@@ -4367,28 +4380,29 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     flex-direction: column
 }
 
-.consult-input .consult-emoji-img {
-    height: 32px
-}
-
-.consult-input .consult-emoji-img:focus {
-    outline: 0
-}
-
 .consult-input .consult-emoji {
     position: relative
 }
 
-.consult-input .consult-emoji-img {
+.consult-emoji .consult-emoji-img {
+    height: 32px
+}
+
+.consult-emoji .consult-emoji-img:focus {
+    outline: 0
+}
+
+.consult-emoji .consult-emoji-img .emoji-img {
     width: 16px;
+    height: 16px;
     margin: 8px 16px
 }
 
-.consult-input .consult-emoji-img:hover {
+.consult-emoji .consult-emoji-img:hover {
     cursor: pointer
 }
 
-.consult-input .consult-emoji-content {
+.consult-emoji .consult-emoji-content {
     box-sizing: content-box;
     display: none;
     max-width: 216px;
@@ -4398,10 +4412,10 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     background-color: #fff;
     position: absolute;
     top: -118px;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
-.consult-input .consult-emoji-content .consult-emoji-Item {
+.consult-emoji-content .consult-emoji-Item {
     cursor: pointer;
     display: inline-block;
     padding: 1px
@@ -4715,28 +4729,29 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     flex-direction: column
 }
 
-.message-input .message-emoji-img {
-    height: 32px
-}
-
-.message-input .message-emoji-img:focus {
-    outline: 0
-}
-
-.message-input .message-emoji {
+.message-emoji {
     position: relative
 }
 
-.message-input .message-emoji-img {
-    width: 16px;
-    margin: 8px 16px
+.message-emoji .message-emoji-img {
+    height: 32px
 }
 
-.message-input .message-emoji-img:hover {
+.message-emoji .message-emoji-img:focus {
+    outline: 0
+}
+
+.message-emoji .message-emoji-img:hover {
     cursor: pointer
 }
 
-.message-input .message-emoji-content {
+.message-emoji .message-emoji-img .emoji-img {
+    width: 16px;
+    height: 16px;
+    margin: 8px 16px
+}
+
+.message-emoji .message-emoji-content {
     box-sizing: content-box;
     display: none;
     max-width: 216px;
@@ -4749,7 +4764,7 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     overflow-y: auto
 }
 
-.message-input .message-emoji-content .message-emoji-Item {
+.message-emoji-content .message-emoji-Item {
     cursor: pointer;
     display: inline-block;
     padding: 1px

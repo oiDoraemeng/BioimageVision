@@ -113,20 +113,6 @@ function submitForm() {
 /**
  * Socket.io
  */
-// 获取输入框和按钮的元素
-var inputBox = document.getElementById("consultInput");
-var sendBtn = document.getElementById("sendBtn");
-
-// 监听输入框的键盘按下事件
-inputBox.addEventListener("keydown", function(event) {
-    // 判断按下的是否是 Enter 键（keyCode 为 13）
-    if (event.keyCode === 13) {
-        // 阻止默认的 Enter 键行为（如换行）
-        event.preventDefault();
-        // 触发按钮的点击事件
-        sendBtn.click();
-    }
-});
 
 function initializeSocket(url) {
     var socket = io.connect(url); // 初始化 socket 连接
@@ -134,36 +120,36 @@ function initializeSocket(url) {
     // 监听服务端的消息,当收到消息时的处理函数
     if (url.includes("customer")) {// 如果 url 包含 "customer"
         socket.on('message', function (message) {
-            chatbox(message, "在线客服 ",'/static/icon/agent.png');
+            chatbox(message, "在线客服 ", '/static/icon/agent.png');
 
         });
         document.getElementById('sendBtn').addEventListener('click', function () {
-            var chatInput = document.getElementById('consultInput');
+            var chatInput = document.getElementById('MessageInput');
             var message = chatInput.value;
             if (message.trim() !== '') {
                 socket.emit('customer_message', message);
-                chatbox_right(message, "用户",'/static/icon/customer.png');
+                chatbox_right(message, "用户", '/static/icon/customer.png');
                 chatInput.value = '';
             }
         });
     } else if (url.includes("agent")) {// 如果 url 包含 "agent"
         socket.on('message', function (message) {
-            chatbox(message, "用户",'/static/icon/customer.png');
+            chatbox(message, "用户", '/static/icon/customer.png');
 
         });
         document.getElementById('sendBtn').addEventListener('click', function () {
-            var chatInput = document.getElementById('consultInput');
+            var chatInput = document.getElementById('MessageInput');
             var message = chatInput.value;
             if (message.trim() !== '') {
                 socket.emit('agent_message', message);
-                chatbox_right(message, "客服",'/static/icon/agent.png');
+                chatbox_right(message, "客服", '/static/icon/agent.png');
                 chatInput.value = '';
             }
         });
     }
 }
 
-function chatbox(message, user,src) {
+function chatbox(message, user, src) {
     var chatContent = document.getElementById('MessageContent');
     var messageElement = document.createElement('div');
     var messageHeader = document.createElement('div');
@@ -194,7 +180,7 @@ function chatbox(message, user,src) {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-function chatbox_right(message, user,src) {
+function chatbox_right(message, user, src) {
     var chatContent = document.getElementById('MessageContent');
     var messageElement = document.createElement('div');
     var messageHeader = document.createElement('div');
@@ -226,7 +212,7 @@ function chatbox_right(message, user,src) {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-// 点击聊天按钮时，初始化 socket 连接
+// 点击侧边栏图标或关闭按钮时，切换消息框的显示状态
 var consultBox = document.querySelector(".consult");
 var sidebarIcon = document.getElementById("chat");
 var closeIcon = document.getElementById("chat-close");
@@ -240,5 +226,27 @@ function toggleConsultBox() {
         consultBox.style.display = "block";
     }
 }
-sidebarIcon.addEventListener("click", toggleConsultBox);
-closeIcon.addEventListener("click", toggleConsultBox);
+
+if (sidebarIcon && closeIcon) {
+    sidebarIcon.addEventListener("click", toggleConsultBox);
+    closeIcon.addEventListener("click", toggleConsultBox);
+}
+
+// 点击发送按钮时，发送消息
+var inputBox = document.getElementById("MessageInput");
+var sendBtn = document.getElementById("sendBtn");
+
+// 监听输入框的键盘按下事件
+if (inputBox) {
+    inputBox.addEventListener("keydown", function (event) {
+        // 判断按下的是否是 Enter 键（keyCode 为 13）
+        if (event.keyCode === 13) {
+            // 阻止默认的 Enter 键行为（如换行）
+            event.preventDefault();
+            // 触发按钮的点击事件
+            sendBtn.click();
+        }
+    });
+}
+
+

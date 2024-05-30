@@ -16,7 +16,7 @@ class Base:
 
     @classmethod
     def find_by_condition(cls,condition):
-        # 根据文章ID查找文章数据
+        # 根据条件查找数据
         return mongo.db[cls.collection].find_one(condition)
 
 
@@ -150,3 +150,22 @@ class Comment(Base):
     def delete(self):
         # 删除评论数据
         mongo.db.comment.delete_one({"_id": self._id})
+
+class Message(Base):
+    """
+        message_data = {
+            "session_id": session_id
+            "from": "customer/agent"
+            "content": "message content",
+            "create_time": datetime.now(),
+            "status": "unread/read"
+        }
+    """
+    collection = "message"
+    def __init__(self, message_data):
+        self._id = message_data.get("_id")
+        self.session_id = message_data.get("session_id")
+        self.from_user = message_data.get("from")
+        self.content = message_data.get("content")
+        self.create_time = message_data.get("create_time")
+        # self.status = message_data.get("status")

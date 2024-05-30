@@ -1,5 +1,5 @@
 from bson import ObjectId
-
+import uuid
 from flask import Flask, request, session, g
 from flask_session import Session  # 导入Session扩展
 
@@ -48,21 +48,23 @@ def create_app():
 
     # 添加过滤器 过滤器的名字时dformat
     app.add_template_filter(datetime_format, 'dformat')
+
+
     @app.before_request
     def before_request():
         # 记录访问日志
         print(request.url)
-        user_id = session.get('user_id')
-        if user_id:
-            user = User.getUser({"_id": ObjectId(user_id)})
-            setattr(g, 'user', user)
+        session_id = session.get('session_id')
+        if session_id:
+            setattr(g, 'session_id', session_id)
         else:
-            setattr(g, 'user', None)
+            session_id = str(uuid.uuid4())
+            setattr(g, 'session_id', session_id)
 
     @app.context_processor
     def context_processor():
         # 给模板添加user变量
-        return {'user': g.user}
+        return {'session_id': g.session_id}
 
     return app
 

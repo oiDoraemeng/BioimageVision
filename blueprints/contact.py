@@ -1,13 +1,14 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request,g
 from utils.exts import socketio
-from flask_socketio import emit
+from flask_socketio import emit,join_room, leave_room
+from bson.objectid import ObjectId
+
 
 # 存储客户端和客服端的连接
 clients = {
     'customers': set(),
     'agents': set()
 }
-
 
 contact = Blueprint('contact', __name__,url_prefix='/contact' )
 
@@ -20,6 +21,7 @@ def agent():
 
 @socketio.on('connect', namespace='/customer')
 def handle_customer_connect():
+    session_id = g.session_id
     clients['customers'].add(request.sid)
     emit('message', '欢迎咨询，请问有什么可以帮助您的？')
 
