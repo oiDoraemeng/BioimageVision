@@ -155,17 +155,41 @@ class Message(Base):
     """
         message_data = {
             "session_id": session_id
-            "from": "customer/agent"
+            "from_user": "customer/agent"
             "content": "message content",
             "create_time": datetime.now(),
-            "status": "unread/read"
         }
     """
     collection = "message"
     def __init__(self, message_data):
         self._id = message_data.get("_id")
         self.session_id = message_data.get("session_id")
-        self.from_user = message_data.get("from")
+        self.from_user = message_data.get("from_user")
         self.content = message_data.get("content")
         self.create_time = message_data.get("create_time")
-        # self.status = message_data.get("status")
+
+
+    @staticmethod
+    def getMessages(condition=None):
+        # 查询消息
+        messages_data = mongo.db.message.find(condition)
+        messages_list = [Message(message) for message in messages_data]
+        return messages_list
+
+    @staticmethod
+    def getAllSessionId():
+        # 获取所有session_id
+        session_id_list = mongo.db.message.distinct("session_id")
+        return session_id_list
+
+    @staticmethod
+    def getCurrentMessage(condition):
+        # 构建聚合管道
+        pipeline = [
+            {"$match": condition},  # 匹配条件
+            {"$sort": {"create_time": pymongo.DESCENDING}},  # 按创建时间排序
+            {"$limit": 1}  # 限制结果集只返回第一个文档
+        ]
+        # 执行聚合查询
+        message = list(mongo.db.message.aggregate(pipeline))[0]
+        return message  # 返回结果或者None（如果没有匹配的文档）

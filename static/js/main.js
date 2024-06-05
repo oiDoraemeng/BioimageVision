@@ -366,13 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
 
         // 获取聊天框元素
     var chatBox = document.querySelector('.consult');
+    var chatBox_header = document.querySelector('.consult-header');
 
     // 使聊天框可拖动
     var isDragging = false;
     var offsetX, offsetY;
 
     if (chatBox) {
-        chatBox.addEventListener('mousedown', function (e) {
+        chatBox_header.addEventListener('mousedown', function (e) {
             isDragging = true;
             offsetX = e.clientX - chatBox.getBoundingClientRect().left;
             offsetY = e.clientY - chatBox.getBoundingClientRect().top;

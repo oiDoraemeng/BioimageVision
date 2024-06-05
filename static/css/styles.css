@@ -460,10 +460,12 @@ section {
 
 .header .logo .ENG {
     font-family: "Lucida Calligraphy", sans-serif;
-    color: #f05454;
+    /*color: rgba(40, 167, 69, 0.6);*/
 }
+
 .header .logo .ZH {
-    font-family: "黑体", sans-serif;
+    font-family: "Arial", sans-serif;
+
 }
 
 .sticked-header-offset {
@@ -2115,11 +2117,14 @@ section {
 .hero {
     width: 100%;
     position: relative;
-
     background: url(../image/hero-bg.png) center center;
     background-size: cover;
+    /*background: url(../picture/brain.png) center -35px;*/
+    /*background-size: 60%;*/
+    /*background-repeat: no-repeat;*/
+    /*background-color: black;*/
     padding: 60px 0 0 0;
-    /*height: 80%;*/
+    /*height: 100%;*/
 }
 
 .hero::after {
@@ -3337,7 +3342,7 @@ section {
 }
 
 .footer-widget {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 
 .footer-content {
@@ -3442,7 +3447,7 @@ section {
 .footer-bottom {
     position: relative;
     background: #0f0f0f;
-    padding: 25px 0px 22px 0px;
+    padding: 5px 0px 22px 0px;
 }
 
 .footer-bottom .copyright,
@@ -4250,8 +4255,8 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
     border-radius: 2px;
     position: fixed;
-    z-index: 99;
-    top: 400px;
+    z-index: 999;
+    top: 0px;
     right: 78px;
     display: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
@@ -4565,7 +4570,7 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
 
 
 .left-menu {
-    width: 300px;
+    width: 350px;
     background-color: #fff;
     border-right: 1px solid #ddd;
     height: 100%;
@@ -4573,6 +4578,7 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
 }
 
 .chat-list {
+    width: 100%;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -4599,6 +4605,7 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
 }
 
 .msg-main {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -4616,9 +4623,16 @@ transform: translateY(0)：显示状态下，每个字符向上移动0像素，�
 }
 
 .msg {
-    font-size: 14px;
+    font-size: 12px;
     color: #555;
     margin: 0;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /*webkit-line-clamp属性，它可以让文本在超出指定行数时自动隐藏多余的文本，并显示省略号*/
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .right-content {

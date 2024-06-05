@@ -1,12 +1,12 @@
 from bson import ObjectId
 import uuid
-from flask import Flask, request, session, g
+from flask import Flask, request, session
 from flask_session import Session  # 导入Session扩展
 
 import config
 from utils.exts import mail,mongo,babel,cors,socketio
 from blueprints import register_blueprints
-from utils.filters import datetime_format
+from utils.filters import datetime_format, Msgdatetime_format
 from utils.models import User
 
 def create_app():
@@ -48,23 +48,25 @@ def create_app():
 
     # 添加过滤器 过滤器的名字时dformat
     app.add_template_filter(datetime_format, 'dformat')
-
+    app.add_template_filter(Msgdatetime_format, 'Msgformat')
 
     @app.before_request
     def before_request():
-        # 记录访问日志
-        print(request.url)
-        session_id = session.get('session_id')
-        if session_id:
-            setattr(g, 'session_id', session_id)
-        else:
-            session_id = str(uuid.uuid4())
-            setattr(g, 'session_id', session_id)
+        try:
+            # 记录访问日志
+            print(f"Request URL: {request.url}")
+            if 'session_id' not in session:
+                session['session_id'] = str(uuid.uuid4())
+                print(f"New session_id generated: {session['session_id']}")
+            else:
+                print(f"Existing session_id: {session['session_id']}")
+        except Exception as e:
+            print(f"Error in before_request: {e}")
 
     @app.context_processor
     def context_processor():
-        # 给模板添加user变量
-        return {'session_id': g.session_id}
+        # 给模板添加全局变量
+        return {'session_id': session.get('session_id')}
 
     return app
 

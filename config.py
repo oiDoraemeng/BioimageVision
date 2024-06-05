@@ -15,7 +15,7 @@ LANGUAGES = ['zh', 'en']
 # ssl=true：指定了连接要使用 SSL。
 # MONGO_URI = 'mongodb://myuser:mypassword@localhost:27017/mydatabase?authSource=admin&replicaSet=myreplicaset&ssl=true'
 
-MONGO_URI  = 'mongodb://localhost:27017/bioimagevision'
+MONGO_URI  = 'mongodb://192.168.1.10:27017/bioimagevision'
 
 # 邮箱配置
 MAIL_SERVER = "smtp.qq.com"

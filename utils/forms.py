@@ -61,10 +61,6 @@ class CommentForm(wtforms.Form):
     content = wtforms.TextAreaField('Content', validators=[DataRequired(), Length(min=1,  message='内容格式错误')])
     article_id = wtforms.StringField('Article ID', validators=[DataRequired(message='请填写用户id')])
 
-class MessageForm(wtforms.Form):
-    # 定义留言表单
-    content = wtforms.TextAreaField('Content', validators=[DataRequired(), Length(min=1,  message='内容格式错误')])
-
 
 
 

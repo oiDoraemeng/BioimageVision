@@ -112,7 +112,19 @@
         </div>
         <div class="message-center">
             <div class="left-menu">
-                <div class="chat-list">
+                <div class="chat-list" id="chat-list">
+                    {% for message in message_list %}
+                        <div class="message-item" id="{{ message.session_id }}">
+                            <div><img class="headimg" src="{{ url_for('static',filename="icon/customer.png") }}"></div>
+                            <div class="msg-main">
+                                <div class="justify-content-between d-flex">
+                                    <span class="msg-name">{{ message.session_id[0:8] }}</span>
+                                    <span class="msg-time ">{{ message.create_time|Msgformat }}</span>
+                                </div>
+                                <div class="msg">{{ message.content }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
                     <div class="message-item">
                         <div><img class="headimg" src="{{ url_for('static',filename="icon/customer.png") }}"></div>
                         <div class="msg-main">
@@ -132,44 +144,13 @@
                             </div>
                             <p class="msg">马费炉里的本生灯收藏了你的博客</p>
                         </div>
-                    </div>
-                </div>
-                <div class="message-item">
-                    <div><img class="headimg" src="{{ url_for('static',filename="icon/customer.png") }}"></div>
-                    <div class="msg-main">
-                        <div class="justify-content-between d-flex">
-                            <span class="msg-name">互动通知</span>
-                            <span class="msg-time ">昨天</span>
-                        </div>
-                        <p class="msg">马费炉里的本生灯收藏了你的博客</p>
                     </div>
                 </div>
                 <div class="blankview" style="display: none;">暂无联系人哦</div>
             </div>
             <div class="right-content">
                 <div class="message-content" id="MessageContent">
-                    <div class="message-div">
-                        <div class="message-time"><img class="message-img"
-                                                       src="{{ url_for('static', filename='icon/customer.png') }}"
-                                                       alt="avatar">
-                            <span class="message-time">在线客服 2024-05-25 17:57:06</span></div>
-
-                        <div class="message-message-area"><span
-                                class="message-message-text">您好，请问有什么可以帮助您的？</span>
-                        </div>
-                    </div>
-                    <div class="message-div">
-                        <div class="message-time"><img class="message-avatar" src="">
-                            <span class="message-time">在线客服 2024-05-25 17:57:08</span></div>
-                        <div class="message-message-area"><span class="message-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
-                        </div>
-                    </div>
-                    <div class="message-div">
-                        <div class="message-time"><img class="message-avatar">
-                            <span class="message-time">在线客服 2024-05-25 17:57:10</span></div>
-                        <div class="message-message-area"><span class="message-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
-                        </div>
-                    </div>
+                    <div class="blank_list">您还未选中或者发起聊天，快去跟好友聊一聊吧</div>
                 </div>
                 <div class="message-status"></div>
                 <div class="message-input">
@@ -205,7 +186,7 @@
                 </div>
             </div>
         </div>
-        <div class="blank_list">您还未选中或者发起聊天，快去跟好友聊一聊吧</div>
+
     </div>
 </div>
 
@@ -295,7 +276,37 @@
 <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
 <!-- Socket.io -->
 <script src="{{ url_for('static', filename = 'js/addition.js') }}"></script>
-<script>initializeSocket('http://127.0.0.1:5000/agent')</script>
+{#<script>initializeSocket('http://127.0.0.1:5000/agent')</script>#}
+<script>
+    var socket; // 用于跟踪当前的 WebSocket 连接
+            $('.message-item').on('click', function () {
+            // 获取当前点击的 div 元素的 id
+            var sessionId = $(this).attr("id");
+
+            // 动态获取当前主机名和端口号
+            var host = window.location.hostname;
+            var port = window.location.port;  // 获取当前端口号，假设 WebSocket 服务器在同一端口// 如果没有端口，|| 5000 默认使用5000
+            var socketUrl = `ws://${host}:${port}/agent?sessionId=${sessionId}`;
+            console.log(socketUrl);
+            // 关闭现有的 WebSocket 连接
+            if (socket) {
+                socket.disconnect();
+            }
+
+            // 清除现有的 chatbox 内容
+            clearChatbox();
+
+            // 调用 initializeSocket 函数，传入完整的 URL
+            initializeSocket(socketUrl);
+        });
+
+    function initializeSocket(socketUrl) {
+
+    function clearChatbox() {
+        // 清除 chatbox 的内容，可以根据 chatbox 的 ID 或 class 选择器来清除内容
+        document.getElementById('MessageContent').innerHTML = '';
+    }
+</script>
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="#"></script>

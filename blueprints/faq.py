@@ -64,7 +64,6 @@ def article_comment():
         return redirect(url_for('qa.article', id=article_id))
     else:
         form.errors
-
         return redirect(request.referrer)
 
 # 搜索文章

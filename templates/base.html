@@ -87,19 +87,19 @@
                         <span><a href="/?lang=en" class="english-link language">English</a></span>
                     </div>
                 </li>
-{#                {% if user %}#}
-{#                    <li class="dropdown"><a href="#"><img class="logo-personal"#}
-{#                                                          src="{{ url_for('static', filename='image/personal.png') }}"#}
-{#                                                          alt="user">#}
-{#                        <i class="bi bi-chevron-down dropdown-indicator"></i></a>#}
-{#                        <ul>#}
-{#                            <li><a href="{{ url_for('auth.personal') }}">{{ _("个人中心") }}</a></li>#}
-{#                            <li><a href="{{ url_for('auth.logout') }}">{{ _("退出登录 ") }}</a></li>#}
-{#                        </ul>#}
-{#                    </li>#}
-{#                {% else %}#}
-{#                    <li><a href="{{ url_for('auth.login') }}" class="main-button">{{ _("登录/注册") }}</a></li>#}
-{#                {% endif %}#}
+                {#                {% if user %}#}
+                {#                    <li class="dropdown"><a href="#"><img class="logo-personal"#}
+                {#                                                          src="{{ url_for('static', filename='image/personal.png') }}"#}
+                {#                                                          alt="user">#}
+                {#                        <i class="bi bi-chevron-down dropdown-indicator"></i></a>#}
+                {#                        <ul>#}
+                {#                            <li><a href="{{ url_for('auth.personal') }}">{{ _("个人中心") }}</a></li>#}
+                {#                            <li><a href="{{ url_for('auth.logout') }}">{{ _("退出登录 ") }}</a></li>#}
+                {#                        </ul>#}
+                {#                    </li>#}
+                {#                {% else %}#}
+                {#                    <li><a href="{{ url_for('auth.login') }}" class="main-button">{{ _("登录/注册") }}</a></li>#}
+                {#                {% endif %}#}
 
             </ul>
         </nav><!-- navbar-->
@@ -157,7 +157,7 @@
 </div>
 
 <!-- ======= consult ======= -->
-<div class="consult" style="display: none;">
+<div class="consult" style="display: block;">
     <div class="consult-header">
         <div class="consult-header-name">在线咨询</div>
         <img id="chat-close" class="consult-header-close"
@@ -306,7 +306,14 @@
 
 <!-- Socket.io -->
 <script src="{{ url_for('static', filename = 'js/addition.js') }}"></script>
-<script>initializeSocket('http://127.0.0.1:5000/customer')</script>
+<script>
+    // 动态获取当前主机名和端口号
+    var session_id = "{{ session_id }}";
+    var host = window.location.hostname;
+    var port = window.location.port;  // 获取当前端口号，假设 WebSocket 服务器在同一端口
+    var socketUrl = `ws://${host}:${port}/customer?sessionId=${session_id}`;
+    initializeSocket(socketUrl)</script>
+
 
 <!-- Google tag (gtag.js) -->
 <script async="" src="#"></script>

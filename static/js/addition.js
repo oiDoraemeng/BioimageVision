@@ -113,43 +113,76 @@ function submitForm() {
 /**
  * Socket.io
  */
+var sessionId = null;
 
 function initializeSocket(url) {
     var socket = io.connect(url); // 初始化 socket 连接
+    // 创建一个URL对象    // 从URL中获取sessionId参数
+    var urlObj = new URL(url);
+    var urlParams = new URLSearchParams(urlObj.search);
+    sessionId = urlParams.get('sessionId');
 
     // 监听服务端的消息,当收到消息时的处理函数
     if (url.includes("customer")) {// 如果 url 包含 "customer"
         socket.on('message', function (message) {
-            chatbox(message, "在线客服 ", '/static/icon/agent.png');
-
+            if (message.session_id === sessionId) {
+                if (message.from_user === 'customer') {
+                    chatbox_right(message, '/static/icon/customer.png');
+                } else {
+                    chatbox(message, '/static/icon/agent.png');
+                }
+            }
         });
         document.getElementById('sendBtn').addEventListener('click', function () {
             var chatInput = document.getElementById('MessageInput');
             var message = chatInput.value;
-            if (message.trim() !== '') {
-                socket.emit('customer_message', message);
-                chatbox_right(message, "用户", '/static/icon/customer.png');
+            let create_time = new Date().toLocaleString();
+            const message_data = {
+                "session_id": sessionId,
+                'from_user': 'customer',
+                'content': message,
+                'create_time': create_time
+            }
+            if (message.trim() !== '') {// 发送消息前先清除输入框中的空格和不可见字符
+                socket.emit('customer_message', message_data);
+                chatbox_right(message_data, '/static/icon/customer.png');
                 chatInput.value = '';
             }
         });
-    } else if (url.includes("agent")) {// 如果 url 包含 "agent"
+    } else {// 如果 url 包含 "agent"
         socket.on('message', function (message) {
-            chatbox(message, "用户", '/static/icon/customer.png');
+            // MessageList(message);
+            if (message.session_id === sessionId) {
+                if (message.from_user === 'agent') {
+                    chatbox_right(message, '/static/icon/agent.png');
+                } else {
+                    chatbox(message, '/static/icon/customer.png');
+                }
+            }
 
         });
         document.getElementById('sendBtn').addEventListener('click', function () {
             var chatInput = document.getElementById('MessageInput');
             var message = chatInput.value;
+            let create_time = new Date().toLocaleString();
+            const message_data = {
+                "session_id": sessionId,
+                'from_user': 'agent',
+                'content': message,
+                'create_time': create_time
+            }
             if (message.trim() !== '') {
-                socket.emit('agent_message', message);
-                chatbox_right(message, "客服", '/static/icon/agent.png');
+                socket.emit('agent_message', message_data);
+                // MessageList(message_data);
+                chatbox_right(message_data, '/static/icon/agent.png');
                 chatInput.value = '';
             }
         });
     }
+    return socket;
 }
 
-function chatbox(message, user, src) {
+function chatbox(message, src) {
     var chatContent = document.getElementById('MessageContent');
     var messageElement = document.createElement('div');
     var messageHeader = document.createElement('div');
@@ -166,8 +199,8 @@ function chatbox(message, user, src) {
     messagetext.classList.add('consult-message-text');
     messageUser.src = src;
 
-    messageTime.textContent = user + new Date().toLocaleString();
-    messagetext.textContent = message;
+    messageTime.textContent = message.from_user + message.create_time;
+    messagetext.textContent = message.content;
 
     chatContent.appendChild(messageElement)
     messageElement.appendChild(messageHeader);
@@ -180,7 +213,7 @@ function chatbox(message, user, src) {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-function chatbox_right(message, user, src) {
+function chatbox_right(message, src) {
     var chatContent = document.getElementById('MessageContent');
     var messageElement = document.createElement('div');
     var messageHeader = document.createElement('div');
@@ -199,8 +232,8 @@ function chatbox_right(message, user, src) {
     messageContent.classList.add('consult-right');
     messageUser.src = src;
 
-    messageTime.textContent = user + new Date().toLocaleString();
-    messagetext.textContent = message;
+    messageTime.textContent = message.from_user + message.create_time;
+    messagetext.textContent = message.content;
 
     chatContent.appendChild(messageElement)
     messageElement.appendChild(messageHeader);
@@ -249,4 +282,69 @@ if (inputBox) {
     });
 }
 
+function MessageList(message) {
+    var messageItem = document.getElementById(message.session_id);
+    var messageElement = document.createElement('div');
+    messageElement.classList.add('message-item');
+    messageElement.id = message.session_id;
+
+    var imgdiv = document.createElement('div');
+    var img = document.createElement('img');
+    img.src = '/static/icon/agent.png'
+    img.classList.add('headimg');
+
+    imgdiv.appendChild(img);
+
+    var msgMain = document.createElement('div');
+    msgMain.classList.add('msg-main');
+
+    var header = document.createElement('div');
+    header.classList.add('d-flex', 'justify-content-between');
+
+    var name = document.createElement('span');
+    name.classList.add('msg-name');
+    name.textContent = message.session_id.substring(0, 8);
+
+    var time = document.createElement('span');
+    time.classList.add('msg-time');
+    time.textContent = formatDateTime(message.create_time);  // You may format this as needed
+
+    header.appendChild(name);
+    header.appendChild(time);
+
+    var msg = document.createElement('div');
+    msg.classList.add('msg');
+    msg.textContent = message.content;
+
+    msgMain.appendChild(header);
+    msgMain.appendChild(msg);
+
+    messageElement.appendChild(imgdiv);
+    messageElement.appendChild(msgMain);
+
+    if (messageItem) {
+        messageItem.parentNode.replaceChild(messageElement, messageItem);
+    }
+
+}
+
+function formatDateTime(dateTimeStr) {
+    const now = new Date();
+    const dateTime = new Date(dateTimeStr);
+
+    const delta = now - dateTime;
+    const deltaDays = Math.floor(delta / (1000 * 60 * 60 * 24));
+
+    if (deltaDays === 0) {
+        return `${dateTime.getHours()}:${String(dateTime.getMinutes()).padStart(2, '0')}`;
+    } else if (deltaDays === 1) {
+        return `昨天`;
+    } else if (deltaDays === 2) {
+        return `前天`;
+    } else if (deltaDays < 7) {
+        return `${deltaDays}天前`;
+    } else {
+        return `${dateTime.getMonth() + 1}-${dateTime.getDate()}`;
+    }
+}
 
