@@ -39,13 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
         document.addEventListener('scroll', headerFixed);
     }
 
+
     const scrollTop2 = document.querySelector('#header');
+
     if (scrollTop2) {
+        // 定义一个函数togglescrollTop
         const togglescrollTop = function () {
-            window.scrollY > 100 ? scrollTop2.classList.add('stikcy-menu') : scrollTop2.classList.remove('stikcy-menu');
+            // 如果滚动条距离窗口顶部大于100px，则添加stikcy-menu类，否则移除stikcy-menu类
+            window.scrollY > 10 ? scrollTop2.classList.add('stikcy-menu') : scrollTop2.classList.remove('stikcy-menu');
         }
+        // 在页面加载时触发togglescrollTop函数
         window.addEventListener('load', togglescrollTop);
+        // 在滚动时触发togglescrollTop函数
         document.addEventListener('scroll', togglescrollTop);
+        // 点击header元素时，滚动到顶部
         scrollTop2.addEventListener('click', window.scrollTo({
             top: 0,
             behavior: 'smooth'
