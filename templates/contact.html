@@ -26,15 +26,15 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-lg-6 d-flex justify-content-end">
-                            <div class="pages-images">
-                                <img src="{{ url_for('static', filename='picture/contact.jpg') }}" class="img-fluid"
-                                     alt="">
-                            </div>
-                        </div>
+                        {#                        <div class="col-lg-6 d-flex justify-content-end">#}
+                        {#                            <div class="pages-images">#}
+                        {#                                <img src="{{ url_for('static', filename='picture/contact.jpg') }}" class="img-fluid"#}
+                        {#                                     alt="">#}
+                        {#                            </div>#}
                     </div>
                 </div>
             </div>
+        </div>
 
         </div><!-- End Breadcrumbs -->
 
@@ -50,14 +50,14 @@
                         <div class="col-lg-8 col-md-12" data-aos="fade-left">
                             <div class="contact-form-box contact-form contact-form-3">
                                 <div class="form-container-box">
-                                    <form class="contact-form form" id="ajax-contact" method="post"
-                                          action="{{ url_for('contact.index') }}">
+                                    <form action="{{ url_for('contact') }}" class="contact-form form"
+                                          id="ajax-contact" method="post">
                                         <div class="controls">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-input-box">
                                                         <input type="text" class="form-control" id="name" name="name"
-                                                               placeholder="Name*" required="required"
+                                                               placeholder="{{ _("姓名") }}" required="required"
                                                                data-error={{ _("用户名必须填写") }}>
                                                         <div class="help-block with-errors"></div>
                                                     </div>
@@ -65,7 +65,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group form-input-box">
                                                         <input type="email" class="form-control" id="email" name="email"
-                                                               placeholder="Email*" required="required"
+                                                               placeholder="{{ _("邮箱") }}" required="required"
                                                                data-error={{ _("邮箱不能为空") }}>
                                                         <div class="help-block with-errors"></div>
                                                     </div>
@@ -73,30 +73,30 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group form-input-box">
                                                         <input type="text" class="form-control" name="subject"
-                                                               placeholder="Subject" required="required">
+                                                               placeholder="{{ _("主题") }}" required="required">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group form-input-box">
                                                         <textarea class="form-control" id="message" name="message"
-                                                                  rows="7" placeholder="Write Your Message*"
+                                                                  rows="7" placeholder="{{ _("留言") }}"
                                                                   required="required"
-                                                                  data-error={{ _("请写下你的留言    ") }}></textarea>
+                                                                  data-error={{ _("请写下你的留言") }}></textarea>
                                                         <div class="help-block with-errors"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <button type="submit"
-                                                            data-text="Send Message">{{ _("发送信息") }}</button>
+                                                            data-text="Send Message">{{ _("发送消息") }}</button>
                                                 </div>
-                                                <div class="messages">
-                                                    <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"
-                                                         id="msgSubmit">
-                                                        <button type="button" class="close" data-dismiss="alert"
-                                                                aria-hidden="true">&times;
-                                                        </button>
-                                                        {{ _("信息已发送，我们会尽快回复您。") }} </div>
-                                                </div>
+{#                                                <div class="messages">#}
+{#                                                    <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"#}
+{#                                                         id="msgSubmit">#}
+{#                                                        <button type="button" class="close" data-dismiss="alert"#}
+{#                                                                aria-hidden="true">&times;#}
+{#                                                        </button>#}
+{#                                                        {{ _("信息已发送，我们会尽快回复您。") }} </div>#}
+{#                                                </div>#}
                                             </div>
                                         </div>
                                     </form>

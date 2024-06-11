@@ -69,12 +69,12 @@
                         <li><a href="{{ url_for('contact.index') }}">{{ _("合作咨询") }}</a></li>
                         <li><a href="{{ url_for('faq.index') }}">{{ _("问题反馈") }}</a></li>
                         {#                        <li><a href="{{ url_for('contact.index') }}">{{ _("帮助中心") }}</a></li>#}
-                        <li><a href="team.html">{{ _("团队") }}</a></li>
-                        <li><a href="coming-soon.html">{{ _("未来发展") }}</a></li>
+{#                        <li><a href="team.html">{{ _("团队") }}</a></li>#}
+{#                        <li><a href="coming-soon.html">{{ _("未来发展") }}</a></li>#}
                         {#                        <li><a href="biomedical.html">{{ _("博客") }}</a></li>#}
                         {#                        <li><a href="blogs-details.html">{{ _("博客详情") }}</a></li>#}
-                        <li><a href="terms.html">{{ _("用户条款") }}</a></li>
-                        <li><a href="{{ url_for('auth.privacy_policy') }}">{{ _("隐私政策") }}</a></li>
+{#                        <li><a href="terms.html">{{ _("用户条款") }}</a></li>#}
+{#                        <li><a href="{{ url_for('auth.privacy_policy') }}">{{ _("隐私政策") }}</a></li>#}
                         {#                        <li><a href="sample.html">{{ _("样本") }}</a></li>#}
                     </ul>
                 </li>
@@ -163,55 +163,32 @@
         <img id="chat-close" class="consult-header-close"
              src="{{ url_for('static', filename='icon/close.png') }}" alt="close"></div>
     <div class="consult-content" id="MessageContent">
-        <div class="consult-message-div">
-            <div class="consult-message-time"><img class="consult-avatar"
-                                                   src="{{ url_for('static', filename='icon/avatar.png') }}"
-                                                   alt="avatar">
-                <span class="consult-time">在线客服 2024-05-25 17:57:06</span></div>
-
-            <div class="consult-message-area"><span class="consult-message-text">您好，请问有什么可以帮助您的？</span>
-            </div>
-        </div>
-        <div class="consult-message-div">
-            <div class="consult-message-time"><img class="consult-avatar" src="">
-                <span class="consult-time">在线客服 2024-05-25 17:57:08</span></div>
-            <div class="consult-message-area"><span
-                    class="consult-message-text">您好,当前在线客服不在线，您可以留下电话，稍后我们会安排专人与您电话沟通</span>
-            </div>
-        </div>
-        <div class="consult-message-div">
-            <div class="consult-message-time"><img class="consult-avatar">
-                <span class="consult-time">在线客服 2024-05-25 17:57:10</span></div>
-            <div class="consult-message-area"><span
-                    class="consult-message-text">您也可以添加客服微信wy15392850237,我们会在一个工作日内给您答复</span>
-            </div>
-        </div>
     </div>
     <div class="consult-status"></div>
     <div class="consult-input">
-        <div class="consult-emoji" id="emoji-toggle">
-            <div class="consult-emoji-img">
-                <img class="emoji-img" src="{{ url_for('static', filename='icon/emoji.png') }}">
-            </div>
-            <div class="consult-emoji-content" id="emoji-content"><span class="consult-emoji-Item">😁</span><span
-                    class="consult-emoji-Item">😂</span><span
-                    class="consult-emoji-Item">😃</span><span class="consult-emoji-Item">😄</span><span
-                    class="consult-emoji-Item">😅</span><span class="consult-emoji-Item">😆</span><span
-                    class="consult-emoji-Item">😉</span><span class="consult-emoji-Item">😊</span><span
-                    class="consult-emoji-Item">😋</span><span class="consult-emoji-Item">😌</span><span
-                    class="consult-emoji-Item">😍</span><span class="consult-emoji-Item">😏</span><span
-                    class="consult-emoji-Item">😒</span><span class="consult-emoji-Item">😓</span><span
-                    class="consult-emoji-Item">😔</span><span class="consult-emoji-Item">😖</span><span
-                    class="consult-emoji-Item">😘</span><span class="consult-emoji-Item">😚</span><span
-                    class="consult-emoji-Item">😜</span><span class="consult-emoji-Item">😝</span><span
-                    class="consult-emoji-Item">😞</span><span class="consult-emoji-Item">😠</span><span
-                    class="consult-emoji-Item">😡</span><span class="consult-emoji-Item">😢</span><span
-                    class="consult-emoji-Item">😭</span><span class="consult-emoji-Item">😫</span><span
-                    class="consult-emoji-Item">😪</span><span class="consult-emoji-Item">😩</span><span
-                    class="consult-emoji-Item">😨</span><span class="consult-emoji-Item">😥</span><span
-                    class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span>
-            </div>
-        </div>
+{#        <div class="consult-emoji" id="emoji-toggle">#}
+{#            <div class="consult-emoji-img">#}
+{#                <img class="emoji-img" src="{{ url_for('static', filename='icon/emoji.png') }}">#}
+{#            </div>#}
+{#            <div class="consult-emoji-content" id="emoji-content"><span class="consult-emoji-Item">😁</span><span#}
+{#                    class="consult-emoji-Item">😂</span><span#}
+{#                    class="consult-emoji-Item">😃</span><span class="consult-emoji-Item">😄</span><span#}
+{#                    class="consult-emoji-Item">😅</span><span class="consult-emoji-Item">😆</span><span#}
+{#                    class="consult-emoji-Item">😉</span><span class="consult-emoji-Item">😊</span><span#}
+{#                    class="consult-emoji-Item">😋</span><span class="consult-emoji-Item">😌</span><span#}
+{#                    class="consult-emoji-Item">😍</span><span class="consult-emoji-Item">😏</span><span#}
+{#                    class="consult-emoji-Item">😒</span><span class="consult-emoji-Item">😓</span><span#}
+{#                    class="consult-emoji-Item">😔</span><span class="consult-emoji-Item">😖</span><span#}
+{#                    class="consult-emoji-Item">😘</span><span class="consult-emoji-Item">😚</span><span#}
+{#                    class="consult-emoji-Item">😜</span><span class="consult-emoji-Item">😝</span><span#}
+{#                    class="consult-emoji-Item">😞</span><span class="consult-emoji-Item">😠</span><span#}
+{#                    class="consult-emoji-Item">😡</span><span class="consult-emoji-Item">😢</span><span#}
+{#                    class="consult-emoji-Item">😭</span><span class="consult-emoji-Item">😫</span><span#}
+{#                    class="consult-emoji-Item">😪</span><span class="consult-emoji-Item">😩</span><span#}
+{#                    class="consult-emoji-Item">😨</span><span class="consult-emoji-Item">😥</span><span#}
+{#                    class="consult-emoji-Item">😤</span><span class="consult-emoji-Item">😣</span>#}
+{#            </div>#}
+{#        </div>#}
         <textarea id="MessageInput" class="consult-textarea" placeholder="点击输入内容..." maxlength="255"></textarea>
         <div class="consult-send">
             <button id="sendBtn" class=" consult-send-default sendBtn">发送</button>
@@ -227,15 +204,15 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                     <div class="logo-widget footer-widget">
-                        <h1 class="footer-logo"><i><span>Bioimage</span>望飞宇<span>.</span></i></h1>
+                        <h1 class="footer-logo logo"><i ><span class="ENG">Bioimage</span><span class="ZH">望飞宇</span></i></h1>
                         <div class="text">
                             <p>{{ _("望飞宇是一家致力于为生物科学研究及医学行业提供普惠的人工智能软件平台。我们提供胞体定位、神经元追踪、血管分析、图像配准、全脑数据一体化处理软件定制开发等服务。") }}</p>
                         </div>
-                        <ul class="footer-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google"></i></a></li>
-                        </ul>
+{#                        <ul class="footer-social">#}
+{#                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-google"></i></a></li>#}
+{#                        </ul>#}
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 offset-lg-1 footer-column">
@@ -275,7 +252,6 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 column">
                 <ul class="footer-nav">
-                    <li><a href="#">{{ ("用户条款") }}</a></li>
                     <li><a href="#">{{ ("隐私政策") }}</a></li>
                 </ul>
             </div>

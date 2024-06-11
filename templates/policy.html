@@ -13,8 +13,8 @@
                 <div class="container position-relative">
                     <div class="row d-flex justify-content-start position-relative">
                         <div class="col-lg-6 text-left">
-                            <h2>Privacy Policy</h2>
-                            <p>{{ _('本隐私政策阐述了本网站如何收集、使用、存储、保护、传输和分享您的个人信息。') }}</p>
+                            <h2>{{ "隐私政策" }}</h2>
+                            <p>{{ _('本隐私政策阐述了本网站如何收集、使用、存储、保护您的个人信息。') }}</p>
                             <nav>
                                 <ol>
                                     <li><a href="{{ url_for('home.index') }}">{{ _('首页') }}</a></li>
@@ -36,97 +36,87 @@
 
         <section class="single-page">
             <div class="container" data-aos="fade-up">
-                <h4 class="mb-5">{{ _("简介&提示") }}</h4>
+                <h4 class="mb-4">{{ _("简介&提示") }}</h4>
                 <p>
-                    {{ _("欢迎您使用我们的产品和服务！我们深知个人信息对您的重要性，您的信任对我们非常重要，我们将根据法律法规要求并参照行业最佳实践为您的个人信息安全提供充分保障。
-                    为此，BioimageVision服务提供者（或称“我们”）制定本《BioimageVision 隐私政策》（下称“本政策”）以便您充分了解在您使用BioimageVision的产品和服务的过程中，
-                    我们会如何收集、使用、共享、存储和保护您的个人信息以及您可以如何管理您的个人信息。") }}
+                    {{ _("本隐私政策详细说明望飞宇（武汉）科技有限公司（以下简称“本公司”或“我们”）如何收集、使用、保护和分享您的个人信息。我们重视您的隐私，并致力于保护您的个人信息安全。欢迎您使用我们的产品和服务！您在使用我们的产品和服务时，我们可能会收集和使用您的相关信息。这份隐私声明将说明我司如何收集、使用、存储经由您对本网站的访问所收集的个人信息，以及我们为您提供的访问、更新、控制和保护这些信息的方式。我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。我们致力于维持您对我们的信任，恪守严格保密原则，您的信任对我们非常重要，我们将根据法律法规要求并参照行业最佳实践为您的个人信息安全提供充分保障。如果您使用了我司的网站，就意味着您知晓且接受本网站的隐私声明；如果您不同意这些条款，请不要使用本网站。") }}
                 </p>
                 <p>
-                    {{ _("在您开始使用我们的产品和服务前，请您务必先仔细阅读和理解本政策，特别应重点阅读我们以粗体/粗体下划线标识的条款，确保您充分理解和同意后再开始使用。
-                    本政策中涉及的专业词汇，我们尽量以简明通俗的表述向您解释，以便于您理解。") }}
+                    {{ _("在您开始使用我们的产品和服务前，请您务必先仔细阅读和理解本政策，特别应重点阅读我们以粗体/粗体下划线标识的条款，确保您充分理解和同意后再开始使用。") }}
                 </p>
-                <h4 class="mt-5 mb-5">{{ _("本政策主要向您说明：") }}</h4>
-                <h4 class="mb-4">{{ _("【我们如何收集和使用您的个人信息】") }}</h4>
-                <ul>
-                    <li>
-                        <i class="ms-5 bi bi bi-arrow-right-square-fill"></i> {{ _('账号注册：您在登录网站时，需要绑定您的填写的邮箱') }}
+                <h4 class="mt-4 mb-4" style="color: #17a2b8;">{{ _("本政策主要向您说明：") }}</h4>
+
+                <h5 class="mt-4 mb-4 ">{{ _("【我们收集哪些个人信息】") }}</h5>
+                <ul class="ms-5 ">
+                    <li class="m-sm-1">
+                        {{ _('个人身份信息（姓名、电子邮箱地址、电话号码等）') }}
                     </li>
-                    <li>
-                        <i class="ms-5 bi bi bi-arrow-right-square-fill"></i> {{ _('问答对话生成：您可以自愿提供您的个人信息，并生成相应文本内容。') }}
+                    <li class="m-sm-1">
+                        {{ _('问答对话生成：您可以自愿提供您的个人信息，并生成相应文本内容') }}
                     </li>
-                    <li>
-                        <i class="ms-5 bi bi bi-arrow-right-square-fill"></i> {{ _("客服及争议处理：我们将使用您的个人信息用于为您提供客户服务和争议处理。") }}
+                    <li class="m-sm-1">
+                        {{ _("关于您如何使用产品或服务的信息") }}
                     </li>
-                    {#                    <li><i class="bi bi bi-arrow-right-square-fill"></i></li>#}
-                    {#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> </li>#}
-                    {#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> </li>#}
+                    <li class="m-sm-1">
+                        {{ _("关于您如何使用本网站的信息，包括您的IP地址或域名、您访问本网站的时长、您访问了本网站的哪些版块、浏览了哪些内容") }}
+                    </li>
+
                 </ul>
-                <h4 class="mt-5 mb-4 ">{{ _("【您如何管理自己的信息】") }}</h4>
-                <p class="ms-5">
-                    {{ _("您可以通过多种方式管理您的个人信息，例如查询、复制、更新、补充您的个人信息。如果您在管理您的个人信息时遇到问题，您还可以通过下方联系方式与我们联系，
-                    我们将在15天内回复您的要求。但也请您理解，我们可能会因为履行法律法规义务或者我们提供服务必要性的原因无法完全满足您的请求。") }}
+                <h5 class="mt-4 mb-4">{{ _("【我们如何收集您的个人信息】") }}</h5>
+                <p class="ms-4">
+                    {{ _("我们收集的绝大多数信息是由您直接提供给我们的。我们将在以下情况下收集、处理和存储您的信息:自愿在我们的留言板上或通过邮件完成客户调查，或在客户支持服务下提供反馈在您通过浏览器浏览本网站时，我们会自动记录一些信息，例如您的访问日期和时间、访问页面、停留时间、您的IP地址和访问的referrer页面。我们的服务不面向13岁以下的儿童，我们不会故意收集13岁以下儿童的个人信息。如果我们发现我们在不知情的情况下收集了13岁以下儿童的个人信息，我们将采取措施删除这些信息。") }}
                 </p>
 
-{#                <p>#}
-{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
-{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
-{#                    ipsum dolorem.#}
-{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
-{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
-{#                    dolore magna aliqua.#}
-{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
-{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
-{#                    ipsum dolorem.#}
-{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
-{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
-{#                    dolore magna aliqua.#}
-{#                </p>#}
-{##}
-{#                <p>#}
-{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
-{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
-{#                    ipsum dolorem.#}
-{#                </p>#}
-{#                <p>#}
-{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
-{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
-{#                    dolore magna aliqua.#}
-{#                </p>#}
-{##}
-{#                <p>#}
-{#                    Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur#}
-{#                    ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat#}
-{#                    ipsum dolorem.#}
-{#                </p>#}
-{#                <p>#}
-{#                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore#}
-{#                    et dolore magna aliqua. Xonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et#}
-{#                    dolore magna aliqua.#}
-{#                </p>#}
-{#                <h3>Sub Heading</h3>#}
-{#                <ul>#}
-{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Nemo enim ipsam voluptatem quia voluptas sit#}
-{#                        aspernatur#}
-{#                    </li>#}
-{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Sed quia consequuntur magni dolores eos qui#}
-{#                        ratione#}
-{#                    </li>#}
-{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Neque porro quisquam est, qui dolorem ipsum#}
-{#                        quia amet#}
-{#                    </li>#}
-{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Consectetur, adipisci velit, sed quia non#}
-{#                        numquameius#}
-{#                    </li>#}
-{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Rempora incidunt ut labore et dolore magnam#}
-{#                        aliquam#}
-{#                    </li>#}
-{#                    <li><i class="bi bi bi-arrow-right-square-fill"></i> Neque porro quisquam est, qui dolorem ipsum#}
-{#                        quia amet#}
-{#                    </li>#}
-{#                </ul>#}
-
+                <h5 class="mt-4 mb-4 ">{{ _("【我们如何使用您的个人信息】") }}</h5>
+                <p class="ms-4">
+                    {{ _("我们可能将收集的信息用于以下目的：") }}
+                </p>
+                <ul class="ms-5 ">
+                    <li class="m-sm-1">
+                        {{ _('提供和维护我们的服务') }}
+                    </li>
+                    <li class="m-sm-1">
+                        {{ _('改善我们的服务和用户体验') }}
+                    </li>
+                    <li class="m-sm-1">
+                        {{ _('与您沟通，包括回应您的询问和提供客户支持') }}
+                    </li>
+                    <li class="m-sm-1">
+                        {{ _('分析和研究，以更好地了解用户需求和趋势') }}
+                    </li>
+                    <li class="m-sm-1">
+                        {{ _('符合法律法规的要求') }}
+                    </li>
+                    <li class="m-sm-1">
+                        {{ _('保障您的合法权益') }}
+                    </li>
+                </ul>
+                <h5 class="mt-4 mb-4 ">{{ _("【我们如何存储您的个人信息】") }}</h5>
+                <p class="ms-4">
+                    {{ _("我们会按照本隐私政策所述的目的和方式来存储您的个人信息。我们会采取合理的措施来保护您的个人信息，防止信息泄露、毁损、丢失、被盗用或被篡改。") }}
+                </p>
+                <h5 class="mt-4 mb-4 ">{{ _("【我们如何保护您的个人信息】") }}</h5>
+                <p class="ms-4">
+                    {{ _("我们采取合理的技术和组织措施来保护您的个人信息免受未经授权的访问、使用、披露、篡改或毁坏。这些措施包括但不限于：数据加密，访问控制，防火墙和入侵检测系统") }}
+                </p>
+                <h5 class="mt-4 mb-4 ">{{ _("【您如何访问、更新、控制和删除您的个人信息】") }}</h5>
+                <p class="ms-4">
+                    {{ _("您有权访问、更新、控制和删除您的个人信息。您可以通过以下方式访问、更新、控制和删除您的个人信息：") }}
+                </p>
+                <h5 class="mt-4 mb-4 ">{{ _("【您的权利】") }}</h5>
+                <p class="ms-4">
+                    {{ _("您有权访问、更正或删除您的个人信息。您还可以选择不接收我们的营销通信。若您希望行使这些权利，请通过以下联系方式与我们联系。") }}
+                </p>
+                <h5 class="mt-4 mb-4 ">{{ _("【隐私政策的变更】") }}</h5>
+                <p class="ms-4">
+                    {{ _("我们可能会不时更新本隐私政策。我们将在我们的网站上发布任何隐私政策的变更，并在变更生效前通过电子邮件通知您。") }}
+                </p>
+                <h5 class="mt-4 mb-4 ">{{ _("【您如何联系我们】") }}</h5>
+                <p class="ms-4">
+                    {{ _("如果您对本隐私政策有任何疑问或建议，请通过发送邮件的方式联系我们，联系邮箱：wfy@wfywh.com。需注意的是，我们可能不会回复与本政策或与个人信息保护无关的问题。") }}
+                </p>
+                <p class="mb-4">{{ _('望飞宇（武汉）科技有限公司将继续致力于保护您的隐私，并不断改进我们的隐私保护措施。感谢您对我们的信任与支持。') }}</p>
             </div>
+
         </section>
 
     </main><!-- End #main -->

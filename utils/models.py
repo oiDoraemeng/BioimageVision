@@ -2,8 +2,10 @@ import pymongo
 
 from utils.exts import mongo
 
+
 class Base:
     collection = None  # 基类中定义的默认集合名称
+
     @classmethod
     def save(cls, data):
         # 保存数据到数据库
@@ -15,10 +17,9 @@ class Base:
         return mongo.db[cls.collection].find_one({"_id": _id})
 
     @classmethod
-    def find_by_condition(cls,condition):
+    def find_by_condition(cls, condition):
         # 根据条件查找数据
         return mongo.db[cls.collection].find_one(condition)
-
 
 
 # 创建用户类
@@ -33,13 +34,13 @@ class User(Base):
     }
     """
     collection = "user"
+
     def __init__(self, user_data):
         self._id = user_data.get("_id")
         self.name = user_data.get("name")
         self.password = user_data.get("password")
         self.email = user_data.get("email")
         self.user_data = user_data
-
 
     @staticmethod
     def getUser(condition):
@@ -56,6 +57,7 @@ class User(Base):
         # 删除用户数据
         mongo.db.user.delete_one({"_id": self.user_data["_id"]})
 
+
 # 创建文章类
 class Article(Base):
     """
@@ -68,12 +70,12 @@ class Article(Base):
     }
     """
     collection = "article"
+
     def __init__(self, article_data):
         self._id = article_data.get("_id")
         self.title = article_data.get("title")
         self.content = article_data.get("content")
         self.create_time = article_data.get("create_time")
-
 
         self.author = article_data.get("author")
         self.author_id = article_data.get("author_id")
@@ -82,6 +84,7 @@ class Article(Base):
     def comments(self):
         # 获取当前文章的所有评论
         return Comment.getCommentsForArticle({"article_id": self._id})
+
     @staticmethod
     def getArticleById(_id):
         # 查询文章
@@ -93,7 +96,7 @@ class Article(Base):
     def getArticles(condition=None):
         # 查询文章
         articles_data = mongo.db.article.find(condition).sort("create_time", pymongo.DESCENDING)
-        articles_list = [Article(article) for article in articles_data ]
+        articles_list = [Article(article) for article in articles_data]
         return articles_list
 
     def update(self, new_data):
@@ -103,6 +106,7 @@ class Article(Base):
     def delete(self):
         # 删除文章数据
         mongo.db.article.delete_one({"_id": self._id})
+
 
 # 创建评论类
 class Comment(Base):
@@ -116,6 +120,7 @@ class Comment(Base):
     }
     """
     collection = "comment"
+
     def __init__(self, comment_data):
         self._id = comment_data.get("_id")
         self.content = comment_data.get("content")
@@ -142,7 +147,6 @@ class Comment(Base):
         comment = Comment(mongo.db.comment.find_one({"_id": _id}))
         return comment
 
-
     def update(self, new_data):
         # 更新评论数据
         mongo.db.comment.update_one({"_id": self._id}, {"$set": new_data})
@@ -150,6 +154,7 @@ class Comment(Base):
     def delete(self):
         # 删除评论数据
         mongo.db.comment.delete_one({"_id": self._id})
+
 
 class Message(Base):
     """
@@ -161,13 +166,13 @@ class Message(Base):
         }
     """
     collection = "message"
+
     def __init__(self, message_data):
         self._id = message_data.get("_id")
         self.session_id = message_data.get("session_id")
         self.from_user = message_data.get("from_user")
         self.content = message_data.get("content")
         self.create_time = message_data.get("create_time")
-
 
     @staticmethod
     def getMessages(condition=None):
@@ -193,3 +198,26 @@ class Message(Base):
         # 执行聚合查询
         message = list(mongo.db.message.aggregate(pipeline))[0]
         return message  # 返回结果或者None（如果没有匹配的文档）
+
+
+class Contact(Base):
+    """
+        email_data = {
+        name = 姓名
+        email = 邮箱
+        subject = 主题
+        message = 内容
+        create_time = 发送时间
+    }
+    """
+    collection = "contact"
+
+    def __init__(self, email_data):
+        self._id = email_data.get("_id")
+        self.name = email_data.get("name")
+        self.email = email_data.get("email")
+        self.subject = email_data.get("subject")
+        self.message = email_data.get("message")
+        self.create_time = email_data.get("create_time")
+
+

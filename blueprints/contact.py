@@ -3,7 +3,7 @@ from datetime import datetime
 from flask import Blueprint, render_template, request,session
 from utils.exts import socketio
 from flask_socketio import emit,join_room, leave_room
-from utils.models import Message
+from utils.models import Message,Contact
 
 
 
@@ -11,6 +11,14 @@ contact = Blueprint('contact', __name__,url_prefix='/contact' )
 
 @contact.route('/', methods=['GET', 'POST'])
 def index():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+        create_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        email_data = {'name': name, 'email': email,'subject': subject,'message': message, 'create_time': create_time}
+        Contact.save(email_data)
     return render_template('contact.html')
 @contact.route('/agent', methods=['GET', 'POST'])
 def agent():
@@ -23,7 +31,7 @@ def handle_customer_connect():
     session_id = session.get('session_id')
     join_room(session_id,namespace='/customer')
     create_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    emit('message', {'from_user': 'agent', 'content':'欢迎咨询，请问有什么可以帮助您的？','session_id': session_id, 'create_time': create_time})
+    emit('message', {'from_user': 'agent', 'content':'欢迎咨询，请问有什么可以帮助您的？,您也可以添加客服微信13166317949,我们会在一个工作日内给您答复','session_id': session_id, 'create_time': create_time})
 
     # 发送历史消息记录
     messageID = Message.getMessages({'session_id': session_id})

@@ -13,14 +13,14 @@
                         <div class="col-lg-6 text-left">
                             <h2>{{ _('生物与医学图像处理工具') }}</h2>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-lg-12 text-center">
-                                    <div class="search-form">
-                                        <form action="#">
-                                            <input type="text" placeholder={{ _('搜索') }}>
-                                            <button><i class="fa fa-search"></i></button>
-                                        </form>
-                                    </div>
-                                </div>
+{#                                <div class="col-lg-12 text-center">#}
+{#                                    <div class="search-form">#}
+{#                                        <form action="#">#}
+{#                                            <input type="text" placeholder={{ _('搜索') }}>#}
+{#                                            <button><i class="fa fa-search"></i></button>#}
+{#                                        </form>#}
+{#                                    </div>#}
+{#                                </div>#}
                             </div>
                             <nav>
                                 <ol>
@@ -29,12 +29,12 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-lg-6 d-flex justify-content-end">
-                            <div class="pages-images">
-                                <img src="{{ url_for('static', filename='picture/blog-2.jpg') }}" class="img-fluid"
-                                     alt="">
-                            </div>
-                        </div>
+{#                        <div class="col-lg-6 d-flex justify-content-end">#}
+{#                            <div class="pages-images">#}
+{#                                <img src="{{ url_for('static', filename='picture/blog-2.jpg') }}" class="img-fluid"#}
+{#                                     alt="">#}
+{#                            </div>#}
+{#                        </div>#}
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                                     </div>
                                     <p class="post-category  ">NeuroGPS Plus</p>
                                     <h2 class="title">
-                                        <a href="blogs-details.html">{{ _("全脑神经元重建技术") }}</a>
+                                        <a href="{{ url_for('static', filename='video/追踪可视化.mp4') }}" class="glightbox">{{ _("全脑神经元重建技术") }}</a>
                                     </h2>
                                     {#                  <div class="d-flex align-items-center">#}
                                     {#                    <div class="post-meta">#}
@@ -76,7 +76,7 @@
                                     </div>
                                     <p class="post-category ">NeuroGPS Plus</p>
                                     <h2 class="title">
-                                        <a href="blogs-details.html">{{ _("全脑尺度下神经细胞定位") }}</a>
+                                        <a href="{{ url_for('static', filename='video/胞体定位.mp4') }}" class="glightbox">{{ _("全脑尺度下神经细胞定位") }}</a>
                                     </h2>
                                 </article>
                             </div><!-- End post list item -->
@@ -89,7 +89,7 @@
                                     </div>
                                     <p class="post-category ">VascuGPS Plus</p>
                                     <h2 class="title">
-                                        <a href="blogs-details.html">{{ _("光学成像系统脑血管重建") }}</a>
+                                        <a href="javascript:void(0)">{{ _("光学成像系统脑血管重建") }}</a>
                                     </h2>
                                 </article>
                             </div><!-- End post list item -->
@@ -102,7 +102,7 @@
                                     </div>
                                     <p class="post-category ">MedSee</p>
                                     <h2 class="title">
-                                        <a href="blogs-details.html">{{ _("一体化软件对CT成像数据中肺部血管重建") }}</a>
+                                        <a href="javascript:void(0)">{{ _("一体化软件对CT成像数据中肺部血管重建") }}</a>
                                     </h2>
                                 </article>
                             </div><!-- End post list item -->
@@ -115,7 +115,7 @@
                                     </div>
                                     <p class="post-category ">MedSee</p>
                                     <h2 class="title">
-                                        <a href="blogs-details.html">{{ _("一体化软件对细菌识别") }}</a>
+                                        <a href="javascript:void(0)">{{ _("一体化软件对细菌识别") }}</a>
                                     </h2>
                                 </article>
                             </div><!-- End post list item -->
@@ -128,7 +128,7 @@
                                     </div>
                                     <p class="post-category ">{{ _("下步计划") }}</p>
                                     <h2 class="title">
-                                        <a href="blogs-details.html"></a>
+                                        <a href="javascript:void(0)"></a>
                                     </h2>
 
                                 </article>

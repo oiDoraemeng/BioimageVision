@@ -421,4 +421,10 @@ document.addEventListener('DOMContentLoaded', () => {// 监听 DOM 内容加载�
         }
     });
 
+    /**
+     * Form validation
+     */
+    // 找到表单元素
+
+
 });
