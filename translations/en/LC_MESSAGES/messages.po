@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-05-14 17:28+0800\n"
-"PO-Revision-Date: 2024-05-14 19:21+0800\n"
+"POT-Creation-Date: 2024-06-12 19:19+0800\n"
+"PO-Revision-Date: 2024-06-12 19:22+0800\n"
 "Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
 "Language: en\n"
@@ -19,98 +19,751 @@ msgstr ""
 "Generated-By: Babel 2.15.0\n"
 "X-Generator: Poedit 3.4.4\n"
 
-#: templates/base.html:46
-msgid "首页"
-msgstr "Home"
+#: templates/analytics.html:3 templates/analytics.html:14 templates/analytics.html:19
+msgid "大数据"
+msgstr ""
 
-#: templates/base.html:47 templates/base.html:109
+#: templates/analytics.html:15 templates/analytics.html:35
+msgid "TB量级数据格式构建、快速读写、数据存储、可视化"
+msgstr ""
+
+#: templates/analytics.html:18 templates/biomedical.html:27 templates/contact.html:18 templates/faq.html:18 templates/index.html:7 templates/policy.html:20 templates/profile.html:20 templates/services.html:19
+msgid "首页"
+msgstr ""
+
+#: templates/analytics.html:40
+msgid "本公司建立了新的大数据格式方法，实现个人电脑快速分析10TB甚至百TB量级数据，同时兼容现有商业软件"
+msgstr ""
+
+#: templates/analytics.html:71
+msgid "大数据格式快速制作及数据格式压缩率"
+msgstr ""
+
+#: templates/analytics.html:73
+msgid "(a)-(b)将图像转换为大数据格式中，数据读写速度接近硬盘极限（红色）"
+msgstr ""
+
+#: templates/analytics.html:76
+msgid "(c)大数据制作速度比较，提升速度至少30倍"
+msgstr ""
+
+#: templates/analytics.html:79
+#, python-format
+msgid "(d)数据的压缩率比较，我们数据格式BV压缩率提升80%%"
+msgstr ""
+
+#: templates/analytics.html:88
+msgid "数据格式特点"
+msgstr ""
+
+#: templates/analytics.html:90
+msgid "快速读写"
+msgstr ""
+
+#: templates/analytics.html:91
+msgid "压缩率高"
+msgstr ""
+
+#: templates/analytics.html:92
+msgid "可视化"
+msgstr ""
+
+#: templates/base.html:51 templates/profile.html:21
+msgid "简介"
+msgstr ""
+
+#: templates/base.html:52 templates/base.html:220 templates/services.html:3 templates/services.html:15 templates/services.html:20
 msgid "服务"
 msgstr "Service"
 
-#: templates/base.html:48
-msgid "模型介绍"
-msgstr "Model Introduction"
-
-#: templates/base.html:51
-msgid "模型1"
+#: templates/base.html:53
+msgid "产品介绍"
 msgstr ""
 
-#: templates/base.html:52
-msgid "模型2    "
+#: templates/base.html:56
+msgid "大数据格式"
 msgstr ""
 
-#: templates/base.html:55
+#: templates/base.html:57 templates/biomedical.html:3 templates/biomedical.html:14 templates/biomedical.html:28
+msgid "生物与医学图像处理工具"
+msgstr ""
+
+#: templates/base.html:61
 msgid "使用手册"
-msgstr "user manual"
-
-#: templates/base.html:57
-msgid "价格"
-msgstr "Price"
-
-#: templates/base.html:59
-msgid "更多"
-msgstr "More info"
-
-#: templates/base.html:62 templates/base.html:79
-msgid "登录"
-msgstr "Login"
-
-#: templates/base.html:63
-msgid "注册"
-msgstr "Register"
-
-#: templates/base.html:65
-msgid "团队"
-msgstr "teams"
-
-#: templates/base.html:66 templates/base.html:74
-msgid "博客"
-msgstr "Blog"
-
-#: templates/base.html:67
-msgid "博客详情"
-msgstr "Blog Details"
-
-#: templates/base.html:68
-msgid "未来发展"
 msgstr ""
 
-#: templates/base.html:69
-msgid "条款"
+#: templates/base.html:64 templates/contact.html:3 templates/contact.html:19 templates/contact.html:98 templates/index.html:235 templates/index.html:302 templates/services.html:129 templates/services.html:150 templates/services.html:172 templates/services.html:193
+msgid "联系我们"
+msgstr ""
+
+#: templates/base.html:69 templates/contact.html:14
+msgid "合作咨询"
 msgstr ""
 
 #: templates/base.html:70
-msgid "隐私政策"
+msgid "问题反馈"
 msgstr ""
 
-#: templates/base.html:71
-msgid "样本"
+#: templates/base.html:122
+msgid "联系电话:"
 msgstr ""
 
-#: templates/base.html:75
-msgid "联系我们"
-msgstr "Contact us"
+#: templates/base.html:123
+msgid "服务时间:"
+msgstr ""
 
-#: templates/base.html:98
-msgid "望飞宇是一家致力于为医疗行业提供AI解决方案的公司。我们提供医疗影像AI模型，医疗图像分析，医疗数据分析，医疗数据处理等服务。"
-msgstr "Wangfeiyu is a company dedicated to providing AI solutions for the healthcare industry. We provide medical imaging AI models, medical image analysis, medical data analysis, medical data processing and other services."
+#: templates/base.html:123
+msgid "9:00 - 21:00"
+msgstr ""
 
-#: templates/base.html:112
+#: templates/base.html:209
+msgid "望飞宇是一家致力于为生物科学研究及医学行业提供普惠的人工智能软件平台。我们提供胞体定位、神经元追踪、血管分析、图像配准、全脑数据一体化处理软件定制开发等服务。"
+msgstr ""
+
+#: templates/base.html:223
 msgid "产品下载"
 msgstr "download"
 
-#: templates/base.html:122
+#: templates/base.html:233
 msgid "联系方式"
 msgstr ""
 
-#: templates/base.html:124
-msgid "商务合作:contact@example.com"
+#: templates/base.html:235
+msgid "商务合作:"
 msgstr ""
 
-#: templates/base.html:125
-msgid "公司地址:武汉市光谷工业园"
+#: templates/base.html:236
+msgid "郭沙沙:"
 msgstr ""
 
-#: templates/base.html:139
+#: templates/base.html:236
+msgid "wfy@wfywh.com"
+msgstr ""
+
+#: templates/base.html:238
+msgid "公司地址:武汉市东湖新技术开发区关东工业园 3-3号4楼418号"
+msgstr ""
+
+#: templates/base.html:251
 msgid "望飞宇(武汉)科技有限公司 备案号："
+msgstr ""
+
+#: templates/biomedical.html:58 templates/index.html:138
+msgid "全脑神经元重建技术"
+msgstr ""
+
+#: templates/biomedical.html:79 templates/index.html:159
+msgid "全脑尺度下神经细胞定位"
+msgstr ""
+
+#: templates/biomedical.html:92 templates/index.html:172
+msgid "光学成像系统脑血管重建"
+msgstr ""
+
+#: templates/biomedical.html:105 templates/index.html:185
+msgid "一体化软件对CT成像数据中肺部血管重建"
+msgstr ""
+
+#: templates/biomedical.html:118 templates/index.html:198
+msgid "一体化软件对细菌识别"
+msgstr ""
+
+#: templates/biomedical.html:129 templates/index.html:209
+msgid "下步计划"
+msgstr ""
+
+#: templates/contact.html:15
+msgid "留下你的联系方式和需求，我们将尽快与您联系"
+msgstr ""
+
+#: templates/contact.html:39
+msgid "在线留言"
+msgstr ""
+
+#: templates/contact.html:40 templates/index.html:236
+msgid "联系我们，我们将竭诚为您提供最好的服务"
+msgstr ""
+
+#: templates/contact.html:54
+msgid "姓名"
+msgstr ""
+
+#: templates/contact.html:55 templates/index.html:251
+msgid "用户名必须填写"
+msgstr ""
+
+#: templates/contact.html:62 templates/register.html:35 templates/register.html:37
+msgid "邮箱"
+msgstr ""
+
+#: templates/contact.html:63 templates/index.html:259
+msgid "邮箱不能为空"
+msgstr ""
+
+#: templates/contact.html:70
+msgid "主题"
+msgstr ""
+
+#: templates/contact.html:76
+msgid "留言"
+msgstr ""
+
+#: templates/contact.html:78
+msgid "请写下你的留言"
+msgstr ""
+
+#: templates/contact.html:84
+msgid "发送消息"
+msgstr ""
+
+#: templates/contact.html:99 templates/index.html:303
+msgid "联系人(微信电话同号)"
+msgstr ""
+
+#: templates/contact.html:118 templates/index.html:322
+msgid "郭沙沙"
+msgstr ""
+
+#: templates/contact.html:119 templates/index.html:323
+msgid "电话：13166317949"
+msgstr ""
+
+#: templates/contact.html:121 templates/index.html:325
+msgid "邮箱: wfy@wfywh.com"
+msgstr ""
+
+#: templates/faq.html:3 templates/faq.html:14 templates/faq.html:19
+msgid "常见问题"
+msgstr ""
+
+#: templates/faq.html:42
+msgid "该公司服务的具体领域是什么？"
+msgstr ""
+
+#: templates/faq.html:48
+msgid "公司服务的具体领域涉及生物科学研究和医学检测，主要集中在人工智能前沿研究以及生物与医学图像处理工具领域。他们提供多元化、定制化的科研服务，包括数据构建、神经元形态重建、血管形态重建、医学数据分析等服务项目。"
+msgstr ""
+
+#: templates/faq.html:58
+msgid "该公司的NeuroGPS Plus工具能实现哪些功能"
+msgstr ""
+
+#: templates/faq.html:64
+msgid "公司的NeuroGPS Plus工具能够实现从10 TB成像数据中进行神经元形态重建及细胞定位。这意味着NeuroGPS Plus可以帮助用户在处理大规模成像数据时进行神经元形态的重建和细胞的定位。"
+msgstr ""
+
+#: templates/faq.html:74
+msgid "该公司提供的MedSee工具有什么特点？ "
+msgstr ""
+
+#: templates/faq.html:80
+msgid "公司提供的MedSee工具是用于医学数据分析的工具，具有以下特点："
+msgstr ""
+
+#: templates/faq.html:82
+msgid "可实现医学图像数    据的自动化标注，一键化模型训练及预测"
+msgstr ""
+
+#: templates/faq.html:83
+msgid "兼容不同类型的生物医学数据"
+msgstr ""
+
+#: templates/faq.html:84
+msgid "可供没有任何编程基础的人员使用最新的深度学习模型"
+msgstr ""
+
+#: templates/faq.html:85
+msgid "能够量化分析生物医学图像"
+msgstr ""
+
+#: templates/faq.html:87
+msgid "这些特点使得MedSee工具在医学数据分析领域具有较高的灵活性和便利性。"
+msgstr ""
+
+#: templates/faq.html:102 templates/index.html:226
+msgid "用户满意,是我们最大的动力"
+msgstr ""
+
+#: templates/faq.html:103 templates/index.html:227
+msgid "我们将持续开展人工智能前沿研究，为用户提供更优质的服务"
+msgstr ""
+
+#: templates/faq.html:104 templates/index.html:228
+msgid "立即前往"
+msgstr ""
+
+#: templates/index.html:15
+msgid "打造更具拓展性更普惠的人工智能软件平台"
+msgstr ""
+
+#: templates/index.html:17
+msgid "服务于生物科学研究及医学检测,为用户提供多元化、定制化科研服务"
+msgstr ""
+
+#: templates/index.html:21
+msgid "下载软件"
+msgstr ""
+
+#: templates/index.html:24
+msgid "视频介绍"
+msgstr ""
+
+#: templates/index.html:37
+msgid "我们的服务"
+msgstr ""
+
+#: templates/index.html:38 templates/services.html:16
+msgid "我们提供多种生物医学图像处理技术及服务，帮助用户提升科研效率，降低成本"
+msgstr ""
+
+#: templates/index.html:47
+msgid "数据处理和可视化"
+msgstr ""
+
+#: templates/index.html:49
+msgid "建立新的大数据格式，快速构建、读写、存储和可视化大规模数据，提高数据处理效率"
+msgstr ""
+
+#: templates/index.html:59
+msgid "软件开发"
+msgstr ""
+
+#: templates/index.html:71
+msgid "生物医学图像标注"
+msgstr ""
+
+#: templates/index.html:73
+msgid "提供病理细胞标注、CT图像数据标注、MRI图像标注等服务"
+msgstr ""
+
+#: templates/index.html:83
+msgid "医学数据分析"
+msgstr ""
+
+#: templates/index.html:85
+msgid "包括数据标注、模型训练和预测，适用于不同类型的生物医学数据"
+msgstr ""
+
+#: templates/index.html:95
+msgid "软件更新"
+msgstr ""
+
+#: templates/index.html:97
+msgid "提供软件更新，确保软件的最新功能和安全性"
+msgstr ""
+
+#: templates/index.html:107
+msgid "定制化的服务"
+msgstr ""
+
+#: templates/index.html:109
+msgid "定制开发全脑数据一体化处理软件和海量数据存储、管理、可视化定制开发等服务"
+msgstr ""
+
+#: templates/index.html:125
+msgid "我们的软件"
+msgstr ""
+
+#: templates/index.html:126
+msgid "我们使用生物医学图像处理技术及深度学习模型，量化分析生物医学图像"
+msgstr ""
+
+#: templates/index.html:274
+msgid "请写下你的留言    "
+msgstr ""
+
+#: templates/index.html:280
+msgid "发送信息"
+msgstr ""
+
+#: templates/index.html:288
+msgid "信息已发送，我们会尽快回复您。"
+msgstr ""
+
+#: templates/index.html:311
+msgid "全廷伟"
+msgstr ""
+
+#: templates/index.html:312
+msgid "电话：15337259396"
+msgstr ""
+
+#: templates/index.html:314
+msgid "邮箱: quantingwei@hust.edu.cn"
+msgstr ""
+
+#: templates/policy.html:4 templates/policy.html:21 templates/profile.html:4
+msgid "隐私政策"
+msgstr ""
+
+#: templates/policy.html:17
+msgid "本隐私政策阐述了本网站如何收集、使用、存储、保护您的个人信息。"
+msgstr ""
+
+#: templates/policy.html:39
+msgid "简介&提示"
+msgstr ""
+
+#: templates/policy.html:41
+msgid ""
+"本隐私政策详细说明望飞宇（武汉）科技有限公司（以下简称“本公司”或“我们”）如何收集、使用、保护和分享您的个人信息。我们重视您的隐私，并致力于保护您的个人信息安全。欢迎您使用我们的产品和服务！您在使用我们的产品和服务时，我们可能会收集和使用您的相关信息。这份隐私声明将说明我司如何收集、使用、存储经由您对本网站的访问所收集的个人信息，以及我们为您提供的访问、更"
+"新、控制和保护这些信息的方式。我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。我们致力于维持您对我们的信任，恪守严格保密原则，您的信任对我们非常重要，我们将根据法律法规要求并参照行业最佳实践为您的个人信息安全提供充分保障。如果您使用了我司的网站，就意味着您知晓且接受本网站的隐私声明；如果您不同意这些条款，请不要使用本网站。"
+msgstr ""
+
+#: templates/policy.html:44
+msgid "在您开始使用我们的产品和服务前，请您务必先仔细阅读和理解本政策，特别应重点阅读我们以粗体/粗体下划线标识的条款，确保您充分理解和同意后再开始使用。"
+msgstr ""
+
+#: templates/policy.html:46
+msgid "本政策主要向您说明："
+msgstr ""
+
+#: templates/policy.html:48
+msgid "【我们收集哪些个人信息】"
+msgstr ""
+
+#: templates/policy.html:51
+msgid "个人身份信息（姓名、电子邮箱地址、电话号码等）"
+msgstr ""
+
+#: templates/policy.html:54
+msgid "问答对话生成：您可以自愿提供您的个人信息，并生成相应文本内容"
+msgstr ""
+
+#: templates/policy.html:57
+msgid "关于您如何使用产品或服务的信息"
+msgstr ""
+
+#: templates/policy.html:60
+msgid "关于您如何使用本网站的信息，包括您的IP地址或域名、您访问本网站的时长、您访问了本网站的哪些版块、浏览了哪些内容"
+msgstr ""
+
+#: templates/policy.html:64
+msgid "【我们如何收集您的个人信息】"
+msgstr ""
+
+#: templates/policy.html:66
+msgid ""
+"我们收集的绝大多数信息是由您直接提供给我们的。我们将在以下情况下收集、处理和存储您的信息:自愿在我们的留言板上或通过邮件完成客户调查，或在客户支持服务下提供反馈在您通过浏览器浏览本网站时，我们会自动记录一些信息，例如您的访问日期和时间、访问页面、停留时间、您的IP地址和访问的referrer页面。我们的服务不面向13岁以下的儿童，我们不会故意收集13岁以下儿童的个人信"
+"息。如果我们发现我们在不知情的情况下收集了13岁以下儿童的个人信息，我们将采取措施删除这些信息。"
+msgstr ""
+
+#: templates/policy.html:69
+msgid "【我们如何使用您的个人信息】"
+msgstr ""
+
+#: templates/policy.html:71
+msgid "我们可能将收集的信息用于以下目的："
+msgstr ""
+
+#: templates/policy.html:75
+msgid "提供和维护我们的服务"
+msgstr ""
+
+#: templates/policy.html:78
+msgid "改善我们的服务和用户体验"
+msgstr ""
+
+#: templates/policy.html:81
+msgid "与您沟通，包括回应您的询问和提供客户支持"
+msgstr ""
+
+#: templates/policy.html:84
+msgid "分析和研究，以更好地了解用户需求和趋势"
+msgstr ""
+
+#: templates/policy.html:87
+msgid "符合法律法规的要求"
+msgstr ""
+
+#: templates/policy.html:90
+msgid "保障您的合法权益"
+msgstr ""
+
+#: templates/policy.html:93
+msgid "【我们如何存储您的个人信息】"
+msgstr ""
+
+#: templates/policy.html:95
+msgid "我们会按照本隐私政策所述的目的和方式来存储您的个人信息。我们会采取合理的措施来保护您的个人信息，防止信息泄露、毁损、丢失、被盗用或被篡改。"
+msgstr ""
+
+#: templates/policy.html:97
+msgid "【我们如何保护您的个人信息】"
+msgstr ""
+
+#: templates/policy.html:99
+msgid "我们采取合理的技术和组织措施来保护您的个人信息免受未经授权的访问、使用、披露、篡改或毁坏。这些措施包括但不限于：数据加密，访问控制，防火墙和入侵检测系统"
+msgstr ""
+
+#: templates/policy.html:101
+msgid "【您如何访问、更新、控制和删除您的个人信息】"
+msgstr ""
+
+#: templates/policy.html:103
+msgid "您有权访问、更新、控制和删除您的个人信息。您可以通过以下方式访问、更新、控制和删除您的个人信息："
+msgstr ""
+
+#: templates/policy.html:105
+msgid "【您的权利】"
+msgstr ""
+
+#: templates/policy.html:107
+msgid "您有权访问、更正或删除您的个人信息。您还可以选择不接收我们的营销通信。若您希望行使这些权利，请通过以下联系方式与我们联系。"
+msgstr ""
+
+#: templates/policy.html:109
+msgid "【隐私政策的变更】"
+msgstr ""
+
+#: templates/policy.html:111
+msgid "我们可能会不时更新本隐私政策。我们将在我们的网站上发布任何隐私政策的变更，并在变更生效前通过电子邮件通知您。"
+msgstr ""
+
+#: templates/policy.html:113
+msgid "【您如何联系我们】"
+msgstr ""
+
+#: templates/policy.html:115
+msgid "如果您对本隐私政策有任何疑问或建议，请通过发送邮件的方式联系我们，联系邮箱：wfy@wfywh.com。需注意的是，我们可能不会回复与本政策或与个人信息保护无关的问题。"
+msgstr ""
+
+#: templates/policy.html:117
+msgid "望飞宇（武汉）科技有限公司将继续致力于保护您的隐私，并不断改进我们的隐私保护措施。感谢您对我们的信任与支持。"
+msgstr ""
+
+#: templates/profile.html:16 templates/profile.html:33
+msgid "公司简介"
+msgstr ""
+
+#: templates/profile.html:35
+msgid "望飞宇（武汉）科技有限公司旨在持续开展人工智能前沿研究，打造更具拓展性更普惠的人工智能软件平台，服务于生物科学研究及医学检测。"
+msgstr ""
+
+#: templates/profile.html:38
+msgid "本公司已研发一系列拥有自主知识产权的生物与医学图像处理工具，可在神经元重建、血管重建、器官分割与配准、三维海量数据可视化等多个领域为用户提供多元化、定制化科研服务。"
+msgstr ""
+
+#: templates/profile.html:41
+msgid "公司开发了大数据格式方法，速度快、数据压缩量少、可视化响应速度提升，可用于个人电脑快速分析大量数据。"
+msgstr ""
+
+#: templates/profile.html:44
+msgid "公司研发的NeuroVision工具可实现从10TB成像数据中神经元重建及细胞定位，BloodVision工具可进行血管形态重建，MedVision工具可用于医学数据分析。"
+msgstr ""
+
+#: templates/profile.html:47
+msgid "公司服务项目包括胞体定位、神经元追踪、血管分析、图像配准、全脑数据一体化处理软件定制开发等。"
+msgstr ""
+
+#: templates/register.html:7 templates/register.html:17 templates/register.html:57
+msgid "注册"
+msgstr ""
+
+#: templates/register.html:18
+msgid "已有账号"
+msgstr ""
+
+#: templates/register.html:19
+msgid "登录"
+msgstr ""
+
+#: templates/register.html:24 templates/register.html:26
+msgid "用户名"
+msgstr ""
+
+#: templates/register.html:40 templates/register.html:42
+msgid "密码"
+msgstr ""
+
+#: templates/register.html:45 templates/register.html:47
+msgid "确认密码"
+msgstr ""
+
+#: templates/register.html:50 templates/register.html:52
+msgid "验证码"
+msgstr ""
+
+#: templates/register.html:62
+msgid "其他登录方式"
+msgstr ""
+
+#: templates/services.html:44
+msgid "胞体定位"
+msgstr ""
+
+#: templates/services.html:45
+msgid "统计胞体三维位置和胞体数量"
+msgstr ""
+
+#: templates/services.html:49 templates/services.html:63 templates/services.html:77 templates/services.html:90 templates/services.html:104 templates/services.html:118 templates/services.html:136 templates/services.html:159 templates/services.html:181
+msgid "¥"
+msgstr ""
+
+#: templates/services.html:58
+msgid "胞体定位及形态重建"
+msgstr ""
+
+#: templates/services.html:59
+msgid "统计胞体三维位置、数量及轮廓信息"
+msgstr ""
+
+#: templates/services.html:72
+msgid "神经元追踪"
+msgstr ""
+
+#: templates/services.html:73
+msgid "全脑尺度神经元追踪"
+msgstr ""
+
+#: templates/services.html:85
+msgid "血管分析"
+msgstr ""
+
+#: templates/services.html:86
+msgid "分割、追踪、定量等分析"
+msgstr ""
+
+#: templates/services.html:99
+msgid "病理细胞,CT图像,MRI图像数据标注"
+msgstr ""
+
+#: templates/services.html:100
+msgid "对细胞、细菌数、CT图像和磁共振成像数据进行辅助诊断标注"
+msgstr ""
+
+#: templates/services.html:113
+msgid "图像配准"
+msgstr ""
+
+#: templates/services.html:114
+msgid "对于一幅医学图像寻求一种空间变换,使它与标准医学图像上的对应点达到空间上的一致"
+msgstr ""
+
+#: templates/services.html:128
+msgid "价格依照数据难度及处理脑的数量来定"
+msgstr ""
+
+#: templates/services.html:135
+msgid "全脑数据一体化处理软件定制开发"
+msgstr ""
+
+#: templates/services.html:141
+msgid "全脑"
+msgstr ""
+
+#: templates/services.html:141
+msgid "二维序列图制作成大数据格式"
+msgstr ""
+
+#: templates/services.html:142
+msgid "自动"
+msgstr ""
+
+#: templates/services.html:142
+msgid "筛选全脑中各类数据作为训练集"
+msgstr ""
+
+#: templates/services.html:143
+msgid "模型"
+msgstr ""
+
+#: templates/services.html:143
+msgid "自动预测训练集"
+msgstr ""
+
+#: templates/services.html:144
+msgid "训练"
+msgstr ""
+
+#: templates/services.html:144
+msgid "人工修订训练集,再对训练集数据进行训练"
+msgstr ""
+
+#: templates/services.html:145
+msgid "预测"
+msgstr ""
+
+#: templates/services.html:145
+msgid "全脑数据提取神经元骨架或血管估计"
+msgstr ""
+
+#: templates/services.html:146 templates/services.html:168
+msgid "适用"
+msgstr ""
+
+#: templates/services.html:146
+msgid "适用数10TB量级fMOST及光片成像系统"
+msgstr ""
+
+#: templates/services.html:158
+msgid "生物医学图像一体化标注、训练、预测软件定制开发"
+msgstr ""
+
+#: templates/services.html:164
+msgid "标注"
+msgstr ""
+
+#: templates/services.html:164
+msgid "能高效标注数据集"
+msgstr ""
+
+#: templates/services.html:165 templates/services.html:166
+msgid "一键式"
+msgstr ""
+
+#: templates/services.html:165
+msgid "训练深度学习模型"
+msgstr ""
+
+#: templates/services.html:166
+msgid "实现深度学习模型预测"
+msgstr ""
+
+#: templates/services.html:167
+msgid "定制"
+msgstr ""
+
+#: templates/services.html:167
+msgid "任务需求的模型及软件"
+msgstr ""
+
+#: templates/services.html:168
+msgid "适用多类型的生物医学图像分析"
+msgstr ""
+
+#: templates/services.html:180
+msgid "海量数据存储、管理、可视化定制开发"
+msgstr ""
+
+#: templates/services.html:186
+msgid "海量"
+msgstr ""
+
+#: templates/services.html:186
+msgid "三维医学生物图像的存储"
+msgstr ""
+
+#: templates/services.html:187
+msgid "构建"
+msgstr ""
+
+#: templates/services.html:187
+msgid "新的数据格式，提供快速可视化及区域选取"
+msgstr ""
+
+#: templates/services.html:188
+msgid "快速"
+msgstr ""
+
+#: templates/services.html:188
+msgid "快速生成其它商业软件大数据格式，适用后续分析"
+msgstr ""
+
+#: templates/services.html:189
+msgid "无损"
+msgstr ""
+
+#: templates/services.html:189
+msgid "无损压缩，可实现3-4倍压缩率"
 msgstr ""

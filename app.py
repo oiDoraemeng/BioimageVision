@@ -1,6 +1,6 @@
 from bson import ObjectId
 import uuid
-from flask import Flask, request, session
+from flask import Flask, request, session,g
 from flask_session import Session  # 导入Session扩展
 
 import config

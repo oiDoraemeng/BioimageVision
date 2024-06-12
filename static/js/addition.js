@@ -24,38 +24,54 @@ function cleanInput(input) {
 
 }
 
-// 发送验证码
-function sendIdentifyingCode() {
-    var email = document.forms["registerForm"]["email"].value;
-    validateForm(email);  // 验证邮箱格式是否正确
+function sendMessage() {
+    // 获取表单元素
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var subject = document.getElementById("subject").value;
+    var message = document.getElementById("message").value;
+
+    // 验证输入内容是否为空
+    if (!name || !email || !subject || !message) {
+        alert("请填写所有必填字段。");
+        return false;
+    }
+    // 验证邮箱格式是否正确
+    if (!validateForm(email)) {
+        return false;
+    }
+
+    // 使用AJAX发送数据到服务器
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/auth/send_code?email=" + encodeURIComponent(email), true);
+    xhr.open("POST", "/contact/", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+    // 处理服务器响应
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log(xhr.status)//获取响应状态码
             console.log(xhr.statusText)//获取响应状态
             console.log(xhr.getAllResponseHeaders())//获取响应头
             console.log(xhr.response)//获取响应数据
-
-            // 倒计时
-            var countdown = 60; // 倒计时秒数
-            var timer = setInterval(function () {
-                document.getElementById("send_code").innerHTML = "重新发送(" + countdown + ")";
-                countdown--;
-                if (countdown <= 0) {
-                    clearInterval(timer);
-                    document.getElementById("send_code").innerHTML = "发送验证码";
-                }
-
-            }, 1000);
-
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                document.getElementById("ajax-contact").reset(); // 清空表单
+            } else {
+                alert("发送失败，请重试。");
+            }
         }
     };
-    //发送请求
-    xhr.send()
+
+    // 发送表单数据
+    var params = "name=" + encodeURIComponent(name) +
+        "&email=" + encodeURIComponent(email) +
+        "&subject=" + encodeURIComponent(subject) +
+        "&message=" + encodeURIComponent(message);
+    xhr.send(params);
+
+    return false; // 阻止表单默认提交行为
 }
+
 
 // 验证邮箱格式是否正确
 function validateForm(email) {
@@ -70,6 +86,7 @@ function validateForm(email) {
         alert("不是一个有效的e-mail地址");
         return false;
     }
+    return true;
 }
 
 // function submitForm() {

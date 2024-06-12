@@ -1,11 +1,5 @@
 {% extends "base.html" %}
 
-{% block head %}
-    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/gmap3.min.js') }}"></script>
-{% endblock %}
-
-
 {% block title %}{{ _("联系我们") }}{% endblock %}
 
 {% block content %}
@@ -50,7 +44,7 @@
                         <div class="col-lg-8 col-md-12" data-aos="fade-left">
                             <div class="contact-form-box contact-form contact-form-3">
                                 <div class="form-container-box">
-                                    <form action="{{ url_for('contact') }}" class="contact-form form"
+                                    <form action="" class="contact-form form"
                                           id="ajax-contact" method="post">
                                         <div class="controls">
                                             <div class="row">
@@ -72,7 +66,7 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group form-input-box">
-                                                        <input type="text" class="form-control" name="subject"
+                                                        <input type="text" class="form-control" id ="subject" name="subject"
                                                                placeholder="{{ _("主题") }}" required="required">
                                                     </div>
                                                 </div>
@@ -87,16 +81,8 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <button type="submit"
-                                                            data-text="Send Message">{{ _("发送消息") }}</button>
+                                                            data-text="Send Message" onclick="sendMessage()">{{ _("发送消息") }}</button>
                                                 </div>
-{#                                                <div class="messages">#}
-{#                                                    <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"#}
-{#                                                         id="msgSubmit">#}
-{#                                                        <button type="button" class="close" data-dismiss="alert"#}
-{#                                                                aria-hidden="true">&times;#}
-{#                                                        </button>#}
-{#                                                        {{ _("信息已发送，我们会尽快回复您。") }} </div>#}
-{#                                                </div>#}
                                             </div>
                                         </div>
                                     </form>

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from flask import Blueprint, render_template, request,session
+from flask import Blueprint, render_template, request, session, redirect, jsonify
 from utils.exts import socketio
 from flask_socketio import emit,join_room, leave_room
 from utils.models import Message,Contact
@@ -19,7 +19,9 @@ def index():
         create_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         email_data = {'name': name, 'email': email,'subject': subject,'message': message, 'create_time': create_time}
         Contact.save(email_data)
+        return jsonify({'status': 200,'success': '提交成功'})
     return render_template('contact.html')
+
 @contact.route('/agent', methods=['GET', 'POST'])
 def agent():
     session_id_list = Message.getAllSessionId()

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='js/addition.js') }}"></script>
+{% endblock %}
+
+{% block title %}{{ _('注册') }}{% endblock %}
+
+{% block content %}
+    <main id="main">
+
+        <div class="single-page">
+            <div class="login">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="heading">
+                            <h1 class="text text-large">{{ _('注册') }}</h1>
+                            <p class="text text-normal">{{ _('已有账号') }}? <span><a href="{{ url_for('auth.login') }}"
+                                                                                      class="text text-links">{{ _('登录') }}</a></span>
+                            </p>
+                        </div>
+                        <form name="registerForm" class="form" method="POST" action="{{ url_for('auth.register') }}">
+                            <div class="input-control">
+                                <label for="name" class="input-label" hidden="">{{ _("用户名") }}</label>
+                                <input type="text" name="name" id="name" class="input-field"
+                                       placeholder={{ _("用户名") }}>
+                            </div>
+{#                            <div id="name-error" class="d_none "><small>{{ _('用户名已存在') }}</small></div>#}
+{#                            <h6><small>{{ _('用户名只能包含字母、数字、下划线和中文') }}</small></h6>#}
+                            {# <div class="input-control">#}
+                            {#  <label for="phone" class="input-label" hidden="">Phone</label>#}
+                            {#  <input type="phone" name="phone" id="phone" class="input-field" placeholder="Phone">#}
+                            {#</div>#}
+                            <div class="input-control">
+                                <label for="email" class="input-label" hidden="">{{ _("邮箱") }}</label>
+                                <input type="email" name="email" id="email" class="input-field"
+                                       placeholder={{ _("邮箱") }}>
+                            </div>
+                            <div class="input-control">
+                                <label for="password" class="input-label" hidden="">{{ _("密码") }}</label>
+                                <input type="password" name="password" id="password" class="input-field"
+                                       placeholder={{ _("密码") }}>
+                            </div>
+                            <div class="input-control">
+                                <label for="confirm_password" class="input-label" hidden="">{{ _("确认密码") }}</label>
+                                <input type="password" name="confirm_password" id="confirm_password" class="input-field"
+                                       placeholder={{ _("确认密码") }}>
+                            </div>
+                            <div class="input-control">
+                                <label for="Verification_code" class="input-label" hidden="">{{ _("验证码") }}</label>
+                                <input type="text" name="Verification_code" id="Verification_code" class="input-field"
+                                       placeholder={{ _("验证码") }}>
+                                <button type="button" class="btn btn-primary btn-secondary" id="send_code" onclick=sendIdentifyingCode()>发送验证码</button>
+                            </div>
+                            <div class="input-control">
+                                <a href="#" class="text text-links"></a>
+                                <input type="submit" name="submit" class="input-submit" value="{{ _('注册') }}">
+                            </div>
+                        </form>
+                        <div class="striped">
+                            <span class="line-separator"></span>
+                            <span class="striped-text">{{ _('其他登录方式') }}</span>
+                            <span class="line-separator"></span>
+                        </div>
+                        <div class="method">
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/WeChat_logo.da5ad05a.svg') }}"
+                                         alt="WeChat">
+                                    <span class="d-none">Sign in with Google</span>
+                                </a>
+                            </div>
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/Google_logo.fbdf93ef.svg') }}"
+                                         alt="Google">
+                                    <span class="d-none">Sign in with Google</span>
+                                </a>
+                            </div>
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/Github_logo.e351596f.svg') }}"
+                                         alt="GitHub">
+                                    <span class="d-none">Sign in with Facebook</span>
+                                </a>
+                            </div>
+                            <div class="method-control">
+                                <a href="#" class="method-action">
+                                    <img class="logo"
+                                         src="{{ url_for('static', filename='logo/Gitee_logo.b1882c20.svg') }}"
+                                         alt="Gitee">
+                                    <span class="d-none">Sign in with Apple</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main><!-- End #main -->
+{% endblock %}
